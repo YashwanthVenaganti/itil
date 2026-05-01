@@ -1,0 +1,56 @@
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Outlet,
+  useLocation,
+} from "react-router-dom";
+import { useEffect } from "react";
+
+import Header from "../Components/Header/Header";
+import Home from "../Pages/Home/Home";
+import AboutUs from "../Pages/About/About";
+import Solutions from "../Pages/Solutions/Solutions";
+import CaseStudies from "../Pages/CaseStudies/CaseStudies";
+import Contact from "../Pages/Contact/Contact";
+import Footer from "../Components/Footer/Footer";
+
+function Layout() {
+  const { pathname } = useLocation();
+
+  // ✅ Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "auto", // change to "smooth" if needed
+    });
+  }, [pathname]);
+
+  return (
+    <>
+      <Header />
+      <div>
+        <Outlet />
+      </div>
+      <Footer />
+    </>
+  );
+}
+
+function AppRouter() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/solutions" element={<Solutions />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/contact" element={<Contact />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default AppRouter;
