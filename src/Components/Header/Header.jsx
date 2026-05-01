@@ -13,12 +13,20 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 
-const navItems = ["Home", "About", "Solutions", "Case Studies", "Contact"];
+const navItems = [
+  "Home",
+  "About",
+  "Solutions",
+  "Portfolio",        // ✅ added
+  "Case Studies",
+  "Contact"
+];
 
 const routes = {
   Home: "/",
   About: "/about",
   Solutions: "/solutions",
+  Portfolio: "/portfolio",   // ✅ added
   "Case Studies": "/case-studies",
   Contact: "/contact",
 };
@@ -58,22 +66,37 @@ export default function Header() {
           sx={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",
             cursor: "pointer",
             flexShrink: 0,
           }}
         >
+          {/* Image */}
           <Box
             component="img"
-            src="/Images/HeaderImage.svg"   // your logo path
+            src="/Images/Button.svg"
             alt="Iitil"
             sx={{
-              height: "36px",              // matches text height
+              height: "36px",
               width: "auto",
               display: "block",
-              objectFit: "contain",
             }}
           />
+
+          {/* Text */}
+          <Typography
+            sx={{
+              color: "#E8EAF2",
+              fontFamily: "Jost, sans-serif",
+              fontWeight: 500,
+              fontSize: "30px",
+              lineHeight: "36px",
+              letterSpacing: "-0.4px",
+              userSelect: "none",
+              ml: "-6px", // 👈 adjust this (-4px to -10px) based on how close you want
+            }}
+          >
+            IItIL
+          </Typography>
         </Box>
 
         {/* Desktop Right Section */}

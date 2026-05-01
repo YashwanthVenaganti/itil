@@ -14,6 +14,7 @@ import Solutions from "../Pages/Solutions/Solutions";
 import CaseStudies from "../Pages/CaseStudies/CaseStudies";
 import Contact from "../Pages/Contact/Contact";
 import Footer from "../Components/Footer/Footer";
+import Portfolio from "../Pages/Portfolio/Portfolio";
 
 function Layout() {
   const { pathname } = useLocation();
@@ -47,6 +48,7 @@ function AppRouter() {
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/portfolio" element={<Portfolio />} />   {/* ✅ added */}
         </Route>
       </Routes>
     </BrowserRouter>
