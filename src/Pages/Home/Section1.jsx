@@ -248,7 +248,7 @@ export default function HeroSection() {
                   },
                 }}
               >
-                Request a Demo
+                Speak to an Expert
               </MotionButton>
             </MotionBox>
           </Box>
@@ -268,87 +268,31 @@ export default function HeroSection() {
               pr: { lg: "12px" },
             }}
           >
-            <MotionBox
-              animate={{ y: [0, -12, 0] }}
-              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+            <Box
               sx={{
                 position: "absolute",
-                top: { xs: "0px", lg: "0px" },
-                right: { xs: "calc(50% - 21.5px)", lg: "20px" },
-                width: "43px",
-                height: "48.5123px",
+                top: { xs: "10px", md: "-60px" },
+                right: { xs: "10px", md: "40px" },
+                width: { xs: "60px", md: "70px" }, // 👈 smaller size
+                height: "auto",
+                zIndex: 1,
+                pointerEvents: "none",
               }}
             >
               <Box
                 component="img"
-                src="/Images/Icon.svg" // 👉 replace with your image
+                src="/Images/Icon.svg"
                 alt="about"
                 sx={{
-                  position: "absolute",
-                  top: { xs: "20px", md: "-110px" },
-                  right: { xs: "20px", md: "60px" },
-                  width: { xs: "0px", md: "150px" },
+                  width: "100%",
                   height: "auto",
                   objectFit: "contain",
-                  zIndex: 1,
-                  pointerEvents: "none",
+                  display: "block",
                 }}
               />
-            </MotionBox>
+            </Box>
 
-            {/* <MotionBox
-              whileHover={{ scale: 1.08, rotate: 8 }}
-              animate={{
-                boxShadow: [
-                  "0px 0px 0px rgba(8, 217, 255, 0)",
-                  "0px 0px 35px rgba(8, 217, 255, 0.35)",
-                  "0px 0px 0px rgba(8, 217, 255, 0)",
-                ],
-              }}
-              transition={{
-                boxShadow: {
-                  duration: 2.4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                },
-              }}
-              sx={{
-                width: { xs: "140px", sm: "150px", md: "170px" },
-                height: { xs: "140px", sm: "150px", md: "170px" },
-                borderRadius: "50%",
-                border: "2px solid #08D9FF",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                mt: { xs: "30px", lg: "20px" },
-                cursor: "pointer",
-              }}
-            >
-              <MotionBox
-                animate={{ scale: [1, 1.12, 1] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                sx={{
-                  width: { xs: "72px", md: "82px" },
-                  height: { xs: "72px", md: "82px" },
-                  borderRadius: "50%",
-                  border: "2px solid #08D9FF",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <MotionBox
-                  animate={{ scale: [1, 0.8, 1] }}
-                  transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-                  sx={{
-                    width: { xs: "28px", md: "32px" },
-                    height: { xs: "28px", md: "32px" },
-                    borderRadius: "50%",
-                    backgroundColor: "#08D9FF",
-                  }}
-                />
-              </MotionBox>
-            </MotionBox> */}
+
           </MotionBox>
         </Box>
       </Box>

@@ -93,7 +93,7 @@ export default function Footer() {
                 fontSize: "24px",
                 fontWeight: 600,
                 mb: 3,
-                textTransform: "uppercase",
+                // textTransform: "uppercase",
               }}
             >
               Solutions
@@ -129,7 +129,7 @@ export default function Footer() {
                 fontSize: "24px",
                 fontWeight: 600,
                 mb: 3,
-                textTransform: "uppercase",
+                // textTransform: "uppercase",
               }}
             >
               Company
@@ -163,7 +163,7 @@ export default function Footer() {
                 fontSize: "24px",
                 fontWeight: 600,
                 mb: 3,
-                textTransform: "uppercase",
+                // textTransform: "uppercase",
               }}
             >
               Contact

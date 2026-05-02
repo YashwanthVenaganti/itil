@@ -15,21 +15,29 @@ export default function AboutHeroSection() {
       }}
     >
       {/* TOP RIGHT IMAGE */}
-      <Box
-        component="img"
-        src="/Images/Icon.svg" // 👉 replace with your image
-        alt="about"
+      {/* <Box
         sx={{
           position: "absolute",
-          top: { xs: "20px", md: "40px" },
-          right: { xs: "20px", md: "60px" },
-          width: { xs: "0px",  md: "150px" },
+          top: { xs: "10px", },
+          right: { xs: "10px", md: "200px" },
+          width: { xs: "60px", md: "70px" }, // 👈 smaller size
           height: "auto",
-          objectFit: "contain",
           zIndex: 1,
           pointerEvents: "none",
         }}
-      />
+      >
+        <Box
+          component="img"
+          src="/Images/Icon.svg"
+          alt="about"
+          sx={{
+            width: "100%",
+            height: "auto",
+            objectFit: "contain",
+            display: "block",
+          }}
+        />
+      </Box> */}
 
       <Container
         maxWidth={false}

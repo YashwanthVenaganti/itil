@@ -221,29 +221,7 @@ export default function CaseStudiesPreview() {
                                 </Box>
                             </Box>
 
-                            <Box
-                                sx={{
-                                    bgcolor: "#11243A",
-                                    px: { xs: "24px", md: "32px" },
-                                    py: "20px",
-                                    mt: "auto",
-                                }}
-                            >
-                                <Button
-                                    endIcon={<ArrowForwardIcon />}
-                                    sx={{
-                                        p: 0,
-                                        color: "#00D9FF",
-                                        textTransform: "none",
-                                        fontFamily: "Jost, sans-serif",
-                                        fontSize: "14px",
-                                        fontWeight: 500,
-                                        "&:hover": { backgroundColor: "transparent" },
-                                    }}
-                                >
-                                    Read Case Study
-                                </Button>
-                            </Box>
+                          
                         </MotionBox>
                     ))}
                 </Box>

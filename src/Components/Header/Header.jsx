@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
   Box,
@@ -17,22 +17,24 @@ const navItems = [
   "Home",
   "About",
   "Solutions",
-  "Portfolio",        // ✅ added
+  "Portfolio",
   "Case Studies",
-  "Contact"
+  "Contact",
 ];
 
 const routes = {
   Home: "/",
   About: "/about",
   Solutions: "/solutions",
-  Portfolio: "/portfolio",   // ✅ added
+  Portfolio: "/portfolio",
   "Case Studies": "/case-studies",
   Contact: "/contact",
 };
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [showHeaderIcon, setShowHeaderIcon] = useState(false);
+
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -40,21 +42,30 @@ export default function Header() {
     setMobileOpen((prev) => !prev);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowHeaderIcon(window.scrollY > window.innerHeight - 80);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
-      {/* FIXED HEADER */}
       <Box
         sx={{
           width: "100%",
-          height: { xs: "70px", md: "70px" },
+          height: { xs: "62px", md: "64px" },
           backgroundColor: "#0A0E27",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
           px: { xs: 2, sm: 3, md: 5 },
           boxSizing: "border-box",
-
-          position: "fixed",   // ✅ sticky/fixed
+          position: "fixed",
           top: 0,
           left: 0,
           zIndex: 1200,
@@ -70,33 +81,16 @@ export default function Header() {
             flexShrink: 0,
           }}
         >
-          {/* Image */}
           <Box
             component="img"
             src="/Images/Itil.svg"
             alt="Iitil"
             sx={{
-              height: "46px",
+              height: { xs: "38px", md: "42px" },
               width: "auto",
               display: "block",
             }}
           />
-
-          {/* Text */}
-          {/* <Typography
-            sx={{
-              color: "#E8EAF2",
-              fontFamily: "Jost, sans-serif",
-              fontWeight: 500,
-              fontSize: "30px",
-              lineHeight: "36px",
-              letterSpacing: "-0.4px",
-              userSelect: "none",
-              ml: "-6px", // 👈 adjust this (-4px to -10px) based on how close you want
-            }}
-          >
-            IItIL
-          </Typography> */}
         </Box>
 
         {/* Desktop Right Section */}
@@ -104,14 +98,17 @@ export default function Header() {
           sx={{
             display: { xs: "none", md: "flex" },
             alignItems: "center",
-            gap: "40px",
+            gap: "24px",
+            ml: "auto",
           }}
         >
           <Box
             sx={{
               display: "flex",
-              gap: "30px",
+              gap: "22px",
               alignItems: "center",
+              mr: showHeaderIcon ? "10px" : "0px",
+              transition: "all 0.3s ease",
             }}
           >
             {navItems.map((item) => (
@@ -144,10 +141,10 @@ export default function Header() {
               textTransform: "none",
               fontSize: "14px",
               fontWeight: 500,
-              padding: "10px 22px",
+              padding: "8px 18px",
               borderRadius: "0px",
-              minWidth: "140px",
-              height: "35px",
+              minWidth: "125px",
+              height: "34px",
               "&:hover": {
                 backgroundColor: "#00c8e0",
               },
@@ -155,6 +152,22 @@ export default function Header() {
           >
             Get in Touch
           </Button>
+
+          {/* Scroll Icon */}
+          <Box
+            component="img"
+            src="/Images/Icon.svg"
+            alt="icon"
+            sx={{
+              width: showHeaderIcon ? "34px" : "0px",
+              height: showHeaderIcon ? "34px" : "0px",
+              opacity: showHeaderIcon ? 1 : 0,
+              objectFit: "contain",
+              transition: "all 0.3s ease",
+              overflow: "hidden",
+              flexShrink: 0,
+            }}
+          />
         </Box>
 
         {/* Mobile Hamburger */}
@@ -169,8 +182,8 @@ export default function Header() {
         </IconButton>
       </Box>
 
-      {/* SPACER (prevents content hiding under fixed header) */}
-      <Box sx={{ height: "70px" }} />
+      {/* Spacer */}
+      <Box sx={{ height: { xs: "62px", md: "64px" } }} />
 
       {/* Mobile Drawer */}
       <Drawer
