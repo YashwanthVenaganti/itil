@@ -23,7 +23,7 @@ export default function CaseStudiesHero() {
           width: { xs: "60px", md: "70px" },
           zIndex: 1,
           pointerEvents: "none",
-          display: "flex",
+          display: { xs: "none", lg: "flex" },
           flexDirection: "column",
           alignItems: "center",
         }}

@@ -20,32 +20,26 @@ export default function HeroSection() {
     >
       <Box
         sx={{
-          maxWidth: "1440px",
+          maxWidth: "1280px", // 🔽 reduced
           margin: "0 auto",
-          px: { xs: "20px", sm: "32px", md: "48px" },
-          pt: { xs: "100px", sm: "120px", md: "140px" },
-          pb: { xs: "70px", md: "100px" },
+          px: { xs: "20px", sm: "28px", md: "40px" },
+          pt: { xs: "90px", sm: "110px", md: "120px" },
+          pb: { xs: "60px", md: "80px" },
           position: "relative",
         }}
       >
         {/* HEADER LABEL */}
         <MotionBox
-          initial={{ opacity: 0, y: -24 }}
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: "10px",
-            mb: { xs: "24px", md: "26px" },
-          }}
+          transition={{ duration: 0.6 }}
+          sx={{ mb: "18px" }}
         >
           <Typography
             sx={{
               color: "#08D9FF",
-              fontWeight: 500,
-              fontSize: { xs: "12px", md: "14px" },
-              letterSpacing: "4px",
+              fontSize: "12px",
+              letterSpacing: "3px",
               textTransform: "uppercase",
             }}
           >
@@ -56,31 +50,30 @@ export default function HeroSection() {
         <Box
           sx={{
             display: "flex",
-            justifyContent: "space-between",
             flexDirection: { xs: "column", lg: "row" },
-            gap: { xs: "40px", lg: "20px" },
-            position: "relative",
+            justifyContent: "space-between",
           }}
         >
           {/* LEFT CONTENT */}
-          <Box sx={{ maxWidth: "860px", zIndex: 2 }}>
+          <Box sx={{ maxWidth: "720px", zIndex: 2 }}>
+            {/* HEADING */}
             <MotionTypography
-              initial={{ opacity: 0, y: 45 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.15 }}
+              transition={{ duration: 0.7 }}
               sx={{
                 fontWeight: 500,
                 fontSize: {
-                  xs: "38px",
-                  sm: "52px",
-                  md: "64px",
-                  lg: "72px",
+                  xs: "30px",
+                  sm: "38px",
+                  md: "46px",
+                  lg: "54px", // 🔽 reduced from 72
                 },
                 lineHeight: {
-                  xs: "46px",
-                  sm: "58px",
-                  md: "70px",
-                  lg: "79px",
+                  xs: "38px",
+                  sm: "46px",
+                  md: "54px",
+                  lg: "62px",
                 },
                 color: "#E7EAF3",
               }}
@@ -88,27 +81,62 @@ export default function HeroSection() {
               Transforming Data into Intelligent Business Outcomes
             </MotionTypography>
 
+            {/* PARAGRAPH 1 */}
             <MotionTypography
-              initial={{ opacity: 0, y: 35 }}
+              initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.35 }}
+              transition={{ delay: 0.2 }}
               sx={{
-                mt: "28px",
+                mt: "18px",
+                fontSize: "15px", // 🔽 reduced from 18
+                lineHeight: "26px",
                 color: "#7A82A8",
-                fontSize: "18px",
-                lineHeight: "30px",
               }}
             >
-              At litl, we enable organizations to harness the true power of data...
+              At Iitil, we enable organizations to harness the true power of data
+              through advanced analytics, intelligent technologies and scalable
+              digital architectures.
             </MotionTypography>
 
-            <MotionBox sx={{ mt: "40px", display: "flex", gap: "16px" }}>
+            {/* PARAGRAPH 2 */}
+            <MotionTypography
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              sx={{
+                mt: "14px",
+                fontSize: "15px",
+                lineHeight: "26px",
+                color: "#7A82A8",
+              }}
+            >
+              Businesses that effectively utilize data outperform their competition.
+              Iitil acts as a strategic partner by combining deep technical expertise
+              with domain understanding.
+            </MotionTypography>
+
+            {/* BUTTONS */}
+            <MotionBox
+              sx={{
+                mt: "26px",
+                display: "flex",
+                gap: "12px",
+                flexWrap: "wrap",
+              }}
+            >
               <MotionButton
                 endIcon={<ArrowForwardIcon />}
                 sx={{
                   backgroundColor: "#11D7FF",
                   color: "#000",
-                  height: "60px",
+                  height: "46px", // 🔽 reduced from 60
+                  fontSize: "13.5px",
+                  px: "18px",
+                  textTransform: "none",
+                  fontWeight: 500,
+                  "&:hover": {
+                    backgroundColor: "#11D7FF",
+                  },
                 }}
               >
                 Schedule a Consultation
@@ -118,7 +146,14 @@ export default function HeroSection() {
                 sx={{
                   border: "1px solid #11D7FF",
                   color: "#11D7FF",
-                  height: "60px",
+                  height: "46px",
+                  fontSize: "13.5px",
+                  px: "18px",
+                  textTransform: "none",
+                  fontWeight: 500,
+                  "&:hover": {
+                    backgroundColor: "rgba(17,215,255,0.08)",
+                  },
                 }}
               >
                 Speak to an Expert
@@ -127,57 +162,54 @@ export default function HeroSection() {
           </Box>
 
           {/* RIGHT ICON */}
-          <MotionBox
-            initial={{ opacity: 0, x: 70 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9, delay: 0.45 }}
-            sx={{
-              position: "relative",
-              width: { xs: "100%", lg: "280px" },
-              display: "flex",
-              justifyContent: { xs: "center", lg: "flex-end" },
-              alignItems: "flex-start",
-            }}
-          >
-            <Box
+          <Box
               sx={{
-                position: "absolute",
-                top: { xs: "10px", md: "-60px" },
-                right: { xs: "10px", md: "40px" },
-                width: { xs: "60px", md: "70px" },
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                pointerEvents: "none",
+                position: "relative",
+                width: { xs: 0, lg: "280px" },
+                display: { xs: "none", lg: "flex" }, // ✅ hide on mobile
+                justifyContent: "flex-end",
+                alignItems: "flex-start",
               }}
             >
-              {/* ICON */}
               <Box
-                component="img"
-                src="/Images/Icon.svg"
-                alt="icon"
                 sx={{
-                  width: "100%",
-                  height: "auto",
-                }}
-              />
-
-              {/* TEXT BELOW ICON */}
-              <Typography
-                sx={{
-                  mt: "6px",
-                  fontFamily: "Gilroy-Medium, sans-serif",
-                  fontWeight: 400,
-                  fontSize: "9.94px",
-                  lineHeight: "100%",
-                  textAlign: "center",
-                  color: "#8D94B8",
+                  position: "absolute",
+                  top: { md: "-60px" },
+                  right: { md: "40px" },
+                  width: { md: "70px" },
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  pointerEvents: "none",
                 }}
               >
-                A YAKA Brands
-              </Typography>
+                {/* ICON */}
+                <Box
+                  component="img"
+                  src="/Images/Icon.svg"
+                  alt="icon"
+                  sx={{
+                    width: "100%",
+                    height: "auto",
+                  }}
+                />
+
+                {/* TEXT */}
+                <Typography
+                  sx={{
+                    mt: "6px",
+                    fontFamily: "Gilroy-Medium, sans-serif",
+                    fontWeight: 400,
+                    fontSize: "9.94px",
+                    lineHeight: "100%",
+                    textAlign: "center",
+                    color: "#8D94B8",
+                  }}
+                >
+                  A YAKA Brands
+                </Typography>
+              </Box>
             </Box>
-          </MotionBox>
         </Box>
       </Box>
     </Box>
