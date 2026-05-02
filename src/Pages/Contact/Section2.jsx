@@ -404,7 +404,7 @@ export default function ContactSection() {
                             color: "#E8EAF2",
                           }}
                         >
-                          contact@itil.com
+                          hello@itil.com
                         </Typography>
                       </Box>
                     </MotionBox>
