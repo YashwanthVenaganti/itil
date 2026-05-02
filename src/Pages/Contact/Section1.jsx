@@ -11,14 +11,60 @@ export default function ContactHeroSection() {
         width: "100%",
         backgroundColor: "#0A0E27",
         overflow: "hidden",
+        position: "relative",
       }}
     >
+      {/* 🔹 TOP RIGHT ICON + TEXT */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: { xs: "60px" },
+          right: { xs: "10px", md: "200px" },
+          width: { xs: "60px", md: "70px" },
+          zIndex: 1,
+          pointerEvents: "none",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <Box
+          component="img"
+          src="/Images/Icon.svg"
+          alt="icon"
+          sx={{
+            width: "100%",
+            height: "auto",
+            objectFit: "contain",
+            display: "block",
+          }}
+        />
+
+        <Typography
+          sx={{
+            mt: "6px",
+            fontFamily: "Gilroy-Medium, sans-serif",
+            fontWeight: 400,
+            fontSize: "9.94px",
+            lineHeight: "100%",
+            letterSpacing: "0px",
+            textAlign: "center",
+            color: "#8D94B8",
+            whiteSpace: "nowrap",
+          }}
+        >
+          A YAKA Brands
+        </Typography>
+      </Box>
+
       <Container
         maxWidth={false}
         sx={{
           px: { xs: "20px", sm: "32px", md: "48px", lg: "54px" },
           pt: { xs: "70px", sm: "90px", md: "110px", lg: "44px" },
           pb: { xs: "70px", sm: "80px", md: "90px", lg: "54px" },
+          position: "relative",
+          zIndex: 2,
         }}
       >
         <MotionBox
@@ -41,7 +87,6 @@ export default function ContactHeroSection() {
               textTransform: "uppercase",
               color: "#00D9FF",
               mb: { xs: "18px", md: "20px" },
-              cursor: "default",
             }}
           >
             Contact Us
@@ -76,8 +121,6 @@ export default function ContactHeroSection() {
               color: "#E8EAF2",
               maxWidth: { xs: "100%", lg: "720px" },
               mb: { xs: "22px", md: "24px" },
-              transition: "all 0.3s ease",
-              cursor: "default",
             }}
           >
             Let&apos;s Transform Your Business
@@ -99,21 +142,14 @@ export default function ContactHeroSection() {
                 md: "17px",
                 lg: "16px",
               },
-              lineHeight: {
-                xs: "26px",
-                sm: "27px",
-                md: "28px",
-                lg: "28px",
-              },
-              letterSpacing: "0px",
+              lineHeight: "28px",
               color: "#7A82A8",
               maxWidth: { xs: "100%", lg: "560px" },
-              transition: "all 0.3s ease",
             }}
           >
-            Connect with litl to explore how data intelligence and technology can
-            transform your business. Our experts are available to understand your
-            requirements and provide tailored solutions.
+            Connect with litl to explore how data intelligence and technology
+            can transform your business. Our experts are available to understand
+            your requirements and provide tailored solutions.
           </MotionTypography>
         </MotionBox>
       </Container>

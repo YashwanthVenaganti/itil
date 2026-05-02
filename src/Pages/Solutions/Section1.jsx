@@ -11,14 +11,62 @@ export default function SolutionsHero() {
         width: "100%",
         backgroundColor: "#0A0E27",
         overflow: "hidden",
+        position: "relative", // ✅ required
       }}
     >
+      {/* 🔹 ICON + TEXT */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: { xs: "60px" },
+          right: { xs: "10px", md: "200px" },
+          width: { xs: "60px", md: "70px" },
+          zIndex: 1,
+          pointerEvents: "none",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        {/* ICON */}
+        <Box
+          component="img"
+          src="/Images/Icon.svg"
+          alt="icon"
+          sx={{
+            width: "100%",
+            height: "auto",
+            objectFit: "contain",
+            display: "block",
+          }}
+        />
+
+        {/* TEXT */}
+        <Typography
+          sx={{
+            mt: "6px",
+            fontFamily: "Gilroy-Medium, sans-serif",
+            fontWeight: 400,
+            fontSize: "9.94px",
+            lineHeight: "100%",
+            letterSpacing: "0px",
+            textAlign: "center",
+            color: "#8D94B8",
+            whiteSpace: "nowrap",
+          }}
+        >
+          A YAKA Brands
+        </Typography>
+      </Box>
+
       <Container
         maxWidth={false}
         sx={{
           px: { xs: "20px", sm: "32px", md: "48px", lg: "80px" },
           pt: { xs: "100px", sm: "120px", md: "140px", lg: "160px" },
           pb: { xs: "80px", md: "100px" },
+          position: "relative",
+          zIndex: 2, // ✅ keep content above icon
         }}
       >
         <MotionBox
@@ -45,7 +93,6 @@ export default function SolutionsHero() {
               textTransform: "uppercase",
               color: "#00D9FF",
               mb: { xs: "20px", md: "28px" },
-              cursor: "default",
             }}
           >
             Solutions
@@ -60,9 +107,7 @@ export default function SolutionsHero() {
               duration: 0.8,
               ease: "easeOut",
             }}
-            whileHover={{
-              scale: 1.02,
-            }}
+            whileHover={{ scale: 1.02 }}
             sx={{
               fontFamily: "Jost, sans-serif",
               fontWeight: 500,
@@ -86,8 +131,6 @@ export default function SolutionsHero() {
               },
               color: "#E8EAF2",
               maxWidth: "920px",
-              transition: "all 0.3s ease",
-              cursor: "default",
             }}
           >
             Comprehensive Technology

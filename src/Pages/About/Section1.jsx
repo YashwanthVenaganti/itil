@@ -11,21 +11,24 @@ export default function AboutHeroSection() {
         width: "100%",
         backgroundColor: "#0A0E27",
         overflow: "hidden",
-        position: "relative", // needed for absolute image
+        position: "relative",
       }}
     >
-      {/* TOP RIGHT IMAGE */}
-      {/* <Box
+      {/* 🔹 TOP RIGHT ICON + TEXT */}
+      <Box
         sx={{
           position: "absolute",
-          top: { xs: "10px", },
+          top: { xs: "60px" },
           right: { xs: "10px", md: "200px" },
-          width: { xs: "60px", md: "70px" }, // 👈 smaller size
-          height: "auto",
+          width: { xs: "60px", md: "70px" },
           zIndex: 1,
           pointerEvents: "none",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
         }}
       >
+        {/* ICON */}
         <Box
           component="img"
           src="/Images/Icon.svg"
@@ -37,7 +40,24 @@ export default function AboutHeroSection() {
             display: "block",
           }}
         />
-      </Box> */}
+
+        {/* TEXT BELOW ICON */}
+        <Typography
+          sx={{
+            mt: "6px",
+            fontFamily: "Gilroy-Medium, sans-serif",
+            fontWeight: 400,
+            fontSize: "9.94px",
+            lineHeight: "100%",
+            letterSpacing: "0px",
+            textAlign: "center",
+            color: "#8D94B8",
+            whiteSpace: "nowrap",
+          }}
+        >
+          A YAKA Brands
+        </Typography>
+      </Box>
 
       <Container
         maxWidth={false}
@@ -53,9 +73,7 @@ export default function AboutHeroSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          sx={{
-            maxWidth: "900px",
-          }}
+          sx={{ maxWidth: "900px" }}
         >
           <MotionTypography
             initial={{ opacity: 0, y: 25 }}
@@ -74,7 +92,6 @@ export default function AboutHeroSection() {
               textTransform: "uppercase",
               color: "#08D9FF",
               mb: { xs: "20px", md: "28px" },
-              cursor: "default",
             }}
           >
             About Us
@@ -83,10 +100,8 @@ export default function AboutHeroSection() {
           <MotionTypography
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            whileHover={{
-              scale: 1.02,
-            }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            whileHover={{ scale: 1.02 }}
             sx={{
               fontFamily: "Jost, sans-serif",
               fontWeight: 500,
@@ -110,8 +125,6 @@ export default function AboutHeroSection() {
               },
               color: "#E7EAF3",
               maxWidth: "820px",
-              transition: "all 0.3s ease",
-              cursor: "default",
             }}
           >
             Bridging Data Complexity

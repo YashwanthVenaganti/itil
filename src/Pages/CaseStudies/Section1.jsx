@@ -11,14 +11,60 @@ export default function CaseStudiesHero() {
         width: "100%",
         backgroundColor: "#0A0E27",
         overflow: "hidden",
+        position: "relative", // ✅ required
       }}
     >
+      {/* 🔹 ICON + TEXT */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: { xs: "60px" },
+          right: { xs: "10px", md: "200px" },
+          width: { xs: "60px", md: "70px" },
+          zIndex: 1,
+          pointerEvents: "none",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <Box
+          component="img"
+          src="/Images/Icon.svg"
+          alt="icon"
+          sx={{
+            width: "100%",
+            height: "auto",
+            objectFit: "contain",
+            display: "block",
+          }}
+        />
+
+        <Typography
+          sx={{
+            mt: "6px",
+            fontFamily: "Gilroy-Medium, sans-serif",
+            fontWeight: 400,
+            fontSize: "9.94px",
+            lineHeight: "100%",
+            letterSpacing: "0px",
+            textAlign: "center",
+            color: "#8D94B8",
+            whiteSpace: "nowrap",
+          }}
+        >
+          A YAKA Brands
+        </Typography>
+      </Box>
+
       <Container
         maxWidth={false}
         sx={{
           px: { xs: "20px", sm: "32px", md: "48px", lg: "80px" },
           pt: { xs: "100px", sm: "120px", md: "140px", lg: "160px" },
           pb: { xs: "80px", md: "100px" },
+          position: "relative",
+          zIndex: 2, // ✅ keep content above icon
         }}
       >
         <MotionBox
@@ -42,7 +88,6 @@ export default function CaseStudiesHero() {
               textTransform: "uppercase",
               color: "#00D9FF",
               mb: { xs: "20px", md: "28px" },
-              cursor: "default",
             }}
           >
             Case Studies
@@ -52,7 +97,7 @@ export default function CaseStudiesHero() {
           <MotionTypography
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
+            transition={{ delay: 0.3, duration: 0.8 }}
             whileHover={{ scale: 1.02 }}
             sx={{
               fontFamily: "Jost, sans-serif",
@@ -78,8 +123,6 @@ export default function CaseStudiesHero() {
               color: "#E8EAF2",
               maxWidth: "900px",
               mb: { xs: "24px", md: "28px" },
-              transition: "all 0.3s ease",
-              cursor: "default",
             }}
           >
             Proven Results Across
@@ -91,7 +134,7 @@ export default function CaseStudiesHero() {
           <MotionTypography
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.45, duration: 0.7, ease: "easeOut" }}
+            transition={{ delay: 0.45, duration: 0.7 }}
             whileHover={{ y: -3 }}
             sx={{
               fontFamily: "Jost, sans-serif",
@@ -108,10 +151,8 @@ export default function CaseStudiesHero() {
                 md: "28px",
                 lg: "29.25px",
               },
-              letterSpacing: "0px",
               color: "#7A82A8",
               maxWidth: "720px",
-              transition: "all 0.3s ease",
             }}
           >
             Explore how litl has helped organizations transform their operations

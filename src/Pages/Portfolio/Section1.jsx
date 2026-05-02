@@ -16,8 +16,51 @@ export default function HeroSection() {
         color: "#fff",
         fontFamily: "Jost, sans-serif",
         overflow: "hidden",
+        position: "relative", // ✅ required
       }}
     >
+      {/* 🔹 ICON + TEXT */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: { xs: "60px" },
+          right: { xs: "10px", md: "200px" },
+          width: { xs: "60px", md: "70px" },
+          zIndex: 1,
+          pointerEvents: "none",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <Box
+          component="img"
+          src="/Images/Icon.svg"
+          alt="icon"
+          sx={{
+            width: "100%",
+            height: "auto",
+            objectFit: "contain",
+            display: "block",
+          }}
+        />
+
+        <Typography
+          sx={{
+            mt: "6px",
+            fontFamily: "Gilroy-Medium, sans-serif",
+            fontWeight: 400,
+            fontSize: "9.94px",
+            lineHeight: "100%",
+            textAlign: "center",
+            color: "#8D94B8",
+            whiteSpace: "nowrap",
+          }}
+        >
+          A YAKA Brands
+        </Typography>
+      </Box>
+
       <Box
         sx={{
           maxWidth: "1440px",
@@ -26,6 +69,7 @@ export default function HeroSection() {
           pt: { xs: "100px", sm: "120px", md: "140px" },
           pb: { xs: "70px", md: "100px" },
           position: "relative",
+          zIndex: 2, // ✅ content above icon
         }}
       >
         {/* TOP LABEL */}
@@ -60,8 +104,8 @@ export default function HeroSection() {
           </Typography>
         </MotionBox>
 
+        {/* CONTENT */}
         <Box>
-          {/* MAIN HEADING */}
           <MotionTypography
             initial={{ opacity: 0, y: 45 }}
             animate={{ opacity: 1, y: 0 }}
@@ -89,92 +133,39 @@ export default function HeroSection() {
             Across India & Global Markets
           </MotionTypography>
 
-          {/* PARAGRAPH 1 */}
           <MotionTypography
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, delay: 0.35 }}
+            transition={{ delay: 0.35 }}
             sx={{
-              mt: { xs: "28px", md: "34px" },
+              mt: "28px",
               maxWidth: "820px",
-              fontSize: { xs: "16px", md: "18px" },
-              lineHeight: "30px",
+              fontSize: "18px",
               color: "#7A82A8",
             }}
           >
-            litl is a full-stack technology services brand delivering scalable IT
-            services, enterprise applications, CRM systems, SaaS products,
-            automation and data intelligence solutions for businesses across
-            India and global markets.
+            Iitil is a full-stack technology services brand delivering scalable IT services, enterprise applications, CRM systems, SaaS products, automation and data intelligence solutions for businesses across India and global markets.<br/>
+          
+            With a focus on innovation, reliability and customer success, Iitil empowers organizations to leverage technology for growth, efficiency and competitive advantage.
           </MotionTypography>
 
-          {/* PARAGRAPH 2 */}
-          <MotionTypography
-            initial={{ opacity: 0, y: 35 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, delay: 0.5 }}
-            sx={{
-              mt: { xs: "20px", md: "24px" },
-              maxWidth: "860px",
-              fontSize: { xs: "15px", md: "17px" },
-              lineHeight: "28px",
-              color: "#7A82A8",
-            }}
-          >
-            IITIL is designed to build a complete digital ecosystem covering
-            infrastructure, applications, CRM systems, SaaS platforms,
-            automation, cybersecurity, and data services under one scalable
-            operating model.
-          </MotionTypography>
-
-          {/* BUTTONS */}
-          <MotionBox
-            initial={{ opacity: 0, y: 35 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, delay: 0.65 }}
-            sx={{
-              mt: { xs: "32px", md: "42px" },
-              display: "flex",
-              gap: "16px",
-              flexWrap: "wrap",
-            }}
-          >
+          <MotionBox sx={{ mt: "40px", display: "flex", gap: "16px" }}>
             <MotionButton
-              whileHover={{
-                scale: 1.04,
-                y: -3,
-                boxShadow: "0px 14px 35px rgba(17, 215, 255, 0.35)",
-              }}
               endIcon={<ArrowForwardIcon />}
               sx={{
-                minWidth: { xs: "100%", sm: "260px" },
-                height: "60px",
                 backgroundColor: "#11D7FF",
                 color: "#000",
-                fontSize: "16px",
-                fontWeight: 500,
-                borderRadius: 0,
-                textTransform: "none",
+                height: "60px",
               }}
             >
               Schedule a Consultation
             </MotionButton>
 
             <MotionButton
-              whileHover={{
-                scale: 1.04,
-                y: -3,
-                backgroundColor: "rgba(17, 215, 255, 0.08)",
-              }}
               sx={{
-                minWidth: { xs: "100%", sm: "200px" },
-                height: "60px",
                 border: "1px solid #11D7FF",
                 color: "#11D7FF",
-                fontSize: "16px",
-                fontWeight: 500,
-                borderRadius: 0,
-                textTransform: "none",
+                height: "60px",
               }}
             >
               View Services
