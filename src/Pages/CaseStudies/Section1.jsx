@@ -53,7 +53,7 @@ export default function CaseStudiesHero() {
             whiteSpace: "nowrap",
           }}
         >
-          A YAKA Brands
+          A YAKA Brand
         </Typography>
       </Box>
 

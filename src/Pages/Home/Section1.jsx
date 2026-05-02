@@ -209,7 +209,7 @@ export default function HeroSection() {
                   color: "#8D94B8",
                 }}
               >
-                A YAKA Brands
+                A YAKA Brand
               </Typography>
             </Box>
           </Box>

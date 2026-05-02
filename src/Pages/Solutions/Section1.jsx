@@ -55,7 +55,7 @@ export default function SolutionsHero() {
             whiteSpace: "nowrap",
           }}
         >
-          A YAKA Brands
+          A YAKA Brand
         </Typography>
       </Box>
 

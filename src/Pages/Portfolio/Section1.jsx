@@ -57,7 +57,7 @@ export default function HeroSection() {
             whiteSpace: "nowrap",
           }}
         >
-          A YAKA Brands
+          A YAKA Brand
         </Typography>
       </Box>
 
