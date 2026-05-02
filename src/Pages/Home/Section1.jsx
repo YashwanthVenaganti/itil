@@ -1,12 +1,14 @@
 import { Box, Button, Typography } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const MotionBox = motion(Box);
 const MotionTypography = motion(Typography);
 const MotionButton = motion(Button);
 
 export default function HeroSection() {
+  const navigate = useNavigate();
   return (
     <Box
       sx={{
@@ -126,10 +128,11 @@ export default function HeroSection() {
             >
               <MotionButton
                 endIcon={<ArrowForwardIcon />}
+                onClick={() => navigate("/contact")} // ✅ navigation added
                 sx={{
                   backgroundColor: "#11D7FF",
                   color: "#000",
-                  height: "46px", // 🔽 reduced from 60
+                  height: "46px",
                   fontSize: "13.5px",
                   px: "18px",
                   textTransform: "none",
@@ -163,53 +166,53 @@ export default function HeroSection() {
 
           {/* RIGHT ICON */}
           <Box
+            sx={{
+              position: "relative",
+              width: { xs: 0, lg: "280px" },
+              display: { xs: "none", lg: "flex" }, // ✅ hide on mobile
+              justifyContent: "flex-end",
+              alignItems: "flex-start",
+            }}
+          >
+            <Box
               sx={{
-                position: "relative",
-                width: { xs: 0, lg: "280px" },
-                display: { xs: "none", lg: "flex" }, // ✅ hide on mobile
-                justifyContent: "flex-end",
-                alignItems: "flex-start",
+                position: "absolute",
+                top: { md: "-60px" },
+                right: { md: "40px" },
+                width: { md: "70px" },
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                pointerEvents: "none",
               }}
             >
+              {/* ICON */}
               <Box
+                component="img"
+                src="/Images/Icon.svg"
+                alt="icon"
                 sx={{
-                  position: "absolute",
-                  top: { md: "-60px" },
-                  right: { md: "40px" },
-                  width: { md: "70px" },
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  pointerEvents: "none",
+                  width: "100%",
+                  height: "auto",
+                }}
+              />
+
+              {/* TEXT */}
+              <Typography
+                sx={{
+                  mt: "6px",
+                  fontFamily: "Gilroy-Medium, sans-serif",
+                  fontWeight: 400,
+                  fontSize: "9.94px",
+                  lineHeight: "100%",
+                  textAlign: "center",
+                  color: "#8D94B8",
                 }}
               >
-                {/* ICON */}
-                <Box
-                  component="img"
-                  src="/Images/Icon.svg"
-                  alt="icon"
-                  sx={{
-                    width: "100%",
-                    height: "auto",
-                  }}
-                />
-
-                {/* TEXT */}
-                <Typography
-                  sx={{
-                    mt: "6px",
-                    fontFamily: "Gilroy-Medium, sans-serif",
-                    fontWeight: 400,
-                    fontSize: "9.94px",
-                    lineHeight: "100%",
-                    textAlign: "center",
-                    color: "#8D94B8",
-                  }}
-                >
-                  A YAKA Brands
-                </Typography>
-              </Box>
+                A YAKA Brands
+              </Typography>
             </Box>
+          </Box>
         </Box>
       </Box>
     </Box>
