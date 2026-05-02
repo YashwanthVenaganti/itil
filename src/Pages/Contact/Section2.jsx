@@ -489,19 +489,15 @@ export default function ContactSection() {
                         </Typography>
                         <Typography
                           sx={{
-                            fontFamily: "Jost, sans-serif",
-                            fontWeight: 400,
-                            fontSize: "18px",
-                            lineHeight: "28px",
                             color: "#E8EAF2",
-                            maxWidth: "300px",
+                            fontSize: "14px",
+                            lineHeight: "24px",
+                            mb: "10px",
                           }}
                         >
-                          123 Innovation Drive
+                          Sattva Knowledge City, Raidurg, Hitec City
                           <br />
-                          Tech District, CA 94000
-                          <br />
-                          United States
+                          Hyderabad - 500 081, Telangana, India
                         </Typography>
                       </Box>
                     </MotionBox>

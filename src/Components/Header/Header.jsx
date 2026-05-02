@@ -73,17 +73,17 @@ export default function Header() {
           {/* Image */}
           <Box
             component="img"
-            src="/Images/Button.svg"
+            src="/Images/Itil.svg"
             alt="Iitil"
             sx={{
-              height: "36px",
+              height: "46px",
               width: "auto",
               display: "block",
             }}
           />
 
           {/* Text */}
-          <Typography
+          {/* <Typography
             sx={{
               color: "#E8EAF2",
               fontFamily: "Jost, sans-serif",
@@ -96,7 +96,7 @@ export default function Header() {
             }}
           >
             IItIL
-          </Typography>
+          </Typography> */}
         </Box>
 
         {/* Desktop Right Section */}

@@ -179,10 +179,17 @@ export default function Footer() {
 
               <Box sx={{ display: "flex", alignItems: "flex-start", gap: 1.5 }}>
                 <LocationOnOutlinedIcon sx={{ color: "#00D9FF", fontSize: 20, mt: "2px" }} />
-                <Typography sx={{ fontSize: "16px", color: "#8D93B8", maxWidth: "220px" }}>
-                  123 Innovation Drive
+                <Typography
+                  sx={{
+                    color: "#8D94B8",
+                    fontSize: "14px",
+                    lineHeight: "24px",
+                    mb: "10px",
+                  }}
+                >
+                  Sattva Knowledge City, Raidurg, Hitec City
                   <br />
-                  Tech District, CA 94000
+                  Hyderabad - 500 081, Telangana, India
                 </Typography>
               </Box>
             </Box>
