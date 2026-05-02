@@ -42,7 +42,7 @@ export default function ContactHeroSection() {
 
         <Typography
           sx={{
-            mt: "6px",
+            mt: "20px",
             fontFamily: "Gilroy-Medium, sans-serif",
             fontWeight: 400,
             fontSize: "9.94px",
