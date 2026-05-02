@@ -44,7 +44,8 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setShowHeaderIcon(window.scrollY > window.innerHeight - 80);
+      const triggerPoint = window.innerHeight * 0.1; // ✅ 10% of screen
+      setShowHeaderIcon(window.scrollY > triggerPoint);
     };
 
     handleScroll();
