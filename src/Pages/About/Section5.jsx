@@ -8,14 +8,14 @@ export default function OurApproachSection() {
   const approachItems = [
     {
       number: "01",
-      title: "Understanding Business\nContext",
+      title: "Understanding Business",
       description:
         "We begin by deeply analyzing business requirements and challenges.",
       icon: "/Images/Bulb.svg",
     },
     {
       number: "02",
-      title: "Designing Data-Driven\nSolutions",
+      title: "Designing Solution",
       description:
         "We architect solutions that leverage data effectively.",
       icon: "/Images/Circle.svg",

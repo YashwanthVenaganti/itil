@@ -37,10 +37,10 @@ const services = [
     icon: <SecurityOutlinedIcon sx={{ color: "#00D9FF", fontSize: 24 }} />,
   },
   {
-  title: "Industry",
-  desc: "Our Industry solutions protect critical business data and systems from threats, ensuring compliance and operational continuity.",
-  icon: <BusinessCenterOutlinedIcon sx={{ color: "#00D9FF", fontSize: 24 }} />,
-},
+    title: "Network and Infrastructure",
+    desc: "They focus on setting up and managing networks, servers, and IT systems for smooth operations. Companies like Cisco help ensure secure and reliable connectivity.",
+    icon: <BusinessCenterOutlinedIcon sx={{ color: "#00D9FF", fontSize: 24 }} />,
+  },
 ];
 
 export default function TechnologyServicesSection() {
@@ -61,63 +61,47 @@ export default function TechnologyServicesSection() {
         <MotionTypography
           initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          whileHover={{ scale: 1.02 }}
+          transition={{ duration: 0.7 }}
           sx={{
             fontFamily: "Jost, sans-serif",
             fontWeight: 500,
-            fontSize: { xs: "34px", sm: "40px", md: "44px", lg: "48px" },
-            lineHeight: { xs: "40px", sm: "44px", md: "46px", lg: "48px" },
-            letterSpacing: { xs: "-0.8px", md: "-1px", lg: "-1.2px" },
+            fontSize: { xs: "34px", md: "48px" },
             color: "#E8EAF2",
-            mb: { xs: "32px", md: "40px", lg: "52px" },
+            mb: { xs: "32px", md: "52px" },
           }}
         >
           Technology Services
         </MotionTypography>
 
-        <Grid container spacing={{ xs: 3, md: 3 }}>
+        {/* ✅ KEY FIX */}
+        <Grid container spacing={3} alignItems="stretch">
           {services.map((item, index) => (
-            <Grid key={index} size={{ xs: 12, sm: 6, md: 4 }}>
+            <Grid
+              key={index}
+              size={{ xs: 12, sm: 6, md: 4 }}
+              sx={{ display: "flex" }} // ✅ IMPORTANT
+            >
               <MotionBox
                 initial={{ opacity: 0, y: 45 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.1,
-                  ease: "easeOut",
-                }}
+                transition={{ delay: index * 0.1 }}
                 whileHover={{
                   y: -8,
                   scale: 1.02,
-                  borderColor: "rgba(8, 217, 255, 0.35)",
-                  boxShadow: "0px 22px 45px rgba(8, 217, 255, 0.12)",
                 }}
                 sx={{
                   backgroundColor: "#141829",
                   border: "1px solid rgba(255,255,255,0.05)",
-                  minHeight: { xs: "auto", md: "254px" },
                   px: { xs: "24px", md: "32px" },
                   py: { xs: "24px", md: "32px" },
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "flex-start",
-                  transition: "all 0.3s ease",
+                  height: "100%", // ✅ IMPORTANT
+                  width: "100%",
                 }}
               >
-                <MotionBox
-                  whileHover={{ rotate: 8, scale: 1.12 }}
-                  animate={{ y: [0, -5, 0] }}
-                  transition={{
-                    y: {
-                      duration: 2.2,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: index * 0.15,
-                    },
-                  }}
+                <Box
                   sx={{
                     width: "48px",
                     height: "48px",
@@ -129,29 +113,22 @@ export default function TechnologyServicesSection() {
                   }}
                 >
                   {item.icon}
-                </MotionBox>
-
-                <MotionTypography
-                  whileHover={{ x: 4 }}
-                  sx={{
-                    fontFamily: "Jost, sans-serif",
-                    fontWeight: 500,
-                    fontSize: { xs: "18px", md: "20px" },
-                    lineHeight: { xs: "26px", md: "30px" },
-                    color: "#E8EAF2",
-                    mb: "14px",
-                    transition: "all 0.3s ease",
-                  }}
-                >
-                  {item.title}
-                </MotionTypography>
+                </Box>
 
                 <Typography
                   sx={{
-                    fontFamily: "Jost, sans-serif",
-                    fontWeight: 400,
+                    fontWeight: 500,
+                    fontSize: { xs: "18px", md: "20px" },
+                    color: "#E8EAF2",
+                    mb: "14px",
+                  }}
+                >
+                  {item.title}
+                </Typography>
+
+                <Typography
+                  sx={{
                     fontSize: { xs: "15px", md: "16px" },
-                    lineHeight: { xs: "26px", md: "28px" },
                     color: "#7A82A8",
                   }}
                 >

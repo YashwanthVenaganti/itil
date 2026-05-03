@@ -79,9 +79,7 @@ export default function FinanceCaseStudyDetailCard() {
                     transition: "all 0.3s ease",
                   }}
                 >
-                  Leading Financial
-                  <br />
-                  Institution
+                  Financial Leading
                 </MotionTypography>
 
                 <MotionTypography

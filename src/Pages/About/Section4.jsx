@@ -57,7 +57,7 @@ export default function LeadershipSection() {
                 flexShrink: 0,
               }}
             >
-              <Typography sx={{ color: "#00D9FF" }}>L</Typography>
+              <Typography sx={{ color: "#00D9FF",fontSize: "35px" }}>L</Typography>
             </MotionBox>
 
             <MotionTypography

@@ -5,15 +5,21 @@ import {
   Grid,
   Typography,
   IconButton,
-  Link,
 } from "@mui/material";
 
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import FacebookIcon from "@mui/icons-material/Facebook"; // ✅ added
-import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import XIcon from "@mui/icons-material/X";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
+
+const companyRoutes = {
+  About: "/about",
+  "Case Studies": "/case-studies",
+  Legal: "/legal",
+  Contact: "/contact",
+};
 
 export default function Footer() {
   const navigate = useNavigate();
@@ -49,29 +55,26 @@ export default function Footer() {
               Transforming data into intelligent business outcomes.
             </Typography>
 
-            {/* SOCIAL ICONS */}
             <Box sx={{ display: "flex", gap: 2 }}>
-              {[
-                <LinkedInIcon />,
-                <TwitterIcon />,
-                <FacebookIcon />, // ✅ added
-                <MailOutlineOutlinedIcon />
-              ].map((icon, i) => (
-                <IconButton
-                  key={i}
-                  sx={{
-                    border: "1px solid rgba(255,255,255,0.1)",
-                    color: "#00D9FF",
-                    width: 36,
-                    height: 36,
-                    "&:hover": {
-                      borderColor: "#00D9FF",
-                    },
-                  }}
-                >
-                  {icon}
-                </IconButton>
-              ))}
+              {[<LinkedInIcon />, <XIcon />, <YouTubeIcon />, <FacebookIcon />].map(
+                (icon, i) => (
+                  <IconButton
+                    key={i}
+                    sx={{
+                      border: "1px solid rgba(255,255,255,0.1)",
+                      color: "#00D9FF",
+                      width: 36,
+                      height: 36,
+                      "&:hover": {
+                        borderColor: "#00D9FF",
+                        backgroundColor: "rgba(0,217,255,0.08)",
+                      },
+                    }}
+                  >
+                    {icon}
+                  </IconButton>
+                )
+              )}
             </Box>
           </Grid>
 
@@ -81,37 +84,10 @@ export default function Footer() {
               Solutions
             </Typography>
 
-            {[
-              "Data Intelligence",
-              "AI & ML",
-              "Cloud",
-              "Cybersecurity",
-            ].map((item) => (
-              <Typography
-                key={item}
-                sx={{
-                  fontSize: "14px",
-                  mb: 1,
-                  cursor: "pointer",
-                  "&:hover": { color: "#00D9FF" },
-                }}
-              >
-                {item}
-              </Typography>
-            ))}
-          </Grid>
-
-          {/* COMPANY */}
-          <Grid size={{ xs: 12, md: 3 }}>
-            <Typography sx={{ color: "#00D9FF", mb: 2 }}>
-              Company
-            </Typography>
-
-            {["About", "Case Studies", "Careers", "Contact"].map(
+            {["Data Intelligence", "AI & ML", "Cloud", "Cybersecurity"].map(
               (item) => (
                 <Typography
                   key={item}
-                  onClick={() => navigate(`/${item.toLowerCase()}`)}
                   sx={{
                     fontSize: "14px",
                     mb: 1,
@@ -125,6 +101,28 @@ export default function Footer() {
             )}
           </Grid>
 
+          {/* COMPANY */}
+          <Grid size={{ xs: 12, md: 3 }}>
+            <Typography sx={{ color: "#00D9FF", mb: 2 }}>
+              Company
+            </Typography>
+
+            {["About", "Case Studies", "Legal", "Contact"].map((item) => (
+              <Typography
+                key={item}
+                onClick={() => navigate(companyRoutes[item])}
+                sx={{
+                  fontSize: "14px",
+                  mb: 1,
+                  cursor: "pointer",
+                  "&:hover": { color: "#00D9FF" },
+                }}
+              >
+                {item}
+              </Typography>
+            ))}
+          </Grid>
+
           {/* CONTACT */}
           <Grid size={{ xs: 12, md: 3 }}>
             <Typography sx={{ color: "#00D9FF", mb: 2 }}>
@@ -133,16 +131,12 @@ export default function Footer() {
 
             <Box sx={{ display: "flex", gap: 1 }}>
               <EmailOutlinedIcon sx={{ color: "#00D9FF" }} />
-              <Typography sx={{ fontSize: "14px" }}>
-                hello@litl.com
-              </Typography>
+              <Typography sx={{ fontSize: "14px" }}>hello@litl.com</Typography>
             </Box>
 
             <Box sx={{ display: "flex", gap: 1, mt: 2 }}>
               <LocationOnOutlinedIcon sx={{ color: "#00D9FF" }} />
-              <Typography sx={{ fontSize: "13px" }}>
-                Hyderabad, India
-              </Typography>
+              <Typography sx={{ fontSize: "13px" }}>Hyderabad, India</Typography>
             </Box>
           </Grid>
         </Grid>
@@ -156,7 +150,8 @@ export default function Footer() {
           }}
         >
           <Typography sx={{ fontSize: "13px" }}>
-            © 2026 Crediple. All rights reserved . Empowering Professionals Through Convergent Technology..
+            © 2026 Crediple. All rights reserved. Empowering Professionals
+            Through Convergent Technology.
           </Typography>
         </Box>
       </Container>

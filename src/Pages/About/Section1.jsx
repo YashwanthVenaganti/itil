@@ -40,14 +40,18 @@ export default function AboutHeroSection() {
 
         <Typography
           sx={{
-            mt: "20px",
+            mt: "5px",
             fontFamily: "Gilroy-Medium, sans-serif",
             fontWeight: 400,
             fontSize: "9.94px",
             color: "#8D94B8",
           }}
         >
-          A YAKA Brand
+          A{" "}
+          <Box component="span" sx={{ fontWeight: 900 }}>
+            YAKA
+          </Box>{" "}
+          Brand
         </Typography>
       </Box>
 

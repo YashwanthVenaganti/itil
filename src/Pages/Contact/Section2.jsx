@@ -422,7 +422,7 @@ export default function ContactSection() {
                       </Box>
                     </MotionBox>
 
-                    <MotionBox
+                    {/* <MotionBox
                       whileHover={{ x: 6 }}
                       sx={{
                         display: "flex",
@@ -472,7 +472,7 @@ export default function ContactSection() {
                           +1 (555) 123-4567
                         </Typography>
                       </Box>
-                    </MotionBox>
+                    </MotionBox> */}
 
                     <MotionBox
                       whileHover={{ x: 6 }}

@@ -83,9 +83,9 @@ export default function CaseStudyDetailCard() {
                     mb: "10px",
                   }}
                 >
-                  Global Healthcare
-                  <br />
-                  Provider
+                  Healthcare Service
+                  
+                  
                 </MotionTypography>
 
                 <Typography

@@ -29,8 +29,8 @@ export default function RetailCaseStudyDetailCard() {
     },
     {
       icon: <LightbulbOutlinedIcon sx={{ color: "#00D9FF", fontSize: 12 }} />,
-      title: "litl Approach",
-      text: "litl implemented a data-driven inventory optimization system combined with customer analytics to understand purchasing patterns. We developed predictive models for demand forecasting and personalized recommendation engines.",
+      title: "IITIL Approach",
+      text: "IITIL implemented a data-driven inventory optimization system combined with customer analytics to understand purchasing patterns. We developed predictive models for demand forecasting and personalized recommendation engines.",
     },
     {
       icon: <TaskAltOutlinedIcon sx={{ color: "#00D9FF", fontSize: 12 }} />,
@@ -142,9 +142,7 @@ export default function RetailCaseStudyDetailCard() {
                     transition: "all 0.3s ease",
                   }}
                 >
-                  E-commerce Retail
-                  <br />
-                  Chain
+                  Retail Chain
                 </MotionTypography>
 
                 <MotionTypography

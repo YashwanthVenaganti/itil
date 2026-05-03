@@ -58,7 +58,7 @@ export default function VisionMissionSection() {
                   mb: "28px",
                 }}
               >
-                <Typography sx={{ color: "#00D9FF" }}>V</Typography>
+                <Typography sx={{ color: "#00D9FF",fontSize: "35px" }}>V</Typography>
               </MotionBox>
 
               <Typography sx={{ fontSize: "32px", color: "#E8EAF2", mb: "18px" }}>
@@ -108,7 +108,7 @@ export default function VisionMissionSection() {
                   mb: "28px",
                 }}
               >
-                <Typography sx={{ color: "#00D9FF" }}>M</Typography>
+                <Typography sx={{ color: "#00D9FF",fontSize: "35px" }}>M</Typography>
               </MotionBox>
 
               <Typography sx={{ fontSize: "32px", color: "#E8EAF2", mb: "18px" }}>
