@@ -54,7 +54,7 @@ export default function LeadershipSection() {
                 justifyContent: "center",
               }}
             >
-              <Typography sx={{ color: "#00D9FF" }}>👥</Typography>
+              <Typography sx={{ color: "#00D9FF" }}>L</Typography>
             </MotionBox>
 
             {/* TITLE */}

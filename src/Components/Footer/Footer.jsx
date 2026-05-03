@@ -32,7 +32,7 @@ export default function Footer() {
       <Container maxWidth={false} sx={{ px: { xs: 3, md: 6 } }}>
         <Grid container spacing={4}>
           {/* LEFT */}
-          <Grid size={{xs:12,md:3}}>
+          <Grid size={{ xs: 12, md: 3 }}>
             <Typography
               onClick={() => navigate("/")}
               sx={{
@@ -51,7 +51,7 @@ export default function Footer() {
 
             {/* SOCIAL ICONS */}
             <Box sx={{ display: "flex", gap: 2 }}>
-              {[ 
+              {[
                 <LinkedInIcon />,
                 <TwitterIcon />,
                 <FacebookIcon />, // ✅ added
@@ -76,7 +76,7 @@ export default function Footer() {
           </Grid>
 
           {/* SOLUTIONS */}
-          <Grid size={{xs:12,md:3}}>
+          <Grid size={{ xs: 12, md: 3 }}>
             <Typography sx={{ color: "#00D9FF", mb: 2 }}>
               Solutions
             </Typography>
@@ -102,7 +102,7 @@ export default function Footer() {
           </Grid>
 
           {/* COMPANY */}
-          <Grid size={{xs:12,md:3}}>
+          <Grid size={{ xs: 12, md: 3 }}>
             <Typography sx={{ color: "#00D9FF", mb: 2 }}>
               Company
             </Typography>
@@ -126,7 +126,7 @@ export default function Footer() {
           </Grid>
 
           {/* CONTACT */}
-          <Grid size={{xs:12,md:3}}>
+          <Grid size={{ xs: 12, md: 3 }}>
             <Typography sx={{ color: "#00D9FF", mb: 2 }}>
               Contact
             </Typography>
@@ -156,7 +156,7 @@ export default function Footer() {
           }}
         >
           <Typography sx={{ fontSize: "13px" }}>
-            © 2026 litl. All rights reserved.
+            © 2026 Crediple. All rights reserved . Empowering Professionals Through Convergent Technology..
           </Typography>
         </Box>
       </Container>

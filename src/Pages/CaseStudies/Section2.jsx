@@ -110,25 +110,26 @@ export default function CaseStudyDetailCard() {
                   icon: <BusinessOutlinedIcon sx={{ color: "#00D9FF", fontSize: 12 }} />,
                   title: "Client Background",
                   text:
-                    "A multinational healthcare organization with operations across 15 countries...",
+                    "A multinational healthcare organization with operations across 15 countries, managing millions of patient records and complex operational workflows.",
+
                 },
                 {
                   icon: <PublicOutlinedIcon sx={{ color: "#00D9FF", fontSize: 12 }} />,
                   title: "Business Challenge",
                   text:
-                    "The organization faced challenges in consolidating patient data...",
+                    "The organization faced challenges in consolidating patient data from disparate systems, leading to inefficiencies in care delivery and difficulty in extracting actionable insights for improving patient outcomes.",
                 },
                 {
                   icon: <LightbulbOutlinedIcon sx={{ color: "#00D9FF", fontSize: 12 }} />,
                   title: "litl Approach",
                   text:
-                    "litl conducted a comprehensive assessment of existing data infrastructure...",
+                    "Iitil conducted a comprehensive assessment of existing data infrastructure and designed a unified data platform that integrated multiple data sources. Our team implemented advanced analytics and machine learning models to identify patterns in patient care.",
                 },
                 {
                   icon: <TaskAltOutlinedIcon sx={{ color: "#00D9FF", fontSize: 12 }} />,
                   title: "Solution Implemented",
                   text:
-                    "We deployed a cloud-based data integration platform with real-time dashboards...",
+                    "We deployed a cloud-based data integration platform with real-time analytics dashboards, predictive models for patient risk assessment, and automated reporting systems that provided actionable insights to clinical teams.",
                 },
               ].map((section, i) => (
                 <MotionBox

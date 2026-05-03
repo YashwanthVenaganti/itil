@@ -7,39 +7,46 @@ const MotionTypography = motion(Typography);
 const projects = [
   {
     title: "My Doctor Capsule",
-    roles: [
-      { name: "Frontend Developers (2)", tech: "REACT JS" },
-      { name: "Backend Developers (2)", tech: "PYTHON" },
-      { name: "iOS Developers (2)", tech: "IOS" },
-      { name: "Android Developers (2)", tech: "ANDROID" },
-      { name: "Manual Tester (1)", tech: "QA" },
+    image: "/Images/Doctor.svg",
+    desc: "A digital healthcare platform that simplifies access to consultations, health records, and patient care services.",
+    points: [
+      "Seamless connection with healthcare providers",
+      "Technology-driven solutions",
+      "Convenient & reliable care delivery",
+      "Smooth integrated healthcare experience",
     ],
   },
   {
     title: "Loan Konnekt",
-    roles: [
-      { name: "Backend Developers (2)", tech: "PYTHON" },
-      { name: "Manual Tester (1)", tech: "QA" },
+    image: "/Images/Loan.svg",
+    desc: "A smart credit and lending facilitation platform connecting customers with the right lenders based on their financial profile.",
+    points: [
+      "Streamlined loan discovery",
+      "Credit eligibility assessment",
+      "Structured channel approach",
+      "Transparency and speed focused",
     ],
   },
   {
     title: "Lawvix",
-    roles: [
-      { name: "Frontend Developers (2)", tech: "REACT JS" },
-      { name: "Backend Developers (2)", tech: "PYTHON" },
-      { name: "iOS Developers (2)", tech: "IOS" },
-      { name: "Android Developers (2)", tech: "ANDROID" },
-      { name: "Manual Tester (1)", tech: "QA" },
+    image: "/Images/Larvix.svg",
+    desc: "A technology enabled legal services platform offering accessible, reliable, and structured legal solutions.",
+    points: [
+      "Verified legal professionals",
+      "Advisory & documentation services",
+      "Digital legal processes",
+      "Efficiency and accuracy guaranteed",
     ],
   },
   {
     title: "Property Care X",
-    roles: [
-      { name: "Frontend Developers (2)", tech: "REACT JS" },
-      { name: "Backend Developers (2)", tech: "PYTHON" },
-      { name: "iOS Developers (2)", tech: "IOS" },
-      { name: "Android Developers (2)", tech: "ANDROID" },
-      { name: "Manual Tester (1)", tech: "QA" },
+    image: "/Images/Property.svg",
+    desc: "An integrated property management and support platform designed to handle end-to-end property needs.",
+    points: [
+      "Maintenance & tenant management",
+      "Documentation and compliance",
+      "Hassle-free ownership",
+      "Transparent and efficient control",
     ],
   },
 ];
@@ -49,24 +56,25 @@ export default function ProjectsSection() {
     <Box
       sx={{
         width: "100%",
-        bgcolor: "#0A0E27", // full section bg
+        bgcolor: "#0A0E27",
         color: "#E9ECF7",
         fontFamily: "Jost, sans-serif",
         px: { xs: "18px", sm: "28px", md: "48px" },
-        py: { xs: "70px", md: "120px" },
+        py: { xs: "70px", md: "110px" },
         overflowX: "hidden",
+        boxSizing: "border-box",
       }}
     >
-      <Box sx={{ maxWidth: "1200px", mx: "auto" }}>
-        {/* TOP */}
+      <Box sx={{ maxWidth: "1200px", mx: "auto", width: "100%" }}>
         <MotionTypography
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           sx={{
             color: "#00D9FF",
-            fontSize: "13px",
-            letterSpacing: "6px",
+            fontSize: { xs: "11px", sm: "12px", md: "13px" },
+            letterSpacing: { xs: "4px", md: "6px" },
             textTransform: "uppercase",
             mb: "22px",
           }}
@@ -77,9 +85,11 @@ export default function ProjectsSection() {
         <MotionTypography
           initial={{ opacity: 0, y: 26 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 }}
           sx={{
-            fontSize: { xs: "32px", sm: "42px", md: "48px" },
+            fontSize: { xs: "30px", sm: "40px", md: "46px", lg: "48px" },
+            lineHeight: { xs: "38px", sm: "48px", md: "56px", lg: "58px" },
             fontWeight: 500,
             mb: "20px",
           }}
@@ -90,18 +100,21 @@ export default function ProjectsSection() {
         <MotionTypography
           initial={{ opacity: 0, y: 22 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
           sx={{
             color: "#7A82A8",
-            fontSize: "16px",
-            maxWidth: "750px",
-            mb: "50px",
+            fontSize: { xs: "14px", sm: "15px", md: "16px" },
+            lineHeight: { xs: "24px", sm: "26px", md: "28px" },
+            maxWidth: "760px",
+            mb: { xs: "42px", md: "60px" },
           }}
         >
-          Our dedicated teams are currently delivering innovative solutions across multiple high-impact projects, spanning healthcare, finance, legal tech, and property management domains.
+          Our dedicated teams are currently delivering innovative solutions
+          across multiple high-impact projects, spanning healthcare, finance,
+          legal tech, and property management domains.
         </MotionTypography>
 
-        {/* GRID */}
         <Box
           sx={{
             display: "grid",
@@ -109,7 +122,7 @@ export default function ProjectsSection() {
               xs: "1fr",
               md: "1fr 1fr",
             },
-            gap: "30px",
+            gap: { xs: "26px", md: "30px" },
           }}
         >
           {projects.map((project, index) => (
@@ -117,69 +130,131 @@ export default function ProjectsSection() {
               key={project.title}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{
                 y: -6,
-                boxShadow: "0 20px 50px rgba(0,217,255,0.08)",
-                borderColor: "rgba(0,217,255,0.3)",
+                boxShadow: "0 22px 55px rgba(0,217,255,0.08)",
+                borderColor: "rgba(0,217,255,0.25)",
               }}
               sx={{
-                bgcolor: "#0F1433", // card bg
-                border: "1px solid rgba(255,255,255,0.05)",
-                p: { xs: "26px", md: "30px" },
+                bgcolor: "#0F1433",
+                border: "1px solid rgba(255,255,255,0.06)",
+                borderRadius: "14px",
+                p: { xs: "22px", sm: "26px", md: "30px" },
+                minHeight: { xs: "auto", md: "405px" },
                 transition: "all 0.3s ease",
+                boxSizing: "border-box",
+                overflow: "hidden",
               }}
             >
+              <Box
+                component="img"
+                src={project.image}
+                alt={project.title}
+                sx={{
+                  width: { xs: "46px", sm: "52px", md: "58px" },
+                  height: { xs: "46px", sm: "52px", md: "58px" },
+                  objectFit: "contain",
+                  display: "block",
+                  mb: { xs: "16px", md: "18px" },
+                }}
+              />
+
               <Typography
                 sx={{
-                  fontSize: "22px",
+                  fontSize: {
+                    xs: "18px",
+                    sm: "20px",
+                    md: "22px",
+                    lg: "24px",
+                  },
+                  lineHeight: {
+                    xs: "26px",
+                    sm: "28px",
+                    md: "30px",
+                    lg: "32px",
+                  },
                   fontWeight: 500,
-                  mb: "22px",
+                  color: "#E9ECF7",
+                  mb: "14px",
                 }}
               >
                 {project.title}
               </Typography>
 
-              {project.roles.map((role) => (
-                <Box
-                  key={role.name}
-                  sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    mb: "16px",
-                  }}
-                >
-                  <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                    <Box
-                      sx={{
-                        width: "6px",
-                        height: "6px",
-                        borderRadius: "50%",
-                        bgcolor: "#00D9FF",
-                      }}
-                    />
-                    <Typography
-                      sx={{
-                        fontSize: "14px",
-                        color: "#9AA3C0",
-                      }}
-                    >
-                      {role.name}
-                    </Typography>
-                  </Box>
+              <Typography
+                sx={{
+                  fontSize: {
+                    xs: "14px",
+                    sm: "15px",
+                    md: "16px",
+                    lg: "16.5px",
+                  },
+                  lineHeight: {
+                    xs: "24px",
+                    sm: "26px",
+                    md: "28px",
+                    lg: "29px",
+                  },
+                  fontWeight: 400,
+                  color: "#AAB1D6",
+                  maxWidth: "500px",
+                  mb: "18px",
+                }}
+              >
+                {project.desc}
+              </Typography>
 
-                  <Typography
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: { xs: "10px", sm: "12px", md: "14px" },
+                }}
+              >
+                {project.points.map((point) => (
+                  <Box
+                    key={point}
                     sx={{
-                      fontSize: "12px",
-                      color: "#00D9FF",
-                      letterSpacing: "1px",
+                      display: "flex",
+                      alignItems: "flex-start",
+                      gap: "12px",
                     }}
                   >
-                    {role.tech}
-                  </Typography>
-                </Box>
-              ))}
+                    <Typography
+                      sx={{
+                        color: "#00D9FF",
+                        fontSize: { xs: "14px", sm: "15px", md: "16px" },
+                        lineHeight: "22px",
+                        mt: "2px",
+                        flexShrink: 0,
+                      }}
+                    >
+                      ✓
+                    </Typography>
+
+                    <Typography
+                      sx={{
+                        fontSize: {
+                          xs: "13px",
+                          sm: "14px",
+                          md: "14.5px",
+                          lg: "15px",
+                        },
+                        lineHeight: {
+                          xs: "20px",
+                          sm: "22px",
+                          md: "24px",
+                        },
+                        color: "#8D94B8",
+                      }}
+                    >
+                      {point}
+                    </Typography>
+                  </Box>
+                ))}
+              </Box>
             </MotionBox>
           ))}
         </Box>

@@ -111,19 +111,30 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15 }}
             sx={{
+              fontFamily: "Jost, sans-serif",
               fontWeight: 500,
+
               fontSize: {
-                xs: "38px",
-                sm: "52px",
-                md: "64px",
-                lg: "72px",
+                xs: "32px",
+                sm: "44px",
+                md: "58px",
+                lg: "72px", // ✅ exact
               },
+
               lineHeight: {
-                xs: "46px",
-                sm: "58px",
+                xs: "40px",
+                sm: "52px",
                 md: "70px",
-                lg: "80px",
+                lg: "90px", // ✅ exact
               },
+
+              letterSpacing: {
+                xs: "-0.8px",
+                sm: "-1.2px",
+                md: "-1.5px",
+                lg: "-1.8px", // ✅ exact
+              },
+
               color: "#E7EAF3",
               maxWidth: "1000px",
             }}
@@ -144,8 +155,8 @@ export default function HeroSection() {
               color: "#7A82A8",
             }}
           >
-            Iitil is a full-stack technology services brand delivering scalable IT services, enterprise applications, CRM systems, SaaS products, automation and data intelligence solutions for businesses across India and global markets.<br/>
-          
+            Iitil is a full-stack technology services brand delivering scalable IT services, enterprise applications, CRM systems, SaaS products, automation and data intelligence solutions for businesses across India and global markets.<br />
+
             With a focus on innovation, reliability and customer success, Iitil empowers organizations to leverage technology for growth, efficiency and competitive advantage.
           </MotionTypography>
 
