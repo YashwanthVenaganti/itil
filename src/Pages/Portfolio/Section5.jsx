@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { motion } from "framer-motion";
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const MotionBox = motion(Box);
@@ -95,6 +95,7 @@ export default function ContactSection() {
                     }}
                 >
                     <MotionButton
+                        onClick={() => navigate("/contact")}
                         whileHover={{
                             scale: 1.05,
                             y: -3,
