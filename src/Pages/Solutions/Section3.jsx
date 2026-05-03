@@ -4,6 +4,7 @@ import MemoryOutlinedIcon from "@mui/icons-material/MemoryOutlined";
 import CodeOutlinedIcon from "@mui/icons-material/CodeOutlined";
 import LinkOutlinedIcon from "@mui/icons-material/LinkOutlined";
 import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
+import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
 import { motion } from "framer-motion";
 
 const MotionBox = motion(Box);
@@ -35,6 +36,11 @@ const services = [
     desc: "Our cybersecurity solutions protect critical business data and systems from threats, ensuring compliance and operational continuity.",
     icon: <SecurityOutlinedIcon sx={{ color: "#00D9FF", fontSize: 24 }} />,
   },
+  {
+  title: "Industry",
+  desc: "Our Industry solutions protect critical business data and systems from threats, ensuring compliance and operational continuity.",
+  icon: <BusinessCenterOutlinedIcon sx={{ color: "#00D9FF", fontSize: 24 }} />,
+},
 ];
 
 export default function TechnologyServicesSection() {
