@@ -1,7 +1,6 @@
 import {
   Box,
   Button,
-  Container,
   Grid,
   TextField,
   Typography,
@@ -104,12 +103,16 @@ export default function ContactSection() {
         width: "100%",
         backgroundColor: "#0A0E27",
         py: { xs: "60px", md: "90px", lg: "110px" },
+        overflowX: "hidden",
       }}
     >
-      <Container
-        maxWidth={false}
+      <Box
         sx={{
-          px: { xs: "20px", sm: "32px", md: "48px", lg: "80px" },
+          maxWidth: "1440px",
+          margin: "0 auto",
+          px: { xs: "20px", sm: "32px", md: "48px" },
+          width: "100%",
+          boxSizing: "border-box",
         }}
       >
         <Grid container spacing={{ xs: 3, md: 3 }}>
@@ -143,7 +146,9 @@ export default function ContactSection() {
                 whileHover={{ scale: 1.12, rotate: 8 }}
                 sx={iconBoxSx}
               >
-                <CalendarTodayOutlinedIcon sx={{ color: "#00D9FF", fontSize: 24 }} />
+                <CalendarTodayOutlinedIcon
+                  sx={{ color: "#00D9FF", fontSize: 24 }}
+                />
               </MotionBox>
 
               <Typography sx={{ ...titleSx, mb: "14px" }}>
@@ -151,8 +156,8 @@ export default function ContactSection() {
               </Typography>
 
               <Typography sx={{ ...bodySx, maxWidth: "510px" }}>
-                Book a meeting with our experts to discuss your specific requirements
-                and explore potential solutions.
+                Book a meeting with our experts to discuss your specific
+                requirements and explore potential solutions.
               </Typography>
 
               <MotionBox whileHover={{ x: 6 }} sx={linkSx}>
@@ -212,8 +217,8 @@ export default function ContactSection() {
               </Typography>
 
               <Typography sx={{ ...bodySx, maxWidth: "510px" }}>
-                Connect directly with our technical specialists to get answers to your
-                technical questions.
+                Connect directly with our technical specialists to get answers
+                to your technical questions.
               </Typography>
 
               <MotionBox whileHover={{ x: 6 }} sx={linkSx}>
@@ -255,8 +260,8 @@ export default function ContactSection() {
               <Typography
                 sx={{
                   ...titleSx,
-                  fontSize: { xs: "34px", md: "32px" },
-                  lineHeight: { xs: "40px", md: "36px" },
+                  fontSize: { xs: "30px", md: "32px" },
+                  lineHeight: { xs: "38px", md: "36px" },
                   mb: "34px",
                 }}
               >
@@ -362,10 +367,16 @@ export default function ContactSection() {
                     Get in Touch
                   </Typography>
 
-                  <Box sx={{ display: "flex", flexDirection: "column", gap: "26px" }}>
+                  <Box
+                    sx={{ display: "flex", flexDirection: "column", gap: "26px" }}
+                  >
                     <MotionBox
                       whileHover={{ x: 6 }}
-                      sx={{ display: "flex", alignItems: "flex-start", gap: "14px" }}
+                      sx={{
+                        display: "flex",
+                        alignItems: "flex-start",
+                        gap: "14px",
+                      }}
                     >
                       <MotionBox
                         whileHover={{ scale: 1.12, rotate: 8 }}
@@ -379,7 +390,9 @@ export default function ContactSection() {
                           flexShrink: 0,
                         }}
                       >
-                        <MailOutlineOutlinedIcon sx={{ color: "#00D9FF", fontSize: 20 }} />
+                        <MailOutlineOutlinedIcon
+                          sx={{ color: "#00D9FF", fontSize: 20 }}
+                        />
                       </MotionBox>
 
                       <Box>
@@ -411,7 +424,11 @@ export default function ContactSection() {
 
                     <MotionBox
                       whileHover={{ x: 6 }}
-                      sx={{ display: "flex", alignItems: "flex-start", gap: "14px" }}
+                      sx={{
+                        display: "flex",
+                        alignItems: "flex-start",
+                        gap: "14px",
+                      }}
                     >
                       <MotionBox
                         whileHover={{ scale: 1.12, rotate: 8 }}
@@ -425,7 +442,9 @@ export default function ContactSection() {
                           flexShrink: 0,
                         }}
                       >
-                        <LocalPhoneOutlinedIcon sx={{ color: "#00D9FF", fontSize: 20 }} />
+                        <LocalPhoneOutlinedIcon
+                          sx={{ color: "#00D9FF", fontSize: 20 }}
+                        />
                       </MotionBox>
 
                       <Box>
@@ -457,7 +476,11 @@ export default function ContactSection() {
 
                     <MotionBox
                       whileHover={{ x: 6 }}
-                      sx={{ display: "flex", alignItems: "flex-start", gap: "14px" }}
+                      sx={{
+                        display: "flex",
+                        alignItems: "flex-start",
+                        gap: "14px",
+                      }}
                     >
                       <MotionBox
                         whileHover={{ scale: 1.12, rotate: 8 }}
@@ -471,7 +494,9 @@ export default function ContactSection() {
                           flexShrink: 0,
                         }}
                       >
-                        <LocationOnOutlinedIcon sx={{ color: "#00D9FF", fontSize: 20 }} />
+                        <LocationOnOutlinedIcon
+                          sx={{ color: "#00D9FF", fontSize: 20 }}
+                        />
                       </MotionBox>
 
                       <Box>
@@ -538,7 +563,7 @@ export default function ContactSection() {
             </Grid>
           </Grid>
         </Grid>
-      </Container>
+      </Box>
     </Box>
   );
 }

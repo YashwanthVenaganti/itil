@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 
 const MotionBox = motion(Box);
@@ -35,12 +35,16 @@ export default function OurApproachSection() {
         width: "100%",
         backgroundColor: "#0A0E27",
         py: { xs: "60px", md: "100px" },
+        overflowX: "hidden",
       }}
     >
-      <Container
-        maxWidth={false}
+      {/* ✅ HERO ALIGNMENT */}
+      <Box
         sx={{
-          px: { xs: "20px", sm: "32px", md: "48px", lg: "80px" },
+          maxWidth: "1440px",
+          margin: "0 auto",
+          px: { xs: "20px", sm: "32px", md: "48px" },
+          width: "100%",
         }}
       >
         {/* Heading */}
@@ -58,8 +62,8 @@ export default function OurApproachSection() {
             sx={{
               fontFamily: "Jost, sans-serif",
               fontWeight: 500,
-              fontSize: { xs: "42px", md: "60px" },
-              lineHeight: { xs: "48px", md: "60px" },
+              fontSize: { xs: "38px", sm: "48px", md: "60px" },
+              lineHeight: { xs: "44px", sm: "54px", md: "60px" },
               letterSpacing: "-1.5px",
               color: "#E8EAF2",
               mb: "18px",
@@ -75,8 +79,8 @@ export default function OurApproachSection() {
             sx={{
               fontFamily: "Jost, sans-serif",
               fontWeight: 400,
-              fontSize: { xs: "16px", md: "18px" },
-              lineHeight: { xs: "26px", md: "29.25px" },
+              fontSize: { xs: "15px", md: "18px" },
+              lineHeight: { xs: "26px", md: "29px" },
               color: "#7A82A8",
             }}
           >
@@ -92,10 +96,7 @@ export default function OurApproachSection() {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2, duration: 0.6 }}
-                whileHover={{
-                  y: -10,
-                  scale: 1.03,
-                }}
+                whileHover={{ y: -10, scale: 1.03 }}
                 sx={{ transition: "all 0.3s ease" }}
               >
                 {/* Number */}
@@ -106,19 +107,19 @@ export default function OurApproachSection() {
                     fontFamily: "Jost, sans-serif",
                     fontWeight: 400,
                     fontSize: {
-                      xs: "64px",
-                      sm: "78px",
-                      md: "88px",
+                      xs: "60px",
+                      sm: "74px",
+                      md: "86px",
                       lg: "96px",
                     },
                     lineHeight: {
-                      xs: "64px",
-                      sm: "78px",
-                      md: "88px",
+                      xs: "60px",
+                      sm: "74px",
+                      md: "86px",
                       lg: "96px",
                     },
                     color: "#00D9FF26",
-                    mb: { xs: "28px", md: "38px" },
+                    mb: { xs: "26px", md: "36px" },
                   }}
                 >
                   {item.number}
@@ -161,8 +162,8 @@ export default function OurApproachSection() {
                   sx={{
                     fontFamily: "Jost, sans-serif",
                     fontWeight: 500,
-                    fontSize: { xs: "28px", md: "32px" },
-                    lineHeight: { xs: "34px", md: "36px" },
+                    fontSize: { xs: "24px", sm: "28px", md: "32px" },
+                    lineHeight: { xs: "30px", sm: "34px", md: "36px" },
                     color: "#E8EAF2",
                     maxWidth: "400px",
                     whiteSpace: "pre-line",
@@ -179,8 +180,8 @@ export default function OurApproachSection() {
                   sx={{
                     fontFamily: "Jost, sans-serif",
                     fontWeight: 400,
-                    fontSize: { xs: "16px", md: "18px" },
-                    lineHeight: { xs: "26px", md: "29.25px" },
+                    fontSize: { xs: "15px", md: "18px" },
+                    lineHeight: { xs: "26px", md: "29px" },
                     color: "#7A82A8",
                     maxWidth: "320px",
                   }}
@@ -191,7 +192,7 @@ export default function OurApproachSection() {
             </Grid>
           ))}
         </Grid>
-      </Container>
+      </Box>
     </Box>
   );
 }

@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 
 const MotionBox = motion(Box);
@@ -11,12 +11,16 @@ export default function LeadershipSection() {
         width: "100%",
         backgroundColor: "#0A0E27",
         py: { xs: "60px", md: "100px" },
+        overflowX: "hidden",
       }}
     >
-      <Container
-        maxWidth={false}
+      <Box
         sx={{
-          px: { xs: "20px", sm: "32px", md: "48px", lg: "80px" },
+          maxWidth: "1440px",
+          margin: "0 auto",
+          px: { xs: "20px", sm: "32px", md: "48px" },
+          width: "100%",
+          boxSizing: "border-box",
         }}
       >
         <MotionBox
@@ -25,7 +29,6 @@ export default function LeadershipSection() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           sx={{ maxWidth: "900px" }}
         >
-          {/* Header Row */}
           <Box
             sx={{
               display: "flex",
@@ -34,7 +37,6 @@ export default function LeadershipSection() {
               mb: { xs: "24px", md: "28px" },
             }}
           >
-            {/* ICON BOX */}
             <MotionBox
               whileHover={{ scale: 1.1, rotate: 8 }}
               animate={{ y: [0, -6, 0] }}
@@ -52,12 +54,12 @@ export default function LeadershipSection() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
+                flexShrink: 0,
               }}
             >
               <Typography sx={{ color: "#00D9FF" }}>L</Typography>
             </MotionBox>
 
-            {/* TITLE */}
             <MotionTypography
               initial={{ opacity: 0, x: -35 }}
               animate={{ opacity: 1, x: 0 }}
@@ -92,7 +94,6 @@ export default function LeadershipSection() {
             </MotionTypography>
           </Box>
 
-          {/* DESCRIPTION */}
           <MotionTypography
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
@@ -113,20 +114,19 @@ export default function LeadershipSection() {
                 md: "28px",
                 lg: "29.25px",
               },
-              letterSpacing: "0px",
               color: "#7A82A8",
               maxWidth: "780px",
               transition: "all 0.3s ease",
             }}
           >
-            litl is led by a team of experienced professionals with deep expertise
-            across data science, technology architecture and enterprise operations.
-            The leadership team brings a strong combination of strategic vision and
-            execution capability, ensuring that every engagement delivers measurable
-            value.
+            litl is led by a team of experienced professionals with deep
+            expertise across data science, technology architecture and enterprise
+            operations. The leadership team brings a strong combination of
+            strategic vision and execution capability, ensuring that every
+            engagement delivers measurable value.
           </MotionTypography>
         </MotionBox>
-      </Container>
+      </Box>
     </Box>
   );
 }

@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 
 const MotionBox = motion(Box);
@@ -11,12 +11,16 @@ export default function VisionMissionSection() {
         width: "100%",
         backgroundColor: "#0A0E27",
         py: { xs: "60px", md: "100px" },
+        overflowX: "hidden",
       }}
     >
-      <Container
-        maxWidth={false}
+      {/* ✅ MATCH HERO SECTION */}
+      <Box
         sx={{
-          px: { xs: "20px", sm: "32px", md: "48px", lg: "80px" },
+          maxWidth: "1440px",
+          margin: "0 auto",
+          px: { xs: "20px", sm: "32px", md: "48px" },
+          width: "100%",
         }}
       >
         <Grid container spacing={{ xs: 4, md: 6 }}>
@@ -40,19 +44,13 @@ export default function VisionMissionSection() {
                 minHeight: "320px",
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "flex-start",
-                transition: "all 0.3s ease",
               }}
             >
               <MotionBox
                 whileHover={{ rotate: 8, scale: 1.12 }}
                 animate={{ y: [0, -6, 0] }}
                 transition={{
-                  y: {
-                    duration: 2.4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  },
+                  y: { duration: 2.4, repeat: Infinity, ease: "easeInOut" },
                 }}
                 sx={{
                   width: "56px",
@@ -68,14 +66,10 @@ export default function VisionMissionSection() {
               </MotionBox>
 
               <MotionTypography
-                initial={{ opacity: 0, x: -25 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
                 sx={{
                   fontFamily: "Jost, sans-serif",
                   fontWeight: 500,
                   fontSize: "32px",
-                  lineHeight: "36px",
                   color: "#E8EAF2",
                   mb: "18px",
                 }}
@@ -84,16 +78,11 @@ export default function VisionMissionSection() {
               </MotionTypography>
 
               <MotionTypography
-                initial={{ opacity: 0, y: 25 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.35 }}
                 sx={{
                   fontFamily: "Jost, sans-serif",
-                  fontWeight: 400,
                   fontSize: "18px",
-                  lineHeight: "29.25px",
+                  lineHeight: "29px",
                   color: "#7A82A8",
-                  maxWidth: "520px",
                 }}
               >
                 To become a globally recognized leader in data intelligence and
@@ -108,7 +97,7 @@ export default function VisionMissionSection() {
             <MotionBox
               initial={{ opacity: 0, y: 45 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+              transition={{ duration: 0.7, delay: 0.15 }}
               whileHover={{
                 y: -8,
                 scale: 1.02,
@@ -123,8 +112,6 @@ export default function VisionMissionSection() {
                 minHeight: "320px",
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "flex-start",
-                transition: "all 0.3s ease",
               }}
             >
               <MotionBox
@@ -152,14 +139,10 @@ export default function VisionMissionSection() {
               </MotionBox>
 
               <MotionTypography
-                initial={{ opacity: 0, x: -25 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
                 sx={{
                   fontFamily: "Jost, sans-serif",
                   fontWeight: 500,
                   fontSize: "32px",
-                  lineHeight: "36px",
                   color: "#E8EAF2",
                   mb: "18px",
                 }}
@@ -168,16 +151,11 @@ export default function VisionMissionSection() {
               </MotionTypography>
 
               <MotionTypography
-                initial={{ opacity: 0, y: 25 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.45 }}
                 sx={{
                   fontFamily: "Jost, sans-serif",
-                  fontWeight: 400,
                   fontSize: "18px",
-                  lineHeight: "29.25px",
+                  lineHeight: "29px",
                   color: "#7A82A8",
-                  maxWidth: "520px",
                 }}
               >
                 To deliver reliable, scalable and intelligent solutions that
@@ -187,7 +165,7 @@ export default function VisionMissionSection() {
             </MotionBox>
           </Grid>
         </Grid>
-      </Container>
+      </Box>
     </Box>
   );
 }

@@ -1,9 +1,7 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 
-const MotionBox = motion(Box);
 const MotionTypography = motion(Typography);
-const MotionGrid = motion(Grid);
 
 export default function CompanyOverview() {
   return (
@@ -11,18 +9,20 @@ export default function CompanyOverview() {
       sx={{
         width: "100%",
         backgroundColor: "#0A0E27",
+        overflowX: "hidden",
       }}
     >
-      <Container
-        maxWidth={false}
+      <Box
         sx={{
-          px: { xs: "20px", sm: "32px", md: "48px", lg: "80px" },
+          maxWidth: "1440px",
+          margin: "0 auto",
+          px: { xs: "20px", sm: "32px", md: "48px" },
           py: { xs: "60px", sm: "80px", md: "100px", lg: "120px" },
+          width: "100%",
+          boxSizing: "border-box",
         }}
       >
         <Grid container spacing={{ xs: 4, md: 8 }} alignItems="flex-start">
-          
-          {/* LEFT TITLE */}
           <Grid size={{ xs: 12, md: 5 }}>
             <MotionTypography
               initial={{ opacity: 0, x: -50 }}
@@ -59,7 +59,6 @@ export default function CompanyOverview() {
             </MotionTypography>
           </Grid>
 
-          {/* RIGHT CONTENT */}
           <Grid size={{ xs: 12, md: 7 }}>
             <MotionTypography
               initial={{ opacity: 0, y: 40 }}
@@ -81,7 +80,6 @@ export default function CompanyOverview() {
                   md: "28px",
                   lg: "29.25px",
                 },
-                letterSpacing: "0px",
                 color: "#7A82A8",
                 mb: "24px",
                 maxWidth: "620px",
@@ -89,10 +87,10 @@ export default function CompanyOverview() {
               }}
             >
               litl is a forward-thinking data intelligence and technology
-              company focused on helping organizations unlock the full
-              potential of their data assets. With a strong foundation in
-              analytics, engineering and enterprise technology, litl bridges
-              the gap between data complexity and business clarity.
+              company focused on helping organizations unlock the full potential
+              of their data assets. With a strong foundation in analytics,
+              engineering and enterprise technology, litl bridges the gap
+              between data complexity and business clarity.
             </MotionTypography>
 
             <MotionTypography
@@ -115,20 +113,18 @@ export default function CompanyOverview() {
                   md: "28px",
                   lg: "29.25px",
                 },
-                letterSpacing: "0px",
                 color: "#7A82A8",
                 maxWidth: "620px",
                 transition: "all 0.3s ease",
               }}
             >
-              Our approach is rooted in understanding business challenges
-              first and then applying the right combination of data strategies
-              and technological solutions to address them effectively.
+              Our approach is rooted in understanding business challenges first
+              and then applying the right combination of data strategies and
+              technological solutions to address them effectively.
             </MotionTypography>
           </Grid>
-
         </Grid>
-      </Container>
+      </Box>
     </Box>
   );
 }

@@ -35,7 +35,6 @@ export default function WhyItil() {
         bgcolor: "#0A0E27",
         color: "#E9ECF7",
         fontFamily: "Jost, sans-serif",
-        px: { xs: "18px", sm: "28px", md: "48px" },
         py: { xs: "70px", md: "120px" },
         overflowX: "hidden",
         boxSizing: "border-box",
@@ -43,9 +42,10 @@ export default function WhyItil() {
     >
       <Box
         sx={{
-          maxWidth: "1200px",
+          maxWidth: "1440px",
+          margin: "0 auto",
+          px: { xs: "20px", sm: "32px", md: "48px" },
           width: "100%",
-          mx: "auto",
           display: "grid",
           gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
           gap: { xs: "45px", md: "40px" },
