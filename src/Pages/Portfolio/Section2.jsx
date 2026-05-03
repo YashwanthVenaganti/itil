@@ -59,13 +59,20 @@ export default function ProjectsSection() {
         bgcolor: "#0A0E27",
         color: "#E9ECF7",
         fontFamily: "Jost, sans-serif",
-        px: { xs: "18px", sm: "28px", md: "48px" },
         py: { xs: "70px", md: "110px" },
         overflowX: "hidden",
-        boxSizing: "border-box",
       }}
     >
-      <Box sx={{ maxWidth: "1200px", mx: "auto", width: "100%" }}>
+      {/* ✅ SAME CONTAINER AS HERO */}
+      <Box
+        sx={{
+          maxWidth: "1440px",
+          margin: "0 auto",
+          px: { xs: "20px", sm: "32px", md: "48px" },
+          width: "100%",
+        }}
+      >
+        {/* LABEL */}
         <MotionTypography
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -82,6 +89,7 @@ export default function ProjectsSection() {
           Active Projects
         </MotionTypography>
 
+        {/* TITLE */}
         <MotionTypography
           initial={{ opacity: 0, y: 26 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -97,6 +105,7 @@ export default function ProjectsSection() {
           Current Project Portfolio
         </MotionTypography>
 
+        {/* DESCRIPTION */}
         <MotionTypography
           initial={{ opacity: 0, y: 22 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -115,6 +124,7 @@ export default function ProjectsSection() {
           legal tech, and property management domains.
         </MotionTypography>
 
+        {/* GRID */}
         <Box
           sx={{
             display: "grid",
@@ -130,7 +140,7 @@ export default function ProjectsSection() {
               key={project.title}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{
                 y: -6,
@@ -142,10 +152,7 @@ export default function ProjectsSection() {
                 border: "1px solid rgba(255,255,255,0.06)",
                 borderRadius: "14px",
                 p: { xs: "22px", sm: "26px", md: "30px" },
-                minHeight: { xs: "auto", md: "405px" },
-                transition: "all 0.3s ease",
-                boxSizing: "border-box",
-                overflow: "hidden",
+                minHeight: { md: "405px" },
               }}
             >
               <Box
@@ -153,30 +160,17 @@ export default function ProjectsSection() {
                 src={project.image}
                 alt={project.title}
                 sx={{
-                  width: { xs: "46px", sm: "52px", md: "58px" },
-                  height: { xs: "46px", sm: "52px", md: "58px" },
-                  objectFit: "contain",
-                  display: "block",
-                  mb: { xs: "16px", md: "18px" },
+                  width: { xs: "46px", md: "58px" },
+                  height: { xs: "46px", md: "58px" },
+                  mb: "18px",
                 }}
               />
 
               <Typography
                 sx={{
-                  fontSize: {
-                    xs: "18px",
-                    sm: "20px",
-                    md: "22px",
-                    lg: "24px",
-                  },
-                  lineHeight: {
-                    xs: "26px",
-                    sm: "28px",
-                    md: "30px",
-                    lg: "32px",
-                  },
+                  fontSize: { xs: "18px", md: "22px" },
+                  lineHeight: "30px",
                   fontWeight: 500,
-                  color: "#E9ECF7",
                   mb: "14px",
                 }}
               >
@@ -185,71 +179,20 @@ export default function ProjectsSection() {
 
               <Typography
                 sx={{
-                  fontSize: {
-                    xs: "14px",
-                    sm: "15px",
-                    md: "16px",
-                    lg: "16.5px",
-                  },
-                  lineHeight: {
-                    xs: "24px",
-                    sm: "26px",
-                    md: "28px",
-                    lg: "29px",
-                  },
-                  fontWeight: 400,
+                  fontSize: { xs: "14px", md: "16px" },
+                  lineHeight: "28px",
                   color: "#AAB1D6",
-                  maxWidth: "500px",
                   mb: "18px",
                 }}
               >
                 {project.desc}
               </Typography>
 
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: { xs: "10px", sm: "12px", md: "14px" },
-                }}
-              >
+              <Box sx={{ display: "flex", flexDirection: "column", gap: "12px" }}>
                 {project.points.map((point) => (
-                  <Box
-                    key={point}
-                    sx={{
-                      display: "flex",
-                      alignItems: "flex-start",
-                      gap: "12px",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#00D9FF",
-                        fontSize: { xs: "14px", sm: "15px", md: "16px" },
-                        lineHeight: "22px",
-                        mt: "2px",
-                        flexShrink: 0,
-                      }}
-                    >
-                      ✓
-                    </Typography>
-
-                    <Typography
-                      sx={{
-                        fontSize: {
-                          xs: "13px",
-                          sm: "14px",
-                          md: "14.5px",
-                          lg: "15px",
-                        },
-                        lineHeight: {
-                          xs: "20px",
-                          sm: "22px",
-                          md: "24px",
-                        },
-                        color: "#8D94B8",
-                      }}
-                    >
+                  <Box key={point} sx={{ display: "flex", gap: "10px" }}>
+                    <Typography sx={{ color: "#00D9FF" }}>✓</Typography>
+                    <Typography sx={{ fontSize: "14px", color: "#8D94B8" }}>
                       {point}
                     </Typography>
                   </Box>

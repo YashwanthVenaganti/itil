@@ -23,8 +23,8 @@ export default function HeroSection() {
       <Box
         sx={{
           position: "absolute",
-          top: { xs: "60px" },
-          right: { xs: "10px", md: "200px" },
+          top: { xs: "40px" },
+          right: { xs: "10px", md: "100px" },
           width: { xs: "60px", md: "70px" },
           zIndex: 1,
           pointerEvents: "none",

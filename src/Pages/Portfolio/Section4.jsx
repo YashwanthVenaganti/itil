@@ -133,22 +133,27 @@ export default function ServicesSection() {
         bgcolor: "#0A0E27",
         color: "#E9ECF7",
         fontFamily: "Jost, sans-serif",
-        px: { xs: "18px", sm: "28px", md: "48px" },
         py: { xs: "70px", md: "120px" },
         overflowX: "hidden",
-        boxSizing: "border-box",
       }}
     >
-      <Box sx={{ maxWidth: "1200px", width: "100%", mx: "auto" }}>
+      {/* ✅ SAME CONTAINER AS HERO */}
+      <Box
+        sx={{
+          maxWidth: "1440px",
+          margin: "0 auto",
+          px: { xs: "20px", sm: "32px", md: "48px" },
+          width: "100%",
+        }}
+      >
         <MotionTypography
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           sx={{
             color: "#00D9FF",
-            fontSize: "13px",
-            letterSpacing: "6px",
+            fontSize: { xs: "11px", sm: "12px", md: "13px" },
+            letterSpacing: { xs: "4px", md: "6px" },
             textTransform: "uppercase",
             mb: "24px",
             fontWeight: 500,
@@ -160,14 +165,12 @@ export default function ServicesSection() {
         <MotionTypography
           initial={{ opacity: 0, y: 26 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 }}
           sx={{
-            fontSize: { xs: "34px", sm: "44px", md: "50px" },
-            lineHeight: { xs: "42px", sm: "54px", md: "60px" },
+            fontSize: { xs: "30px", sm: "40px", md: "46px", lg: "48px" },
+            lineHeight: { xs: "38px", sm: "48px", md: "56px", lg: "58px" },
             fontWeight: 500,
             mb: "22px",
-            letterSpacing: "-1px",
           }}
         >
           Comprehensive Services
@@ -176,12 +179,11 @@ export default function ServicesSection() {
         <MotionTypography
           initial={{ opacity: 0, y: 22 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
           sx={{
             color: "#8D94B8",
-            fontSize: { xs: "15px", md: "16px" },
-            lineHeight: "28px",
+            fontSize: { xs: "14px", sm: "15px", md: "16px" },
+            lineHeight: { xs: "24px", sm: "26px", md: "28px" },
             maxWidth: "1120px",
             mb: { xs: "44px", md: "64px" },
           }}
@@ -201,7 +203,6 @@ export default function ServicesSection() {
             },
             gap: { xs: "24px", md: "34px" },
             width: "100%",
-            minWidth: 0,
           }}
         >
           {services.map((service, index) => (
@@ -209,7 +210,6 @@ export default function ServicesSection() {
               key={service.title}
               initial={{ opacity: 0, y: 38 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: index * 0.07 }}
               whileHover={{
                 y: -7,
@@ -222,45 +222,38 @@ export default function ServicesSection() {
                 borderLeft: "1px solid rgba(255,255,255,0.04)",
                 borderRight: "1px solid rgba(255,255,255,0.04)",
                 borderBottom: "1px solid rgba(255,255,255,0.04)",
-                p: { xs: "26px", md: "34px" },
+                p: { xs: "24px", md: "32px" },
                 minHeight: "430px",
-                boxSizing: "border-box",
                 transition: "all 0.3s ease",
-                overflow: "hidden",
               }}
             >
-              <Box sx={{ display: "flex", alignItems: "flex-start", gap: "18px", mb: "22px" }}>
+              <Box sx={{ display: "flex", gap: "16px", mb: "20px" }}>
                 <Box
                   sx={{
-                    width: "44px",
-                    height: "44px",
-                    borderRadius: "4px",
+                    width: "40px",
+                    height: "40px",
                     border: "1px solid rgba(0,217,255,0.35)",
-                    bgcolor: "rgba(0,217,255,0.08)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    flexShrink: 0,
                   }}
                 >
                   <Box
                     sx={{
-                      width: "16px",
-                      height: "16px",
+                      width: "14px",
+                      height: "14px",
                       borderRadius: "50%",
                       bgcolor: "#00D9FF",
                     }}
                   />
                 </Box>
 
-                <Box sx={{ minWidth: 0 }}>
+                <Box>
                   <Typography
                     sx={{
-                      fontSize: { xs: "20px", md: "21px" },
-                      lineHeight: "29px",
+                      fontSize: { xs: "18px", md: "20px" },
                       fontWeight: 500,
-                      color: "#E9ECF7",
-                      mb: "10px",
+                      mb: "6px",
                     }}
                   >
                     {service.title}
@@ -270,7 +263,6 @@ export default function ServicesSection() {
                     sx={{
                       color: "#8D94B8",
                       fontSize: "14px",
-                      lineHeight: "22px",
                     }}
                   >
                     {service.desc}
@@ -278,35 +270,22 @@ export default function ServicesSection() {
                 </Box>
               </Box>
 
-              <Box component="ul" sx={{ m: 0, p: 0, listStyle: "none" }}>
+              <Box component="ul" sx={{ p: 0, m: 0 }}>
                 {service.points.map((point) => (
                   <Box
-                    component="li"
                     key={point}
-                    sx={{
-                      display: "flex",
-                      alignItems: "flex-start",
-                      gap: "10px",
-                      mb: "12px",
-                    }}
+                    component="li"
+                    sx={{ display: "flex", gap: "8px", mb: "10px" }}
                   >
                     <Box
                       sx={{
                         width: "4px",
                         height: "4px",
-                        borderRadius: "50%",
                         bgcolor: "#00D9FF",
-                        mt: "9px",
-                        flexShrink: 0,
+                        mt: "8px",
                       }}
                     />
-                    <Typography
-                      sx={{
-                        color: "#8D94B8",
-                        fontSize: "13px",
-                        lineHeight: "22px",
-                      }}
-                    >
+                    <Typography sx={{ fontSize: "13px", color: "#8D94B8" }}>
                       {point}
                     </Typography>
                   </Box>

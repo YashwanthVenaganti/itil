@@ -40,7 +40,7 @@ export default function KeyOfferings() {
         bgcolor: "#0A0E27",
         color: "#E9ECF7",
         fontFamily: "Jost, sans-serif",
-        px: { xs: "18px", sm: "28px", md: "40px" },
+        px: 0,
         py: { xs: "70px", md: "120px" },
         overflowX: "hidden",
         boxSizing: "border-box",
@@ -48,9 +48,11 @@ export default function KeyOfferings() {
     >
       <Box
         sx={{
-          maxWidth: "1100px",
-          mx: "auto",
+          maxWidth: "1280px",
+          margin: "0 auto",
+          px: { xs: "20px", sm: "28px", md: "40px" },
           width: "100%",
+          boxSizing: "border-box",
         }}
       >
         <MotionTypography
