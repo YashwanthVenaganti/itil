@@ -114,8 +114,8 @@ export default function FinanceCaseStudyDetailCard() {
                 },
                 {
                   icon: <LightbulbOutlinedIcon sx={{ color: "#00D9FF", fontSize: 12 }} />,
-                  title: "litl Approach",
-                  text: "litl designed a comprehensive AI-driven fraud detection system leveraging machine learning algorithms and real-time transaction monitoring. We also implemented advanced risk modeling frameworks aligned with regulatory standards.",
+                  title: "IITIL Approach",
+                  text: "IITIL designed a comprehensive AI-driven fraud detection system leveraging machine learning algorithms and real-time transaction monitoring. We also implemented advanced risk modeling frameworks aligned with regulatory standards.",
                 },
                 {
                   icon: <TaskAltOutlinedIcon sx={{ color: "#00D9FF", fontSize: 12 }} />,

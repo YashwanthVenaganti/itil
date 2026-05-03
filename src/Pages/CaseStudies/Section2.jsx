@@ -121,9 +121,9 @@ export default function CaseStudyDetailCard() {
                 },
                 {
                   icon: <LightbulbOutlinedIcon sx={{ color: "#00D9FF", fontSize: 12 }} />,
-                  title: "litl Approach",
+                  title: "IITIL Approach",
                   text:
-                    "Iitil conducted a comprehensive assessment of existing data infrastructure and designed a unified data platform that integrated multiple data sources. Our team implemented advanced analytics and machine learning models to identify patterns in patient care.",
+                    "IITIL conducted a comprehensive assessment of existing data infrastructure and designed a unified data platform that integrated multiple data sources. Our team implemented advanced analytics and machine learning models to identify patterns in patient care.",
                 },
                 {
                   icon: <TaskAltOutlinedIcon sx={{ color: "#00D9FF", fontSize: 12 }} />,

@@ -153,7 +153,7 @@ export default function CaseStudiesHero() {
               maxWidth: "720px",
             }}
           >
-            Explore how litl has helped organizations transform their operations
+            Explore how IITIL has helped organizations transform their operations
             and achieve measurable success through data intelligence and
             technology solutions.
           </MotionTypography>

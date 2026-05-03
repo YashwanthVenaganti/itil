@@ -56,25 +56,37 @@ export default function Footer() {
             </Typography>
 
             <Box sx={{ display: "flex", gap: 2 }}>
-              {[<LinkedInIcon />, <XIcon />, <YouTubeIcon />, <FacebookIcon />].map(
-                (icon, i) => (
-                  <IconButton
-                    key={i}
+              {[
+                "/Images/linkedin.svg",
+                "/Images/x.svg",
+                "/Images/youtube.svg",
+                "/Images/facebook.svg",
+              ].map((src, i) => (
+                <IconButton
+                  key={i}
+                  sx={{
+                    border: "1px solid rgba(255,255,255,0.1)",
+                    width: 36,
+                    height: 36,
+                    borderRadius: 0,
+                    "&:hover": {
+                      borderColor: "#00D9FF",
+                      backgroundColor: "rgba(0,217,255,0.08)",
+                    },
+                  }}
+                >
+                  <Box
+                    component="img"
+                    src={src}
+                    alt="social"
                     sx={{
-                      border: "1px solid rgba(255,255,255,0.1)",
-                      color: "#00D9FF",
-                      width: 36,
-                      height: 36,
-                      "&:hover": {
-                        borderColor: "#00D9FF",
-                        backgroundColor: "rgba(0,217,255,0.08)",
-                      },
+                      width: "18px",  // adjust size
+                      height: "18px",
+                      objectFit: "contain",
                     }}
-                  >
-                    {icon}
-                  </IconButton>
-                )
-              )}
+                  />
+                </IconButton>
+              ))}
             </Box>
           </Grid>
 

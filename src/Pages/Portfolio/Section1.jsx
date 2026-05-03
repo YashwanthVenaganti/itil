@@ -166,9 +166,12 @@ export default function HeroSection() {
                 backgroundColor: "#11D7FF",
                 color: "#000",
                 height: "60px",
+                textTransform: "none", // ✅ sentence case
+                fontFamily: "Jost, sans-serif",
+                fontWeight: 500,
               }}
             >
-              Schedule a Consultation
+              Schedule a consultation
             </MotionButton>
 
             <MotionButton
@@ -176,9 +179,12 @@ export default function HeroSection() {
                 border: "1px solid #11D7FF",
                 color: "#11D7FF",
                 height: "60px",
+                textTransform: "none", // ✅ sentence case
+                fontFamily: "Jost, sans-serif",
+                fontWeight: 500,
               }}
             >
-              View Services
+              View services
             </MotionButton>
           </MotionBox>
         </Box>
