@@ -40,25 +40,22 @@ export default function KeyOfferings() {
         bgcolor: "#0A0E27",
         color: "#E9ECF7",
         fontFamily: "Jost, sans-serif",
-        px: 0,
         py: { xs: "70px", md: "120px" },
         overflowX: "hidden",
-        boxSizing: "border-box",
       }}
     >
+      {/* ✅ MATCH HERO SECTION */}
       <Box
         sx={{
-          maxWidth: "1280px",
+          maxWidth: "1440px", // 🔥 FIXED
           margin: "0 auto",
-          px: { xs: "20px", sm: "28px", md: "40px" },
+          px: { xs: "20px", sm: "32px", md: "48px" }, // 🔥 FIXED
           width: "100%",
-          boxSizing: "border-box",
         }}
       >
         <MotionTypography
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           sx={{
             color: "#00D9FF",
@@ -75,7 +72,6 @@ export default function KeyOfferings() {
         <MotionTypography
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 }}
           sx={{
             fontSize: { xs: "34px", sm: "44px", md: "50px" },
@@ -93,7 +89,6 @@ export default function KeyOfferings() {
         <MotionTypography
           initial={{ opacity: 0, y: 22 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
           sx={{
             color: "#8D94B8",
@@ -101,13 +96,10 @@ export default function KeyOfferings() {
             lineHeight: "29px",
             maxWidth: "790px",
             mb: { xs: "44px", md: "60px" },
-            fontWeight: 400,
           }}
         >
           litl delivers a comprehensive suite of data intelligence and technology
           services designed to address the evolving needs of modern enterprises.
-          Each offering is backed by a strong execution framework, ensuring
-          reliability, scalability, and long-term value creation.
         </MotionTypography>
 
         <Box
@@ -118,9 +110,7 @@ export default function KeyOfferings() {
               md: "repeat(2, minmax(0, 1fr))",
             },
             gap: { xs: "20px", md: "28px" },
-            justifyItems: "center",
             width: "100%",
-            overflow: "hidden",
           }}
         >
           {offerings.map((item, index) => (
@@ -128,12 +118,7 @@ export default function KeyOfferings() {
               key={item.title}
               initial={{ opacity: 0, y: 45 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.25 }}
-              transition={{
-                duration: 0.65,
-                delay: index * 0.12,
-                ease: "easeOut",
-              }}
+              transition={{ duration: 0.65, delay: index * 0.12 }}
               whileHover={{
                 y: -8,
                 borderColor: "rgba(0,217,255,0.55)",
@@ -142,20 +127,15 @@ export default function KeyOfferings() {
               sx={{
                 width: "100%",
                 maxWidth: "500px",
-                minHeight: { xs: "220px", md: "220px" },
+                minHeight: "220px",
                 bgcolor: "#14192B",
                 border: "1px solid rgba(255,255,255,0.06)",
                 px: { xs: "24px", md: "28px" },
                 py: { xs: "30px", md: "34px" },
                 transition: "all 0.3s ease",
-                cursor: "pointer",
-                boxSizing: "border-box",
-                overflow: "hidden",
               }}
             >
-              <MotionBox
-                whileHover={{ scale: 1.14, rotate: 4 }}
-                transition={{ duration: 0.25 }}
+              <Box
                 sx={{
                   color: "#00D9FF",
                   width: "46px",
@@ -164,22 +144,17 @@ export default function KeyOfferings() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  "& svg": {
-                    fontSize: "40px",
-                  },
+                  "& svg": { fontSize: "40px" },
                 }}
               >
                 {item.icon}
-              </MotionBox>
+              </Box>
 
               <Typography
                 sx={{
                   fontSize: { xs: "21px", md: "23px" },
-                  lineHeight: "31px",
                   fontWeight: 500,
-                  color: "#E9ECF7",
                   mb: "14px",
-                  letterSpacing: "-0.4px",
                 }}
               >
                 {item.title}
@@ -188,9 +163,7 @@ export default function KeyOfferings() {
               <Typography
                 sx={{
                   fontSize: "15.5px",
-                  lineHeight: "26px",
                   color: "#8D94B8",
-                  maxWidth: "420px",
                 }}
               >
                 {item.desc}
