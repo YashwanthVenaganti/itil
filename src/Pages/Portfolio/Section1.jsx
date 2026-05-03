@@ -24,7 +24,7 @@ export default function HeroSection() {
         sx={{
           position: "absolute",
           top: { xs: "40px" },
-          right: { xs: "10px", md: "100px" },
+          right: { xs: "10px", md: "70px" },
           width: { xs: "60px", md: "70px" },
           zIndex: 1,
           pointerEvents: "none",
@@ -38,10 +38,8 @@ export default function HeroSection() {
           src="/Images/Icon.svg"
           alt="icon"
           sx={{
-            width: "100%",
+            width: "40%",
             height: "auto",
-            objectFit: "contain",
-            display: "block",
           }}
         />
 
@@ -51,10 +49,7 @@ export default function HeroSection() {
             fontFamily: "Gilroy-Medium, sans-serif",
             fontWeight: 400,
             fontSize: "9.94px",
-            lineHeight: "100%",
-            textAlign: "center",
             color: "#8D94B8",
-            whiteSpace: "nowrap",
           }}
         >
           A YAKA Brand
