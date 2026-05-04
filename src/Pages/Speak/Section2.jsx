@@ -39,7 +39,7 @@ export default function ContactFormSection() {
             <Box
                 sx={{
                     width: "100%",
-                    //   borderTop: "1px solid rgba(255,255,255,0.2)",
+                      borderTop: "1px solid rgba(255,255,255,0.2)",
                     mb: { xs: "40px", md: "60px" },
                 }}
             />
