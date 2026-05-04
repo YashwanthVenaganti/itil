@@ -69,7 +69,7 @@ export default function ContactFormSection() {
           }}
         >
           {/* LEFT IMAGE */}
-          <Grid size={{xs:12,md:6}} sx={{ display: "flex" }}>
+          <Grid size={{xs:0,md:6}} sx={{ display: "flex" }}>
             <MotionBox
               initial={{ opacity: 0, y: 35 }}
               whileInView={{ opacity: 1, y: 0 }}
