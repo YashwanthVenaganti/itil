@@ -1,12 +1,14 @@
 import { Box, Button, Typography } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const MotionBox = motion(Box);
 const MotionTypography = motion(Typography);
 const MotionButton = motion(Button);
 
 export default function HeroSection() {
+  const navigate = useNavigate();
   return (
     <Box
       sx={{
@@ -161,6 +163,7 @@ export default function HeroSection() {
 
           <MotionBox sx={{ mt: "40px", display: "flex", gap: "16px" }}>
             <MotionButton
+            onClick={()=>navigate("/contact")}
               endIcon={<ArrowForwardIcon />}
               sx={{
                 backgroundColor: "#11D7FF",
