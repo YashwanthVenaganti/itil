@@ -50,6 +50,7 @@ export default function ContactFormSection() {
         }}
       />
 
+      {/* KEEP container full width */}
       <Box
         sx={{
           maxWidth: "1440px",
@@ -57,9 +58,18 @@ export default function ContactFormSection() {
           px: { xs: "20px", sm: "32px", md: "48px" },
         }}
       >
-        <Grid container spacing={4} alignItems="stretch">
+        {/* REDUCE ONLY GRID WIDTH HERE */}
+        <Grid
+          container
+          spacing={20}
+          alignItems="stretch"
+          sx={{
+            maxWidth: "1200px",   // 👈 control grid width here
+            mx: "auto",          // center it
+          }}
+        >
           {/* LEFT IMAGE */}
-          <Grid size={{ xs: 12, md: 6 }} sx={{ display: "flex" }}>
+          <Grid size={{xs:12,md:6}} sx={{ display: "flex" }}>
             <MotionBox
               initial={{ opacity: 0, y: 35 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -67,7 +77,7 @@ export default function ContactFormSection() {
               sx={{
                 backgroundColor: "#141829",
                 width: "100%",
-                height: { xs: "320px", md: "560px" },
+                height: { xs: "300px", md: "520px" },
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -88,16 +98,16 @@ export default function ContactFormSection() {
           </Grid>
 
           {/* RIGHT FORM */}
-          <Grid size={{ xs: 12, md: 6 }} sx={{ display: "flex" }}>
+          <Grid size={{xs:12,md:6}} sx={{ display: "flex" }}>
             <MotionBox
               initial={{ opacity: 0, y: 35 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               sx={{
                 backgroundColor: "#141829",
-                p: { xs: "22px", md: "28px" },
+                p: { xs: "22px", md: "26px" },
                 width: "100%",
-                height: { xs: "auto", md: "560px" },
+                height: { xs: "auto", md: "520px" },
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
@@ -115,7 +125,7 @@ export default function ContactFormSection() {
                 Send us a message
               </Typography>
 
-              <Box sx={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+              <Box sx={{ display: "flex", flexDirection: "column", gap: "11px" }}>
                 <TextField placeholder="First Name" fullWidth sx={fieldStyles} />
                 <TextField placeholder="Last Name" fullWidth sx={fieldStyles} />
                 <TextField placeholder="Email Address" fullWidth sx={fieldStyles} />

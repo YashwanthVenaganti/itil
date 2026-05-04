@@ -71,7 +71,7 @@ export default function LegalHeroSection() {
                     transition={{ duration: 0.7, ease: "easeOut" }}
                     sx={{ maxWidth: "760px" }}
                 >
-                    <MotionTypography
+                    {/* <MotionTypography
                         initial={{ opacity: 0, y: 22 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.15, duration: 0.5 }}
@@ -88,7 +88,7 @@ export default function LegalHeroSection() {
                         }}
                     >
                         Contact Us
-                    </MotionTypography>
+                    </MotionTypography> */}
 
                     <MotionTypography
                         initial={{ opacity: 0, y: 45 }}

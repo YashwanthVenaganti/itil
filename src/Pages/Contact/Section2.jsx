@@ -12,6 +12,7 @@ import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const MotionBox = motion(Box);
 const MotionButton = motion(Button);
@@ -97,6 +98,7 @@ const fieldSx = {
 };
 
 export default function ContactSection() {
+  const navigate = useNavigate();
   return (
     <Box
       sx={{
@@ -221,7 +223,7 @@ export default function ContactSection() {
                 to your technical questions.
               </Typography>
 
-              <MotionBox whileHover={{ x: 6 }} sx={linkSx}>
+              <MotionBox whileHover={{ x: 6 }} sx={linkSx} onClick={()=>navigate("/speak-to-our-expert")}>
                 <Typography
                   component="span"
                   sx={{
