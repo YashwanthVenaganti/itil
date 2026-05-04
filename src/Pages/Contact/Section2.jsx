@@ -8,7 +8,6 @@ import {
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
 import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
-import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { motion } from "framer-motion";
@@ -19,79 +18,52 @@ const MotionButton = motion(Button);
 
 const cardSx = {
   backgroundColor: "#141829",
-  border: "1px solid rgba(255,255,255,0.06)",
+  border: "1px solid rgba(255,255,255,0.08)",
 };
 
 const iconBoxSx = {
-  width: "52px",
-  height: "52px",
+  width: "46px",
+  height: "46px",
   backgroundColor: "#1D2442",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  mb: "28px",
+  mb: "22px",
 };
 
 const titleSx = {
   fontFamily: "Jost, sans-serif",
   fontWeight: 500,
-  fontSize: { xs: "28px", md: "30px" },
-  lineHeight: { xs: "34px", md: "36px" },
-  letterSpacing: "-0.6px",
+  fontSize: { xs: "22px", md: "26px" },
+  lineHeight: { xs: "30px", md: "34px" },
   color: "#E8EAF2",
 };
 
 const bodySx = {
   fontFamily: "Jost, sans-serif",
-  fontWeight: 400,
-  fontSize: { xs: "15px", md: "16px" },
-  lineHeight: { xs: "26px", md: "28px" },
-  color: "#7A82A8",
-};
-
-const linkSx = {
-  mt: "26px",
-  display: "inline-flex",
-  alignItems: "center",
-  gap: "10px",
-  fontFamily: "Jost, sans-serif",
-  fontWeight: 400,
-  fontSize: "16px",
-  lineHeight: "20px",
-  color: "#00D9FF",
-  cursor: "pointer",
+  fontSize: { xs: "13px", md: "14px" },
+  lineHeight: "24px",
+  color: "#8D94B8",
 };
 
 const fieldSx = {
   "& .MuiInputLabel-root": {
-    color: "#7A82A8",
+    color: "#8D94B8",
     fontFamily: "Jost, sans-serif",
-    fontWeight: 400,
-    fontSize: "15px",
+    fontSize: "13px",
     position: "static",
     transform: "none",
-    mb: "10px",
-  },
-  "& .MuiInputLabel-root.Mui-focused": {
-    color: "#7A82A8",
+    mb: "8px",
   },
   "& .MuiOutlinedInput-root": {
-    fontFamily: "Jost, sans-serif",
-    fontSize: "16px",
-    color: "#E8EAF2",
     backgroundColor: "#1F2850",
+    color: "#E8EAF2",
     borderRadius: 0,
-    "& fieldset": {
-      border: "none",
-    },
-    "&:hover fieldset": {
-      border: "none",
-    },
-    "&.Mui-focused fieldset": {
-      border: "none",
-    },
+    fontFamily: "Jost, sans-serif",
+    fontSize: "13px",
+    "& fieldset": { border: "none" },
     "& input::placeholder, & textarea::placeholder": {
-      color: "#7A82A8",
+      color: "#8D94B8",
       opacity: 1,
     },
   },
@@ -99,6 +71,7 @@ const fieldSx = {
 
 export default function ContactSection() {
   const navigate = useNavigate();
+
   return (
     <Box
       sx={{
@@ -110,459 +83,323 @@ export default function ContactSection() {
     >
       <Box
         sx={{
-          maxWidth: "1440px",
-          margin: "0 auto",
-          px: { xs: "20px", sm: "32px", md: "48px" },
           width: "100%",
+          borderTop: "1px solid rgba(255,255,255,0.45)",
+          mb: { xs: "42px", md: "70px" },
+        }}
+      />
+
+      <Box
+        sx={{
+          maxWidth: "1440px",
+          mx: "auto",
+          px: { xs: "20px", sm: "32px", md: "48px" },
           boxSizing: "border-box",
         }}
       >
-        <Grid container spacing={{ xs: 3, md: 3 }}>
-          {/* Top Left */}
+        <Grid
+          container
+          spacing={{ xs: 3, md: 4 }}
+          sx={{
+            maxWidth: "1200px",
+            mx: "auto",
+          }}
+        >
+          {/* TOP LEFT */}
           <Grid size={{ xs: 12, md: 6 }}>
             <MotionBox
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 35 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              whileHover={{
-                y: -6,
-                borderColor: "rgba(0,217,255,0.3)",
-                boxShadow: "0px 22px 45px rgba(0,217,255,0.12)",
-              }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
               sx={{
                 ...cardSx,
-                minHeight: { xs: "auto", md: "260px" },
-                px: { xs: "24px", md: "36px" },
-                py: { xs: "26px", md: "32px" },
-                transition: "all 0.3s ease",
+                p: { xs: "24px", md: "30px" },
+                minHeight: { xs: "auto", md: "230px" },
               }}
             >
-              <MotionBox
-                animate={{ y: [0, -5, 0] }}
-                transition={{
-                  duration: 2.4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                whileHover={{ scale: 1.12, rotate: 8 }}
-                sx={iconBoxSx}
-              >
+              <Box sx={iconBoxSx}>
                 <CalendarTodayOutlinedIcon
-                  sx={{ color: "#00D9FF", fontSize: 24 }}
+                  sx={{ color: "#00D9FF", fontSize: 22 }}
                 />
-              </MotionBox>
+              </Box>
 
               <Typography sx={{ ...titleSx, mb: "14px" }}>
                 Schedule a Consultation
               </Typography>
 
-              <Typography sx={{ ...bodySx, maxWidth: "510px" }}>
+              <Typography sx={{ ...bodySx, maxWidth: "520px", mb: "20px" }}>
                 Book a meeting with our experts to discuss your specific
                 requirements and explore potential solutions.
               </Typography>
 
-              <MotionBox whileHover={{ x: 6 }} sx={linkSx} onClick={()=>navigate("/speak-to-our-expert")}>
-                <Typography
-                  component="span"
-                  sx={{
-                    fontFamily: "Jost, sans-serif",
-                    fontWeight: 400,
-                    fontSize: "16px",
-                    lineHeight: "20px",
-                    color: "#00D9FF",
-                  }}
-                >
-                  Book Now
-                </Typography>
-                <ArrowForwardIcon sx={{ fontSize: 18, color: "#00D9FF" }} />
-              </MotionBox>
+              <Box
+                onClick={() => navigate("/speak-to-our-expert")}
+                sx={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  color: "#00D9FF",
+                  fontSize: "13px",
+                  cursor: "pointer",
+                  fontFamily: "Jost, sans-serif",
+                }}
+              >
+                Book Now <ArrowForwardIcon sx={{ fontSize: 15 }} />
+              </Box>
             </MotionBox>
           </Grid>
 
-          {/* Top Right */}
+          {/* TOP RIGHT */}
           <Grid size={{ xs: 12, md: 6 }}>
             <MotionBox
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 35 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: 0.12, ease: "easeOut" }}
-              whileHover={{
-                y: -6,
-                borderColor: "rgba(0,217,255,0.3)",
-                boxShadow: "0px 22px 45px rgba(0,217,255,0.12)",
-              }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               sx={{
                 ...cardSx,
-                minHeight: { xs: "auto", md: "260px" },
-                px: { xs: "24px", md: "36px" },
-                py: { xs: "26px", md: "32px" },
-                transition: "all 0.3s ease",
+                p: { xs: "24px", md: "30px" },
+                minHeight: { xs: "auto", md: "230px" },
               }}
             >
-              <MotionBox
-                animate={{ y: [0, -5, 0] }}
-                transition={{
-                  duration: 2.4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.2,
-                }}
-                whileHover={{ scale: 1.12, rotate: 8 }}
-                sx={iconBoxSx}
-              >
-                <GroupsOutlinedIcon sx={{ color: "#00D9FF", fontSize: 24 }} />
-              </MotionBox>
+              <Box sx={iconBoxSx}>
+                <GroupsOutlinedIcon sx={{ color: "#00D9FF", fontSize: 22 }} />
+              </Box>
 
               <Typography sx={{ ...titleSx, mb: "14px" }}>
                 Speak to an Expert
               </Typography>
 
-              <Typography sx={{ ...bodySx, maxWidth: "510px" }}>
-                Connect directly with our technical specialists to get answers
-                to your technical questions.
+              <Typography sx={{ ...bodySx, maxWidth: "520px", mb: "20px" }}>
+                Connect directly with our technical specialists to get answers to
+                your technical questions.
               </Typography>
 
-              <MotionBox whileHover={{ x: 6 }} sx={linkSx} onClick={()=>navigate("/speak-to-our-expert")}>
-                <Typography
-                  component="span"
-                  sx={{
-                    fontFamily: "Jost, sans-serif",
-                    fontWeight: 400,
-                    fontSize: "16px",
-                    lineHeight: "20px",
-                    color: "#00D9FF",
-                  }}
-                >
-                  Contact Expert
-                </Typography>
-                <ArrowForwardIcon sx={{ fontSize: 18, color: "#00D9FF" }} />
-              </MotionBox>
-            </MotionBox>
-          </Grid>
-
-          {/* Bottom Left Form */}
-          <Grid size={{ xs: 12, md: 6 }}>
-            <MotionBox
-              initial={{ opacity: 0, y: 45 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.65, ease: "easeOut" }}
-              whileHover={{
-                borderColor: "rgba(0,217,255,0.24)",
-                boxShadow: "0px 22px 45px rgba(0,217,255,0.1)",
-              }}
-              sx={{
-                ...cardSx,
-                px: { xs: "24px", md: "36px" },
-                py: { xs: "28px", md: "38px" },
-                transition: "all 0.3s ease",
-              }}
-            >
-              <Typography
+              <Box
+                onClick={() => navigate("/speak-to-our-expert")}
                 sx={{
-                  ...titleSx,
-                  fontSize: { xs: "30px", md: "32px" },
-                  lineHeight: { xs: "38px", md: "36px" },
-                  mb: "34px",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  color: "#00D9FF",
+                  fontSize: "13px",
+                  cursor: "pointer",
+                  fontFamily: "Jost, sans-serif",
                 }}
               >
-                Send us a message
-              </Typography>
-
-              <Box component="form">
-                <TextField
-                  fullWidth
-                  label="Full Name"
-                  placeholder="John Doe"
-                  variant="outlined"
-                  InputLabelProps={{ shrink: true }}
-                  sx={{ ...fieldSx, mb: "22px" }}
-                />
-
-                <TextField
-                  fullWidth
-                  label="Email Address"
-                  placeholder="john@company.com"
-                  variant="outlined"
-                  InputLabelProps={{ shrink: true }}
-                  sx={{ ...fieldSx, mb: "22px" }}
-                />
-
-                <TextField
-                  fullWidth
-                  label="Company"
-                  placeholder="Your Company"
-                  variant="outlined"
-                  InputLabelProps={{ shrink: true }}
-                  sx={{ ...fieldSx, mb: "22px" }}
-                />
-
-                <TextField
-                  fullWidth
-                  multiline
-                  rows={5}
-                  label="Message"
-                  placeholder="Tell us about your project..."
-                  variant="outlined"
-                  InputLabelProps={{ shrink: true }}
-                  sx={{
-                    ...fieldSx,
-                    mb: "28px",
-                    "& .MuiOutlinedInput-root": {
-                      ...fieldSx["& .MuiOutlinedInput-root"],
-                      alignItems: "flex-start",
-                    },
-                  }}
-                />
-
-                <MotionButton
-                  fullWidth
-                  whileHover={{
-                    scale: 1.02,
-                    boxShadow: "0px 14px 30px rgba(25,200,232,0.28)",
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                  endIcon={<ArrowForwardIcon />}
-                  sx={{
-                    height: "56px",
-                    backgroundColor: "#19C8E8",
-                    color: "#000",
-                    borderRadius: 0,
-                    textTransform: "none",
-                    fontFamily: "Jost, sans-serif",
-                    fontWeight: 500,
-                    fontSize: "18px",
-                    lineHeight: "20px",
-                    "&:hover": {
-                      backgroundColor: "#19C8E8",
-                    },
-                  }}
-                >
-                  Send Message
-                </MotionButton>
+                Contact Expert <ArrowForwardIcon sx={{ fontSize: 15 }} />
               </Box>
             </MotionBox>
           </Grid>
 
-          {/* Bottom Right */}
+          {/* BOTTOM LEFT */}
           <Grid size={{ xs: 12, md: 6 }}>
-            <Grid container spacing={{ xs: 3, md: 3 }}>
+            <Grid container spacing={3}>
               <Grid size={{ xs: 12 }}>
                 <MotionBox
-                  initial={{ opacity: 0, x: 35 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.65, ease: "easeOut" }}
-                  whileHover={{
-                    borderColor: "rgba(0,217,255,0.24)",
-                    boxShadow: "0px 22px 45px rgba(0,217,255,0.1)",
-                  }}
+                  initial={{ opacity: 0, y: 35 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
                   sx={{
                     ...cardSx,
-                    px: { xs: "24px", md: "32px" },
-                    py: { xs: "28px", md: "34px" },
-                    transition: "all 0.3s ease",
+                    p: { xs: "24px", md: "30px" },
                   }}
                 >
-                  <Typography sx={{ ...titleSx, mb: "28px" }}>
-                    Get in Touch
+                  <Typography sx={{ ...titleSx, mb: "24px" }}>
+                    Engage with us
                   </Typography>
 
-                  <Box
-                    sx={{ display: "flex", flexDirection: "column", gap: "26px" }}
-                  >
-                    <MotionBox
-                      whileHover={{ x: 6 }}
+                  <Box sx={{ display: "flex", gap: "16px", mb: "22px" }}>
+                    <Box
                       sx={{
+                        width: 38,
+                        height: 38,
+                        backgroundColor: "#1D2442",
                         display: "flex",
-                        alignItems: "flex-start",
-                        gap: "14px",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        flexShrink: 0,
                       }}
                     >
-                      <MotionBox
-                        whileHover={{ scale: 1.12, rotate: 8 }}
+                      <MailOutlineOutlinedIcon
+                        sx={{ color: "#00D9FF", fontSize: 19 }}
+                      />
+                    </Box>
+
+                    <Box>
+                      <Typography sx={{ ...bodySx, fontSize: "13px" }}>
+                        Email
+                      </Typography>
+                      <Typography
                         sx={{
-                          width: "40px",
-                          height: "40px",
-                          backgroundColor: "#1D2442",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          flexShrink: 0,
+                          color: "#E8EAF2",
+                          fontFamily: "Jost, sans-serif",
+                          fontSize: "14px",
                         }}
                       >
-                        <MailOutlineOutlinedIcon
-                          sx={{ color: "#00D9FF", fontSize: 20 }}
-                        />
-                      </MotionBox>
+                        hello@iitil.com
+                      </Typography>
+                    </Box>
+                  </Box>
 
-                      <Box>
-                        <Typography
-                          sx={{
-                            fontFamily: "Jost, sans-serif",
-                            fontWeight: 400,
-                            fontSize: "15px",
-                            lineHeight: "20px",
-                            color: "#7A82A8",
-                            mb: "6px",
-                          }}
-                        >
-                          Email
-                        </Typography>
-                        <Typography
-                          sx={{
-                            fontFamily: "Jost, sans-serif",
-                            fontWeight: 400,
-                            fontSize: "18px",
-                            lineHeight: "28px",
-                            color: "#E8EAF2",
-                          }}
-                        >
-                          hello@itil.com
-                        </Typography>
-                      </Box>
-                    </MotionBox>
-
-                    {/* <MotionBox
-                      whileHover={{ x: 6 }}
+                  <Box sx={{ display: "flex", gap: "16px" }}>
+                    <Box
                       sx={{
+                        width: 38,
+                        height: 38,
+                        backgroundColor: "#1D2442",
                         display: "flex",
-                        alignItems: "flex-start",
-                        gap: "14px",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        flexShrink: 0,
                       }}
                     >
-                      <MotionBox
-                        whileHover={{ scale: 1.12, rotate: 8 }}
+                      <LocationOnOutlinedIcon
+                        sx={{ color: "#00D9FF", fontSize: 19 }}
+                      />
+                    </Box>
+
+                    <Box>
+                      <Typography sx={{ ...bodySx, fontSize: "13px" }}>
+                        Address
+                      </Typography>
+                      <Typography
                         sx={{
-                          width: "40px",
-                          height: "40px",
-                          backgroundColor: "#1D2442",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          flexShrink: 0,
+                          color: "#E8EAF2",
+                          fontFamily: "Jost, sans-serif",
+                          fontSize: "14px",
+                          lineHeight: "23px",
                         }}
                       >
-                        <LocalPhoneOutlinedIcon
-                          sx={{ color: "#00D9FF", fontSize: 20 }}
-                        />
-                      </MotionBox>
-
-                      <Box>
-                        <Typography
-                          sx={{
-                            fontFamily: "Jost, sans-serif",
-                            fontWeight: 400,
-                            fontSize: "15px",
-                            lineHeight: "20px",
-                            color: "#7A82A8",
-                            mb: "6px",
-                          }}
-                        >
-                          Phone
-                        </Typography>
-                        <Typography
-                          sx={{
-                            fontFamily: "Jost, sans-serif",
-                            fontWeight: 400,
-                            fontSize: "18px",
-                            lineHeight: "28px",
-                            color: "#E8EAF2",
-                          }}
-                        >
-                          +1 (555) 123-4567
-                        </Typography>
-                      </Box>
-                    </MotionBox> */}
-
-                    <MotionBox
-                      whileHover={{ x: 6 }}
-                      sx={{
-                        display: "flex",
-                        alignItems: "flex-start",
-                        gap: "14px",
-                      }}
-                    >
-                      <MotionBox
-                        whileHover={{ scale: 1.12, rotate: 8 }}
-                        sx={{
-                          width: "40px",
-                          height: "40px",
-                          backgroundColor: "#1D2442",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          flexShrink: 0,
-                        }}
-                      >
-                        <LocationOnOutlinedIcon
-                          sx={{ color: "#00D9FF", fontSize: 20 }}
-                        />
-                      </MotionBox>
-
-                      <Box>
-                        <Typography
-                          sx={{
-                            fontFamily: "Jost, sans-serif",
-                            fontWeight: 400,
-                            fontSize: "15px",
-                            lineHeight: "20px",
-                            color: "#7A82A8",
-                            mb: "6px",
-                          }}
-                        >
-                          Address
-                        </Typography>
-                        <Typography
-                          sx={{
-                            color: "#E8EAF2",
-                            fontSize: "14px",
-                            lineHeight: "24px",
-                            mb: "10px",
-                          }}
-                        >
-                          Sattva Knowledge City, Raidurg, Hitec City
-                          <br />
-                          Hyderabad - 500 081, Telangana, India
-                        </Typography>
-                      </Box>
-                    </MotionBox>
+                        Sattva Knowledge City, Hi-Tec City,
+                        <br />
+                        Hyderabad - 500081 Telangana,
+                        <br />
+                        India
+                      </Typography>
+                    </Box>
                   </Box>
                 </MotionBox>
               </Grid>
 
               <Grid size={{ xs: 12 }}>
                 <MotionBox
-                  initial={{ opacity: 0, x: 35 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.65, delay: 0.12, ease: "easeOut" }}
-                  whileHover={{
-                    borderColor: "rgba(0,217,255,0.24)",
-                    boxShadow: "0px 22px 45px rgba(0,217,255,0.1)",
-                  }}
+                  initial={{ opacity: 0, y: 35 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
                   sx={{
                     ...cardSx,
-                    px: { xs: "24px", md: "32px" },
-                    py: { xs: "28px", md: "30px" },
-                    transition: "all 0.3s ease",
+                    p: { xs: "24px", md: "30px" },
                   }}
                 >
-                  <Typography sx={{ ...titleSx, mb: "16px" }}>
+                  <Typography sx={{ ...titleSx, mb: "22px" }}>
                     Office Hours
                   </Typography>
 
-                  <Typography sx={{ ...bodySx, mb: "4px" }}>
-                    Monday - Friday: 9:00 AM - 6:00 PM (PST)
-                  </Typography>
+                  <Box sx={{ display: "flex", gap: "16px" }}>
+                    <Box
+                      sx={{
+                        width: 38,
+                        height: 38,
+                        backgroundColor: "#1D2442",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        flexShrink: 0,
+                      }}
+                    >
+                      <CalendarTodayOutlinedIcon
+                        sx={{ color: "#00D9FF", fontSize: 19 }}
+                      />
+                    </Box>
 
-                  <Typography sx={bodySx}>
-                    Saturday - Sunday: Closed
-                  </Typography>
+                    <Box>
+                      <Typography sx={bodySx}>
+                        Monday - Friday: 9:00 AM - 6:00 PM (IST)
+                      </Typography>
+                      <Typography sx={bodySx}>
+                        Saturday - Sunday: Closed
+                      </Typography>
+                    </Box>
+                  </Box>
                 </MotionBox>
               </Grid>
             </Grid>
+          </Grid>
+
+          {/* BOTTOM RIGHT FORM */}
+          <Grid size={{ xs: 12, md: 6 }}>
+            <MotionBox
+              initial={{ opacity: 0, y: 35 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              sx={{
+                ...cardSx,
+                p: { xs: "24px", md: "36px" },
+                height: "100%",
+              }}
+            >
+              <Typography sx={{ ...titleSx, mb: "30px" }}>Reach Us</Typography>
+
+              <TextField
+                fullWidth
+                label="Full Name"
+                placeholder="John Doe"
+                InputLabelProps={{ shrink: true }}
+                sx={{ ...fieldSx, mb: "22px" }}
+              />
+
+              <TextField
+                fullWidth
+                label="Email Address"
+                placeholder="john@company.com"
+                InputLabelProps={{ shrink: true }}
+                sx={{ ...fieldSx, mb: "22px" }}
+              />
+
+              <TextField
+                fullWidth
+                multiline
+                rows={6}
+                label="Message"
+                placeholder="Tell us about your project..."
+                InputLabelProps={{ shrink: true }}
+                sx={{
+                  ...fieldSx,
+                  mb: "26px",
+                  "& .MuiOutlinedInput-root": {
+                    ...fieldSx["& .MuiOutlinedInput-root"],
+                    alignItems: "flex-start",
+                  },
+                }}
+              />
+
+              <MotionButton
+                fullWidth
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                endIcon={<ArrowForwardIcon />}
+                sx={{
+                  height: "54px",
+                  backgroundColor: "#19C8E8",
+                  color: "#000",
+                  borderRadius: 0,
+                  textTransform: "none",
+                  fontFamily: "Jost, sans-serif",
+                  fontWeight: 500,
+                  fontSize: "15px",
+                  "&:hover": {
+                    backgroundColor: "#19C8E8",
+                  },
+                }}
+              >
+                Submit
+              </MotionButton>
+            </MotionBox>
           </Grid>
         </Grid>
       </Box>

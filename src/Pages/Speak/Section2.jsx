@@ -84,7 +84,7 @@ export default function ContactFormSection() {
             >
               <Box
                 component="img"
-                src="/Images/contact.svg"
+                src="/Images/Chat.svg"
                 alt="contact"
                 sx={{
                   width: "100%",

@@ -17,6 +17,7 @@ import Footer from "../Components/Footer/Footer";
 import Portfolio from "../Pages/Portfolio/Portfolio";
 import Legal from "../Pages/Legal/Legal";
 import Speak from "../Pages/Speak/Speak";
+import CookieConsent from "../Components/Cookies/Cookies";
 
 function Layout() {
   const { pathname } = useLocation();
@@ -36,6 +37,7 @@ function Layout() {
         <Outlet />
       </div>
       <Footer />
+      <CookieConsent />
     </>
   );
 }

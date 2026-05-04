@@ -1,5 +1,8 @@
-import { Box, Typography } from "@mui/material";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { Box, Typography, IconButton } from "@mui/material";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { motion, AnimatePresence } from "framer-motion";
 
 const MotionBox = motion(Box);
 const MotionTypography = motion(Typography);
@@ -7,125 +10,82 @@ const MotionTypography = motion(Typography);
 const services = [
   {
     title: "Managed IT Services",
-    desc: "Comprehensive IT infrastructure support and management",
     points: [
       "Remote IT Support",
       "IT Helpdesk Services",
       "Infrastructure Monitoring",
-      "Server & Network Management",
-      "Cloud & Email Management",
-      "IT AMC Services",
       "Endpoint Support Services",
+      "IT AMC Services",
+      "Cloud & Email Management",
+      "Server & Network Management",
     ],
   },
   {
     title: "Application Development",
-    desc: "Custom applications tailored to business needs",
     points: [
       "Web Applications",
-      "Mobile Apps (Android/iOS/Hybrid)",
+      "Mobile Apps",
       "Desktop Applications",
       "Enterprise Applications",
       "API Development & Integration",
-      "Portal Development",
       "ERP & HRMS Systems",
-      "Billing & Accounting Applications",
     ],
   },
   {
     title: "CRM Development & Lifecycle",
-    desc: "End-to-end CRM solutions from development to maintenance",
     points: [
       "Custom CRM Systems",
       "Sales & Support CRM",
       "Lead Management CRM",
-      "Channel Partner CRM",
-      "CRM Integration & Customisation",
-      "Workflow & Dashboard Customisation",
-      "Third-party Integrations",
-      "CRM Maintenance & Support",
-    ],
-  },
-  {
-    title: "SaaS Development & Services",
-    desc: "Scalable SaaS platforms and product engineering",
-    points: [
-      "Multi-tenant SaaS Platforms",
-      "Subscription-based Software",
-      "Industry-specific SaaS Solutions",
-      "SaaS Architecture & Engineering",
-      "Microservices Architecture",
-      "Payment & Subscription Integration",
-      "SaaS Operations & Management",
-      "Performance Monitoring",
-    ],
-  },
-  {
-    title: "Application Support & Optimisation",
-    desc: "Ongoing maintenance and performance improvements",
-    points: [
-      "Application Maintenance",
-      "Performance Optimisation",
-      "UI/UX Improvements",
-      "Bug Fixing & Enhancements",
-      "Database Optimisation",
-      "Security Hardening",
-      "Scalability Improvements",
-      "Cloud Migration",
+      "CRM Integration",
+      "Workflow Customisation",
+      "CRM Maintenance",
     ],
   },
   {
     title: "Data Services",
-    desc: "Comprehensive data management and intelligence",
     points: [
       "Data Entry & Processing",
-      "Data Cleansing & Validation",
-      "Data Migration Services",
-      "CRM Data Management",
+      "Data Cleansing",
+      "Data Migration",
       "MIS Reporting",
       "Business Dashboards",
-      "Data Structuring & Enrichment",
-    ],
-  },
-  {
-    title: "Cybersecurity Services",
-    desc: "Protecting your digital assets and infrastructure",
-    points: [
-      "Endpoint Security",
-      "Firewall Management",
-      "Security Audits",
-      "Backup & Disaster Recovery",
-      "Access Control Management",
-      "Data Protection Services",
+      "Data Enrichment",
     ],
   },
   {
     title: "Cloud & Infrastructure",
-    desc: "Modern cloud infrastructure and deployment",
     points: [
-      "Cloud Deployment & Migration",
+      "Cloud Deployment",
       "Server Management",
-      "Virtual Infrastructure Setup",
+      "Virtual Infrastructure",
       "Backup Infrastructure",
       "Storage Management",
       "Cloud Monitoring",
     ],
   },
-  {
-    title: "Automation & Digital Transformation",
-    desc: "Streamline operations with intelligent automation",
-    points: [
-      "Workflow Automation",
-      "CRM Automation",
-      "Business Process Automation",
-      "Reporting Automation",
-      "System Integration Services",
-      "Digital Transformation Consulting",
-    ],
-  },
 ];
 
 export default function ServicesSection() {
+  const [active, setActive] = useState(0);
+
+  const nextSlide = () => {
+    setActive((prev) => (prev + 1) % services.length);
+  };
+
+  const prevSlide = () => {
+    setActive((prev) => (prev - 1 + services.length) % services.length);
+  };
+
+  useEffect(() => {
+    const timer = setInterval(nextSlide, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const current = services[active];
+  const leftPoints = current.points.slice(0, 4);
+  const rightPoints = current.points.slice(4);
+
   return (
     <Box
       sx={{
@@ -134,16 +94,15 @@ export default function ServicesSection() {
         color: "#E9ECF7",
         fontFamily: "Jost, sans-serif",
         py: { xs: "70px", md: "120px" },
-        overflowX: "hidden",
+        overflow: "hidden",
       }}
     >
-      {/* ✅ SAME CONTAINER AS HERO */}
       <Box
         sx={{
           maxWidth: "1440px",
-          margin: "0 auto",
+          mx: "auto",
           px: { xs: "20px", sm: "32px", md: "48px" },
-          width: "100%",
+          boxSizing: "border-box",
         }}
       >
         <MotionTypography
@@ -152,7 +111,7 @@ export default function ServicesSection() {
           transition={{ duration: 0.6 }}
           sx={{
             color: "#00D9FF",
-            fontSize: { xs: "11px", sm: "12px", md: "13px" },
+            fontSize: { xs: "11px", md: "13px" },
             letterSpacing: { xs: "4px", md: "6px" },
             textTransform: "uppercase",
             mb: "24px",
@@ -167,8 +126,8 @@ export default function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
           sx={{
-            fontSize: { xs: "30px", sm: "40px", md: "46px", lg: "48px" },
-            lineHeight: { xs: "38px", sm: "48px", md: "56px", lg: "58px" },
+            fontSize: { xs: "32px", sm: "40px", md: "48px" },
+            lineHeight: { xs: "40px", sm: "50px", md: "58px" },
             fontWeight: 500,
             mb: "22px",
           }}
@@ -182,10 +141,10 @@ export default function ServicesSection() {
           transition={{ duration: 0.7, delay: 0.2 }}
           sx={{
             color: "#8D94B8",
-            fontSize: { xs: "14px", sm: "15px", md: "16px" },
-            lineHeight: { xs: "24px", sm: "26px", md: "28px" },
+            fontSize: { xs: "14px", md: "16px" },
+            lineHeight: "28px",
             maxWidth: "1120px",
-            mb: { xs: "44px", md: "64px" },
+            mb: { xs: "44px", md: "70px" },
           }}
         >
           IITIL delivers a complete digital ecosystem covering infrastructure,
@@ -195,104 +154,154 @@ export default function ServicesSection() {
 
         <Box
           sx={{
-            display: "grid",
-            gridTemplateColumns: {
-              xs: "1fr",
-              sm: "repeat(2, minmax(0, 1fr))",
-              lg: "repeat(3, minmax(0, 1fr))",
-            },
-            gap: { xs: "24px", md: "34px" },
-            width: "100%",
+            position: "relative",
+            maxWidth: "900px",
+            mx: "auto",
+            px: { xs: "0px", md: "90px" },
           }}
         >
-          {services.map((service, index) => (
+          <IconButton
+            onClick={prevSlide}
+            sx={{
+              position: "absolute",
+              left: { xs: "-8px", md: "-40px" },
+              top: "50%",
+              transform: "translateY(-50%)",
+              width: "56px",
+              height: "56px",
+              bgcolor: "#092645",
+              color: "#00D9FF",
+              zIndex: 3,
+              borderRadius: "50%",
+              "&:hover": { bgcolor: "#0B3158" },
+            }}
+          >
+            <ArrowBackIosNewIcon sx={{ fontSize: 20 }} />
+          </IconButton>
+
+          <IconButton
+            onClick={nextSlide}
+            sx={{
+              position: "absolute",
+              right: { xs: "-8px", md: "-40px" },
+              top: "50%",
+              transform: "translateY(-50%)",
+              width: "56px",
+              height: "56px",
+              bgcolor: "#092645",
+              color: "#00D9FF",
+              zIndex: 3,
+              borderRadius: "50%",
+              "&:hover": { bgcolor: "#0B3158" },
+            }}
+          >
+            <ArrowForwardIosIcon sx={{ fontSize: 20 }} />
+          </IconButton>
+
+          <AnimatePresence mode="wait">
             <MotionBox
-              key={service.title}
-              initial={{ opacity: 0, y: 38 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.07 }}
-              whileHover={{
-                y: -7,
-                borderColor: "rgba(0,217,255,0.35)",
-                boxShadow: "0 22px 55px rgba(0,217,255,0.08)",
-              }}
+              key={active}
+              initial={{ opacity: 0, x: 60 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -60 }}
+              transition={{ duration: 0.45, ease: "easeOut" }}
               sx={{
-                bgcolor: "#0F1433",
-                borderTop: "0.8px solid #1A1F47",
-                borderLeft: "1px solid rgba(255,255,255,0.04)",
-                borderRight: "1px solid rgba(255,255,255,0.04)",
-                borderBottom: "1px solid rgba(255,255,255,0.04)",
-                p: { xs: "24px", md: "32px" },
-                minHeight: "430px",
-                transition: "all 0.3s ease",
+                border: "1px solid #00D9FF",
+                borderRadius: "12px",
+                overflow: "hidden",
+                bgcolor: "#080D27",
               }}
             >
-              <Box sx={{ display: "flex", gap: "16px", mb: "20px" }}>
-                <Box
+              <Box
+                sx={{
+                  bgcolor: "#0C2948",
+                  py: { xs: "26px", md: "36px" },
+                  px: "24px",
+                  textAlign: "center",
+                }}
+              >
+                <Typography
                   sx={{
-                    width: "40px",
-                    height: "40px",
-                    border: "1px solid rgba(0,217,255,0.35)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
+                    fontSize: { xs: "22px", md: "28px" },
+                    fontWeight: 500,
+                    color: "#E8EAF2",
                   }}
                 >
-                  <Box
-                    sx={{
-                      width: "14px",
-                      height: "14px",
-                      borderRadius: "50%",
-                      bgcolor: "#00D9FF",
-                    }}
-                  />
-                </Box>
-
-                <Box>
-                  <Typography
-                    sx={{
-                      fontSize: { xs: "18px", md: "20px" },
-                      fontWeight: 500,
-                      mb: "6px",
-                    }}
-                  >
-                    {service.title}
-                  </Typography>
-
-                  <Typography
-                    sx={{
-                      color: "#8D94B8",
-                      fontSize: "14px",
-                    }}
-                  >
-                    {service.desc}
-                  </Typography>
-                </Box>
+                  {current.title}
+                </Typography>
               </Box>
 
-              <Box component="ul" sx={{ p: 0, m: 0 }}>
-                {service.points.map((point) => (
-                  <Box
-                    key={point}
-                    component="li"
-                    sx={{ display: "flex", gap: "8px", mb: "10px" }}
-                  >
-                    <Box
-                      sx={{
-                        width: "4px",
-                        height: "4px",
-                        bgcolor: "#00D9FF",
-                        mt: "8px",
-                      }}
-                    />
-                    <Typography sx={{ fontSize: "13px", color: "#8D94B8" }}>
-                      {point}
-                    </Typography>
+              <Box
+                sx={{
+                  display: "grid",
+                  gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
+                  gap: { xs: "8px", md: "40px" },
+                  px: { xs: "28px", md: "80px" },
+                  py: { xs: "28px", md: "34px" },
+                }}
+              >
+                {[leftPoints, rightPoints].map((group, i) => (
+                  <Box key={i}>
+                    {group.map((point) => (
+                      <Box
+                        key={point}
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "10px",
+                          mb: "16px",
+                        }}
+                      >
+                        <Box
+                          sx={{
+                            width: "8px",
+                            height: "8px",
+                            borderRadius: "50%",
+                            bgcolor: "#00D9FF",
+                            boxShadow: "0 0 0 4px rgba(0,217,255,0.15)",
+                            flexShrink: 0,
+                          }}
+                        />
+                        <Typography
+                          sx={{
+                            color: "#8D94B8",
+                            fontSize: { xs: "13px", md: "14px" },
+                            lineHeight: "22px",
+                          }}
+                        >
+                          {point}
+                        </Typography>
+                      </Box>
+                    ))}
                   </Box>
                 ))}
               </Box>
             </MotionBox>
-          ))}
+          </AnimatePresence>
+
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              gap: "18px",
+              mt: "52px",
+            }}
+          >
+            {services.map((_, index) => (
+              <Box
+                key={index}
+                onClick={() => setActive(index)}
+                sx={{
+                  width: "14px",
+                  height: "14px",
+                  borderRadius: "50%",
+                  bgcolor: active === index ? "#00D9FF" : "#7B7E8E",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                }}
+              />
+            ))}
+          </Box>
         </Box>
       </Box>
     </Box>

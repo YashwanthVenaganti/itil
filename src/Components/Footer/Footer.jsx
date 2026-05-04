@@ -144,7 +144,7 @@ export default function Footer() {
               Company
             </Typography>
 
-            {["About", "Case Studies", "Legal", "Contact"].map((item) => (
+            {["About", "Case Studies", "Legal", "Reach Us"].map((item) => (
               <Typography
                 key={item}
                 onClick={() => navigate(companyRoutes[item])}
