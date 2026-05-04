@@ -162,7 +162,7 @@ export default function ContactSection() {
                 requirements and explore potential solutions.
               </Typography>
 
-              <MotionBox whileHover={{ x: 6 }} sx={linkSx}>
+              <MotionBox whileHover={{ x: 6 }} sx={linkSx} onClick={()=>navigate("/speak-to-our-expert")}>
                 <Typography
                   component="span"
                   sx={{
