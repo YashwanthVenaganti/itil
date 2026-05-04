@@ -39,20 +39,45 @@ export default function Footer() {
         <Grid container spacing={4}>
           {/* LEFT */}
           <Grid size={{ xs: 12, md: 3 }}>
-            <Typography
+            <Box
               onClick={() => navigate("/")}
               sx={{
-                color: "#fff",
-                fontSize: "30px",
-                mb: 2,
                 cursor: "pointer",
+                display: "inline-flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
               }}
             >
-              litl
-            </Typography>
+              {/* LOGO IMAGE */}
+              <Box
+                component="img"
+                src="/Images/Itil.svg" // 👉 replace with your image path
+                alt="litl"
+                sx={{
+                  height: "36px",
+                  width: "auto",
+                  objectFit: "contain",
+                  display: "block",
+                  mb: "4px",
+                }}
+              />
 
-            <Typography sx={{ fontSize: "14px", mb: 3 }}>
-              Transforming data into intelligent business outcomes.
+              {/* SUB TEXT */}
+              <Typography
+                sx={{
+                  color: "#FFFFFF",
+                  fontSize: "11px", // 👈 smaller size
+                  fontWeight: 600,  // 👈 bold
+                  lineHeight: "14px",
+                  fontFamily: "Jost, sans-serif",
+                }}
+              >
+                A YAKA Brand by Crediple
+              </Typography>
+            </Box>
+
+            <Typography sx={{ fontSize: "14px", mb: 3,mt: 1 }}>
+              Transforming data into intelligent business outcomes through advanced analytics and technology solutions.
             </Typography>
 
             <Box sx={{ display: "flex", gap: 2 }}>
