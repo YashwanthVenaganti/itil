@@ -189,6 +189,7 @@ export default function HeroSection() {
               </MotionButton>
 
               <MotionButton
+                onClick={() => navigate("/speak-to-our-expert")}
                 sx={{
                   border: "1px solid #11D7FF",
                   color: "#11D7FF",
