@@ -198,7 +198,7 @@ export default function ProjectsSection() {
                         height: "8px",
                         borderRadius: "50%",
                         backgroundColor: "#00D9FF",
-                        // boxShadow: "0 0 0 4px rgba(0,217,255,0.15)",
+                        boxShadow: "0 0 0 4px rgba(0,217,255,0.15)",
                         flexShrink: 0,
                         mt: "6px",
                       }}
