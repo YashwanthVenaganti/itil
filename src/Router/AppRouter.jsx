@@ -5,7 +5,7 @@ import {
   Outlet,
   useLocation,
 } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import Header from "../Components/Header/Header";
 import Home from "../Pages/Home/Home";
@@ -19,26 +19,42 @@ import Legal from "../Pages/Legal/Legal";
 import Speak from "../Pages/Speak/Speak";
 import Consultation from "../Pages/Consultation/Consultation";
 import CookieConsent from "../Components/Cookies/Cookies";
+import { Box } from "@mui/material";
 
 function Layout() {
   const { pathname } = useLocation();
+  const [cookieAccepted, setCookieAccepted] = useState(false);
 
-  // ✅ Scroll to top on route change
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "auto", // change to "smooth" if needed
-    });
+    const cookieStatus = localStorage.getItem("iitilCookieConsent");
+    if (cookieStatus) {
+      setCookieAccepted(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
   }, [pathname]);
 
   return (
     <>
       <Header />
-      <div>
+
+      {/* ✅ BLUR WRAPPER */}
+      <Box
+        sx={{
+          filter: cookieAccepted ? "none" : "blur(6px)",
+          pointerEvents: cookieAccepted ? "auto" : "none",
+          userSelect: cookieAccepted ? "auto" : "none",
+          transition: "all 0.3s ease",
+        }}
+      >
         <Outlet />
-      </div>
-      <Footer />
-      <CookieConsent />
+        <Footer />
+      </Box>
+
+      {/* COOKIE BANNER (always on top) */}
+      <CookieConsent onAccept={() => setCookieAccepted(true)} />
     </>
   );
 }

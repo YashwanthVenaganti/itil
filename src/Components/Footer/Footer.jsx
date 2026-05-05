@@ -18,7 +18,7 @@ const companyRoutes = {
   About: "/about",
   "Case Studies": "/case-studies",
   Legal: "/legal",
-  Contact: "/contact",
+  "Reach Us": "/contact",
 };
 
 export default function Footer() {

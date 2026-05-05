@@ -8,8 +8,9 @@ import {
   Typography,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
-export default function CookieConsent() {
+export default function CookieConsent({ onAccept }) {
   const [showBanner, setShowBanner] = useState(false);
   const [openModal, setOpenModal] = useState(false);
 
@@ -23,11 +24,13 @@ export default function CookieConsent() {
   const handleAccept = () => {
     localStorage.setItem("iitilCookieConsent", "accepted");
     setShowBanner(false);
+    onAccept && onAccept(); // ✅ notify layout
   };
 
   const handleReject = () => {
     localStorage.setItem("iitilCookieConsent", "rejected");
     setShowBanner(false);
+    onAccept && onAccept(); // ✅ still remove blur
   };
 
   return (
@@ -69,11 +72,10 @@ export default function CookieConsent() {
               mb: "24px",
             }}
           >
-            We and our selected partners wish to use cookies to collect
-            information about you for functional purposes and statistical
-            marketing. You may not give us your consent for certain purposes by
-            selecting an option and you can withdraw your consent at any time via
-            the cookie icon.
+            We and our selected partners wish to use cookies to collect information
+            about you for functional purposes and statistical marketing. You may not give
+            us your consent for certain purposes by selecting an option and you can
+            withdraw your consent at any time via the cookie icon.
           </Typography>
 
           <Box
@@ -88,36 +90,45 @@ export default function CookieConsent() {
             <Box sx={{ display: "flex", gap: "14px", flexWrap: "wrap" }}>
               <Button
                 onClick={handleAccept}
+                endIcon={<ArrowForwardIcon />}
                 sx={{
                   bgcolor: "#11D7FF",
-                  color: "#fff",
-                  height: "44px",
-                  px: "22px",
+                  color: "#000",
+                  height: "56px",
+                  minWidth: "185px",
+                  px: "26px",
                   borderRadius: 0,
                   textTransform: "none",
                   fontFamily: "Jost, sans-serif",
-                  fontWeight: 600,
+                  fontWeight: 500,
+                  fontSize: "16px",
                   "&:hover": { bgcolor: "#11D7FF" },
                 }}
               >
-                Accept All Cookies
+                Accept All
               </Button>
 
               <Button
                 onClick={handleReject}
                 sx={{
-                  bgcolor: "#11D7FF",
-                  color: "#fff",
-                  height: "44px",
-                  px: "22px",
+                  bgcolor: "transparent",
+                  color: "#11D7FF",
+                  height: "56px",
+                  minWidth: "185px",
+                  px: "26px",
+                  border: "1px solid #11D7FF",
                   borderRadius: 0,
                   textTransform: "none",
                   fontFamily: "Jost, sans-serif",
-                  fontWeight: 600,
-                  "&:hover": { bgcolor: "#11D7FF" },
+                  fontWeight: 500,
+                  fontSize: "16px",
+                  "&:hover": {
+                    bgcolor: "rgba(17,215,255,0.08)",
+                    borderColor: "#11D7FF",
+                  },
                 }}
               >
-                Reject All Cookies
+                Reject All
               </Button>
             </Box>
 
@@ -136,7 +147,6 @@ export default function CookieConsent() {
           </Box>
         </Box>
       )}
-
       <Dialog
         open={openModal}
         onClose={() => setOpenModal(false)}
@@ -149,6 +159,9 @@ export default function CookieConsent() {
             borderRadius: 0,
             maxHeight: "88vh",
             fontFamily: "Jost, sans-serif",
+
+            // ✅ GAP BETWEEN BANNER & MODAL
+            marginBottom: { xs: "100px", md: "140px" },
           },
         }}
       >
@@ -169,6 +182,8 @@ export default function CookieConsent() {
           sx={{
             bgcolor: "#0A0E27",
             p: { xs: "24px", md: "42px" },
+
+            // smooth scroll style
             "&::-webkit-scrollbar": { width: "8px" },
             "&::-webkit-scrollbar-thumb": { bgcolor: "#1D2442" },
           }}

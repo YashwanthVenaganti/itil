@@ -95,7 +95,7 @@ export default function ContactSection() {
                     }}
                 >
                     <MotionButton
-                        onClick={() => navigate("/contact")}
+                        onClick={() => navigate("/schedule-consultation")}
                         whileHover={{
                             scale: 1.05,
                             y: -3,
@@ -141,7 +141,7 @@ export default function ContactSection() {
                             },
                         }}
                     >
-                        Contact Us
+                        Reach Us
                     </MotionButton>
                 </MotionBox>
 
