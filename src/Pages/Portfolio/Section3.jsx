@@ -129,6 +129,7 @@ export default function OrganizationSection() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+                  backgroundColor:" #00D9FF1A",
                   mb: "18px",
                 }}
               >
