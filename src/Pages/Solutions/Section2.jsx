@@ -4,6 +4,7 @@ import StorageOutlinedIcon from "@mui/icons-material/StorageOutlined";
 import HubOutlinedIcon from "@mui/icons-material/HubOutlined";
 import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
 import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
+import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
 import { motion } from "framer-motion";
 
 const MotionBox = motion(Box);
@@ -35,6 +36,11 @@ const services = [
     desc: "We develop intelligent systems that automate processes, enhance accuracy, and improve efficiency across various business functions.",
     icon: <PsychologyOutlinedIcon sx={{ color: "#00D9FF", fontSize: 24 }} />,
   },
+  {
+    title: "Data Governance & Compliance",
+    desc: "Ensures data is accurate, secure, and regulation-ready. Includes data quality management, master data management (MDM), data security, compliance frameworks, and audit readiness.",
+    icon: <SecurityOutlinedIcon sx={{ color: "#00D9FF", fontSize: 24 }} />,
+  },
 ];
 
 export default function DataIntelligenceSection() {
@@ -59,7 +65,9 @@ export default function DataIntelligenceSection() {
           sx={{
             fontFamily: "Jost, sans-serif",
             fontWeight: 500,
-            fontSize: { xs: "34px", md: "48px" },
+            fontSize: { xs: "34px", sm: "40px", md: "44px", lg: "48px" },
+            lineHeight: { xs: "40px", sm: "44px", md: "46px", lg: "48px" },
+            letterSpacing: { xs: "-0.8px", md: "-1px", lg: "-1.2px" },
             color: "#E8EAF2",
             mb: { xs: "32px", md: "52px" },
           }}
@@ -67,13 +75,12 @@ export default function DataIntelligenceSection() {
           Data Intelligence
         </MotionTypography>
 
-        {/* ✅ FIX */}
         <Grid container spacing={3} alignItems="stretch">
           {services.map((item, index) => (
             <Grid
               key={index}
               size={{ xs: 12, sm: 6, md: 4 }}
-              sx={{ display: "flex" }} // ✅ important
+              sx={{ display: "flex" }}
             >
               <MotionBox
                 initial={{ opacity: 0, y: 45 }}
@@ -82,17 +89,20 @@ export default function DataIntelligenceSection() {
                 whileHover={{
                   y: -8,
                   scale: 1.02,
+                  borderColor: "rgba(8, 217, 255, 0.35)",
+                  boxShadow: "0px 22px 45px rgba(8, 217, 255, 0.12)",
                 }}
                 sx={{
                   backgroundColor: "#141829",
                   border: "1px solid rgba(255,255,255,0.05)",
-                  px: { xs: "16px", md: "20px" },
+                  px: { xs: "24px", md: "32px" },
                   py: { xs: "24px", md: "32px" },
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "flex-start",
-                  height: "100%", // ✅ key
+                  height: "100%",
                   width: "100%",
+                  transition: "all 0.3s ease",
                 }}
               >
                 <Box
@@ -111,8 +121,10 @@ export default function DataIntelligenceSection() {
 
                 <Typography
                   sx={{
+                    fontFamily: "Jost, sans-serif",
                     fontWeight: 500,
                     fontSize: { xs: "18px", md: "20px" },
+                    lineHeight: { xs: "26px", md: "30px" },
                     color: "#E8EAF2",
                     mb: "14px",
                   }}
@@ -122,7 +134,10 @@ export default function DataIntelligenceSection() {
 
                 <Typography
                   sx={{
+                    fontFamily: "Jost, sans-serif",
+                    fontWeight: 400,
                     fontSize: { xs: "13px", md: "14px" },
+                    lineHeight: { xs: "22px", md: "24px" },
                     color: "#7A82A8",
                   }}
                 >

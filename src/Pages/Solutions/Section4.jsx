@@ -4,6 +4,7 @@ import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalance
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FactoryOutlinedIcon from "@mui/icons-material/FactoryOutlined";
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
+import ApartmentOutlinedIcon from "@mui/icons-material/ApartmentOutlined"; // ✅ new icon
 import { motion } from "framer-motion";
 
 const MotionBox = motion(Box);
@@ -34,6 +35,11 @@ const industries = [
     title: "Logistics",
     desc: "We streamline supply chain operations with real-time tracking, analytics, and intelligent decision-making systems.",
     icon: <LocalShippingOutlinedIcon sx={{ color: "#00D9FF", fontSize: 24 }} />,
+  },
+  {
+    title: "Real Estate", // ✅ added card
+    desc: "We support property developers, brokers, and facility management firms with digital platforms, analytics, CRM systems, and smart property management solutions.",
+    icon: <ApartmentOutlinedIcon sx={{ color: "#00D9FF", fontSize: 24 }} />,
   },
 ];
 
@@ -67,19 +73,23 @@ export default function IndustryVerticalsSection() {
           Industry Verticals
         </MotionTypography>
 
-        {/* ✅ FIX */}
         <Grid container spacing={3} alignItems="stretch">
           {industries.map((item, index) => (
             <Grid
               key={index}
               size={{ xs: 12, sm: 6, md: 4 }}
-              sx={{ display: "flex" }} // ✅ important
+              sx={{ display: "flex" }}
             >
               <MotionBox
                 initial={{ opacity: 0, y: 45 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -8, scale: 1.02 }}
+                whileHover={{
+                  y: -8,
+                  scale: 1.02,
+                  borderColor: "rgba(0,217,255,0.3)",
+                  boxShadow: "0 18px 45px rgba(0,217,255,0.1)",
+                }}
                 sx={{
                   backgroundColor: "#141829",
                   border: "1px solid rgba(255,255,255,0.05)",
@@ -87,8 +97,9 @@ export default function IndustryVerticalsSection() {
                   py: { xs: "24px", md: "32px" },
                   display: "flex",
                   flexDirection: "column",
-                  height: "100%", // ✅ key
+                  height: "100%",
                   width: "100%",
+                  transition: "all 0.3s ease",
                 }}
               >
                 <Box
@@ -107,6 +118,7 @@ export default function IndustryVerticalsSection() {
 
                 <Typography
                   sx={{
+                    fontFamily: "Jost, sans-serif",
                     fontWeight: 500,
                     fontSize: { xs: "18px", md: "20px" },
                     color: "#E8EAF2",
@@ -118,8 +130,10 @@ export default function IndustryVerticalsSection() {
 
                 <Typography
                   sx={{
+                    fontFamily: "Jost, sans-serif",
                     fontSize: { xs: "15px", md: "16px" },
                     color: "#7A82A8",
+                    lineHeight: "24px",
                   }}
                 >
                   {item.desc}
