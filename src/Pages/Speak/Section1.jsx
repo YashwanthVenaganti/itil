@@ -71,7 +71,7 @@ export default function SpeakHeroSection() {
                     transition={{ duration: 0.7, ease: "easeOut" }}
                     sx={{ maxWidth: "760px" }}
                 >
-                    {/* <MotionTypography
+                    <MotionTypography
                         initial={{ opacity: 0, y: 22 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.15, duration: 0.5 }}
@@ -87,8 +87,8 @@ export default function SpeakHeroSection() {
                             mb: { xs: "18px", md: "20px" },
                         }}
                     >
-                        Contact Us
-                    </MotionTypography> */}
+                        Reach Us
+                    </MotionTypography>
 
                     <MotionTypography
                         initial={{ opacity: 0, y: 45 }}
