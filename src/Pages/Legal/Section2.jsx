@@ -84,6 +84,7 @@ export default function LegalContentSection() {
         color: "#E8EAF2",
         overflowX: "hidden",
         py: { xs: "50px", md: "80px" },
+        borderTop:"0.8px solid #FFFFFF14",
       }}
     >
       <Box

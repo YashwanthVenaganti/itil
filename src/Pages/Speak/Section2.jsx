@@ -40,6 +40,7 @@ export default function ContactFormSection() {
         width: "100%",
         backgroundColor: "#0A0E27",
         py: { xs: "45px", md: "65px" },
+        borderTop:"0.8px solid #FFFFFF14",
       }}
     >
       <Box

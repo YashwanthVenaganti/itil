@@ -42,6 +42,7 @@ export default function KeyOfferings() {
         fontFamily: "Jost, sans-serif",
         py: { xs: "70px", md: "120px" },
         overflowX: "hidden",
+        borderTop:"0.8px solid #FFFFFF14",
       }}
     >
       {/* ✅ MATCH HERO SECTION */}

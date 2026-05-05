@@ -50,6 +50,7 @@ export default function DataIntelligenceSection() {
         width: "100%",
         backgroundColor: "#0A0E27",
         py: { xs: "60px", md: "90px", lg: "110px" },
+        borderTop:"0.8px solid #FFFFFF14",
       }}
     >
       <Container

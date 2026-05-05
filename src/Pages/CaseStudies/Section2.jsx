@@ -27,6 +27,7 @@ export default function CaseStudyDetailCard() {
         width: "100%",
         backgroundColor: "#0A0E27",
         py: { xs: "40px", md: "70px" },
+        borderTop:"0.8px solid #FFFFFF14",
       }}
     >
       <Container

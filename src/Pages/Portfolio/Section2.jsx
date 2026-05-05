@@ -61,6 +61,7 @@ export default function ProjectsSection() {
         fontFamily: "Jost, sans-serif",
         py: { xs: "70px", md: "110px" },
         overflowX: "hidden",
+        borderTop:"0.8px solid #FFFFFF14",
       }}
     >
       {/* ✅ SAME CONTAINER AS HERO */}

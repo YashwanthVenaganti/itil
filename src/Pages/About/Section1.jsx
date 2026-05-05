@@ -130,15 +130,7 @@ export default function AboutHeroSection() {
             and Business Clarity
 
             {/* Light Blue Line */}
-            <Box
-              sx={{
-                width: { xs: "120px", sm: "160px", md: "200px" },
-                height: "3px",
-                backgroundColor: "#00D9FF",
-                mt: "14px",
-                borderRadius: "2px",
-              }}
-            />
+            
           </MotionTypography>
         </MotionBox>
       </Container>

@@ -10,6 +10,7 @@ export default function CompanyOverview() {
         width: "100%",
         backgroundColor: "#0A0E27",
         overflowX: "hidden",
+        borderTop:"0.8px solid #FFFFFF14",
       }}
     >
       <Box
