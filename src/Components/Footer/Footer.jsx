@@ -21,6 +21,14 @@ const companyRoutes = {
   "Reach Us": "/contact",
 };
 
+const solutions = [
+  { label: "IT Service", path: "/it-services" },
+  { label: "Data Service", path: "/data-services" },
+  { label: "AI & ML", path: "/ai-ml" },
+  { label: "Cloud Infrastructure", path: "/cloud-infrastructure" },
+  { label: "Cybersecurity", path: "/cybersecurity" },
+];
+
 export default function Footer() {
   const navigate = useNavigate();
 
@@ -118,14 +126,32 @@ export default function Footer() {
 
           {/* SOLUTIONS */}
           <Grid size={{ xs: 12, md: 3 }}>
-            {/* <Typography sx={{ color: "#00D9FF", mb: 2 }}>
-              Solutions
+            {solutions.map((item) => (
+              <Typography
+                key={item.label}
+                onClick={() => navigate(item.path)}
+                sx={{
+                  fontSize: "14px",
+                  mb: 1,
+                  cursor: "pointer",
+                  "&:hover": { color: "#00D9FF" },
+                }}
+              >
+                {item.label}
+              </Typography>
+            ))}
+          </Grid>
+
+            {/* COMPANY */}
+            <Grid size={{ xs: 12, md: 2.5 }}>
+              {/* <Typography sx={{ color: "#00D9FF", mb: 2 }}>
+              Company
             </Typography> */}
 
-            {["IT Service","Data Service", "AI & ML", "Cloud Infrastructure", "Cybersecurity"].map(
-              (item) => (
+              {["About", "Case Studies", "Legal", "Reach Us"].map((item) => (
                 <Typography
                   key={item}
+                  onClick={() => navigate(companyRoutes[item])}
                   sx={{
                     fontSize: "14px",
                     mb: 1,
@@ -135,68 +161,45 @@ export default function Footer() {
                 >
                   {item}
                 </Typography>
-              )
-            )}
-          </Grid>
+              ))}
+            </Grid>
 
-          {/* COMPANY */}
-          <Grid size={{ xs: 12, md: 2.5 }}>
-            {/* <Typography sx={{ color: "#00D9FF", mb: 2 }}>
-              Company
-            </Typography> */}
-
-            {["About", "Case Studies", "Legal", "Reach Us"].map((item) => (
-              <Typography
-                key={item}
-                onClick={() => navigate(companyRoutes[item])}
-                sx={{
-                  fontSize: "14px",
-                  mb: 1,
-                  cursor: "pointer",
-                  "&:hover": { color: "#00D9FF" },
-                }}
-              >
-                {item}
-              </Typography>
-            ))}
-          </Grid>
-
-          {/* CONTACT */}
-          <Grid size={{ xs: 12, md: 2.5 }}>
-            {/* <Typography sx={{ color: "#00D9FF", mb: 2 }}>
+            {/* CONTACT */}
+            <Grid size={{ xs: 12, md: 2.5 }}>
+              {/* <Typography sx={{ color: "#00D9FF", mb: 2 }}>
               Contact
             </Typography> */}
 
-            <Box sx={{ display: "flex", gap: 1 }}>
-              <EmailOutlinedIcon sx={{ color: "#00D9FF" }} />
-              <Typography sx={{ fontSize: "14px" }}>hello@litl.com</Typography>
-            </Box>
+              <Box sx={{ display: "flex", gap: 1 }}>
+                {/* <EmailOutlinedIcon sx={{ color: "#00D9FF" }} /> */}
+                <Typography sx={{ fontSize: "14px" }}>hello@litl.com</Typography>
+              </Box>
 
-            <Box sx={{ display: "flex", gap: 1, mt: 2 }}>
-              <LocationOnOutlinedIcon sx={{ color: "#00D9FF" }} />
-              <Typography sx={{ fontSize: "13px" }}>Sattva Knowledge City, Hi-Tec City,
-                
-                Hyderabad - 500081 Telangana,
-                
-                India
-              </Typography>
-            </Box>
+              <Box sx={{ display: "flex", gap: 1, mt: 2 }}>
+                {/* <LocationOnOutlinedIcon sx={{ color: "#00D9FF" }} /> */}
+                <Typography sx={{ fontSize: "13px" }}>Sattva Knowledge City, Hi-Tec City,
+
+                  Hyderabad - 500081 Telangana,
+
+                  India
+                </Typography>
+              </Box>
+            </Grid>
           </Grid>
-        </Grid>
 
-        {/* BOTTOM */}
-        <Box
-          sx={{
-            borderTop: "1px solid rgba(255,255,255,0.1)",
-            mt: 5,
-            pt: 3,
-          }}
-        >
-          <Typography sx={{ fontSize: "13px" }}>
-            © 2026 Crediple India Private Limited  (CIPL). All rights reserved . Empowering Professionals Through Convergent
-            Technology..
-          </Typography>
-        </Box>
+          {/* BOTTOM */}
+          <Box
+            sx={{
+              borderTop: "1px solid rgba(255,255,255,0.1)",
+              mt: 5,
+              pt: 3,
+            }}
+          >
+            <Typography sx={{ fontSize: "13px" }}>
+              © 2026 Crediple India Private Limited  (CIPL). All rights reserved . Empowering Professionals Through Convergent
+              Technology..
+            </Typography>
+          </Box>
       </Container>
     </Box>
   );

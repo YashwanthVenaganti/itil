@@ -21,7 +21,7 @@ export default function HeroSection() {
         position: "relative",
       }}
     >
-      {/* ✅ RIGHT IMAGE / ICON (EXACT POSITION) */}
+      {/* RIGHT IMAGE / ICON */}
       <Box
         sx={{
           position: "absolute",
@@ -30,14 +30,14 @@ export default function HeroSection() {
           width: { xs: "60px", md: "70px" },
           zIndex: 1,
           pointerEvents: "none",
-          display: { xs: "none", lg: "flex" }, // ❌ hide mobile
+          display: { xs: "none", lg: "flex" },
           flexDirection: "column",
           alignItems: "center",
         }}
       >
         <Box
           component="img"
-          src="/Images/Icon.svg" // 👉 replace if needed
+          src="/Images/Icon.svg"
           alt="icon"
           sx={{
             width: "40%",
@@ -62,7 +62,7 @@ export default function HeroSection() {
         </Typography>
       </Box>
 
-      {/* ✅ CONTENT CONTAINER */}
+      {/* CONTENT */}
       <Box
         sx={{
           maxWidth: "1440px",
@@ -88,11 +88,11 @@ export default function HeroSection() {
             sx={{
               fontWeight: 500,
               fontSize: {
-                  xs: "32px",
-                  sm: "44px",
-                  md: "58px",
-                  lg: "72px",
-                },
+                xs: "32px",
+                sm: "44px",
+                md: "58px",
+                lg: "72px",
+              },
               lineHeight: {
                 xs: "48px",
                 sm: "64px",
@@ -108,9 +108,9 @@ export default function HeroSection() {
               color: "#E7EAF3",
             }}
           >
-            Build Powerful, Scalable
+            Turn Data into Strategic
             <br />
-            Digital Systems
+            Advantage
           </MotionTypography>
 
           {/* SUBTEXT */}
@@ -127,8 +127,7 @@ export default function HeroSection() {
               maxWidth: "600px",
             }}
           >
-            End-to-end IT solutions designed to transform your business
-            operations.
+           Secure Your Digital Future
           </MotionTypography>
 
           {/* BUTTON */}

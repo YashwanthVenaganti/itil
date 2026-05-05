@@ -4,21 +4,21 @@ import KeyOfferingsSection from "./Section3";
 import ProcessSection from "./Section4";
 import UseCasesSection from "./Section5";
 import WhyIITILSection from "./Section6";
-import EngagementModelsSection from "./Section7";
-import CTASection from "./Section8";
+import CTASection from "./Section7";
 
-
-export default function It() {
+export default function Cybersecurity() {
   return (
     <>
       <HeroSection />
       <AboutSection />
       <KeyOfferingsSection />
-      <ProcessSection />    
+      <ProcessSection />
       <UseCasesSection />
       <WhyIITILSection />
-      <EngagementModelsSection />
       <CTASection />
+
     </>
+
   );
 }
+

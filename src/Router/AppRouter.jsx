@@ -21,6 +21,10 @@ import Consultation from "../Pages/Consultation/Consultation";
 import CookieConsent from "../Components/Cookies/Cookies";
 import { Box } from "@mui/material";
 import It from "../Pages/It/It";
+import DataServices from "../Pages/DataServices/DataServices";
+import AIML from "../Pages/AIML/AIML";
+import Infrastructure from "../Pages/Infrastructure/Infrastructure";
+import Cybersecurity from "../Pages/Cybersecurity/Cybersecurity";
 
 function Layout() {
   const { pathname } = useLocation();
@@ -74,7 +78,11 @@ function AppRouter() {
           <Route path="/legal" element={<Legal />} />
           <Route path="/speak-to-our-expert" element={<Speak />} />
           <Route path="/schedule-consultation" element={<Consultation />} />
-          <Route path="/it-services" element={<It />} /> {/* New route for IT Services page */}
+          <Route path="/it-services" element={<It />} /> 
+          <Route path="/data-services" element={<DataServices />} />
+          <Route path="/ai-ml" element={<AIML />} />
+          <Route path="/cloud-infrastructure" element={<Infrastructure />} />
+          <Route path="/cybersecurity" element={<Cybersecurity />} />
         </Route>
       </Routes>
     </BrowserRouter>
