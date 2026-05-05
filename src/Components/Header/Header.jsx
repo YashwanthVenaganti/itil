@@ -19,7 +19,7 @@ const navItems = [
   "Solutions",
   "Portfolio",
   "Case Studies",
-  "Contact",
+  "Reach Us",
 ];
 
 const routes = {
@@ -28,7 +28,7 @@ const routes = {
   Solutions: "/solutions",
   Portfolio: "/portfolio",
   "Case Studies": "/case-studies",
-  Contact: "/contact",
+  "Reach Us": "/contact",
 };
 
 export default function Header() {
@@ -151,7 +151,7 @@ export default function Header() {
               },
             }}
           >
-            Get in Touch
+            Engage with us
           </Button>
 
           {/* Scroll Icon */}
@@ -252,7 +252,7 @@ export default function Header() {
               },
             }}
           >
-            Get in Touch
+            Engage with us
           </Button>
         </Box>
       </Drawer>

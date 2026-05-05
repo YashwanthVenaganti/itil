@@ -134,7 +134,7 @@ export default function ContactSection() {
               </Typography>
 
               <Box
-                onClick={() => navigate("/speak-to-our-expert")}
+                onClick={() => navigate("/schedule-consultation")}
                 sx={{
                   display: "inline-flex",
                   alignItems: "center",

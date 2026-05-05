@@ -17,6 +17,7 @@ import Footer from "../Components/Footer/Footer";
 import Portfolio from "../Pages/Portfolio/Portfolio";
 import Legal from "../Pages/Legal/Legal";
 import Speak from "../Pages/Speak/Speak";
+import Consultation from "../Pages/Consultation/Consultation";
 import CookieConsent from "../Components/Cookies/Cookies";
 
 function Layout() {
@@ -55,6 +56,7 @@ function AppRouter() {
           <Route path="/portfolio" element={<Portfolio />} />   
           <Route path="/legal" element={<Legal />} />
           <Route path="/speak-to-our-expert" element={<Speak />} />
+          <Route path="/schedule-consultation" element={<Consultation />} />
         </Route>
       </Routes>
     </BrowserRouter>

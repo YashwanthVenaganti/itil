@@ -87,7 +87,7 @@ export default function ContactHeroSection() {
               mb: { xs: "18px", md: "20px" },
             }}
           >
-            Contact Us
+            Reach us
           </MotionTypography>
 
           <MotionTypography
