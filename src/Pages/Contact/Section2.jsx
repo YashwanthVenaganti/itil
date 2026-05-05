@@ -79,12 +79,13 @@ export default function ContactSection() {
         backgroundColor: "#0A0E27",
         py: { xs: "60px", md: "90px", lg: "110px" },
         overflowX: "hidden",
+        borderTop:"0.8px solid #FFFFFF14",
       }}
     >
       <Box
         sx={{
           width: "100%",
-          borderTop: "1px solid rgba(255,255,255,0.45)",
+          // borderTop: "0.8px solid #FFFFFF14",
           mb: { xs: "42px", md: "70px" },
         }}
       />
