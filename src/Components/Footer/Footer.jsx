@@ -33,6 +33,7 @@ export default function Footer() {
         pt: { xs: 6, md: 8 },
         pb: { xs: 4, md: 5 },
         fontFamily: "Jost, sans-serif",
+        paddingX: { xs: 1, md: 1 },
       }}
     >
       <Container maxWidth={false} sx={{ px: { xs: 3, md: 6 } }}>

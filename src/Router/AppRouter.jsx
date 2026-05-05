@@ -20,6 +20,7 @@ import Speak from "../Pages/Speak/Speak";
 import Consultation from "../Pages/Consultation/Consultation";
 import CookieConsent from "../Components/Cookies/Cookies";
 import { Box } from "@mui/material";
+import It from "../Pages/It/It";
 
 function Layout() {
   const { pathname } = useLocation();
@@ -73,6 +74,7 @@ function AppRouter() {
           <Route path="/legal" element={<Legal />} />
           <Route path="/speak-to-our-expert" element={<Speak />} />
           <Route path="/schedule-consultation" element={<Consultation />} />
+          <Route path="/it-services" element={<It />} /> {/* New route for IT Services page */}
         </Route>
       </Routes>
     </BrowserRouter>

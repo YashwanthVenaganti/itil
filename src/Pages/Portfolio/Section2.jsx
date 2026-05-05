@@ -61,7 +61,7 @@ export default function ProjectsSection() {
         fontFamily: "Jost, sans-serif",
         py: { xs: "70px", md: "110px" },
         overflowX: "hidden",
-        borderTop:"0.8px solid #FFFFFF14",
+        borderTop: "0.8px solid #FFFFFF14",
       }}
     >
       {/* ✅ SAME CONTAINER AS HERO */}
@@ -192,7 +192,17 @@ export default function ProjectsSection() {
               <Box sx={{ display: "flex", flexDirection: "column", gap: "12px" }}>
                 {project.points.map((point) => (
                   <Box key={point} sx={{ display: "flex", gap: "10px" }}>
-                    <Typography sx={{ color: "#00D9FF" }}>✓</Typography>
+                    <Box
+                      sx={{
+                        width: "8px",
+                        height: "8px",
+                        borderRadius: "50%",
+                        backgroundColor: "#00D9FF",
+                        // boxShadow: "0 0 0 4px rgba(0,217,255,0.15)",
+                        flexShrink: 0,
+                        mt: "6px",
+                      }}
+                    />
                     <Typography sx={{ fontSize: "14px", color: "#8D94B8" }}>
                       {point}
                     </Typography>
