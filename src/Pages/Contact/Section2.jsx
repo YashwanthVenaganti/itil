@@ -79,17 +79,9 @@ export default function ContactSection() {
         backgroundColor: "#0A0E27",
         py: { xs: "60px", md: "90px", lg: "110px" },
         overflowX: "hidden",
-        borderTop:"0.8px solid #FFFFFF14",
+        borderTop: "0.8px solid #FFFFFF14",
       }}
     >
-      <Box
-        sx={{
-          width: "100%",
-          // borderTop: "0.8px solid #FFFFFF14",
-          mb: { xs: "42px", md: "70px" },
-        }}
-      />
-
       <Box
         sx={{
           maxWidth: "1440px",
@@ -101,13 +93,14 @@ export default function ContactSection() {
         <Grid
           container
           spacing={{ xs: 3, md: 4 }}
+          alignItems="stretch"
           sx={{
             maxWidth: "1200px",
             mx: "auto",
           }}
         >
           {/* TOP LEFT */}
-          <Grid size={{ xs: 12, md: 6 }}>
+          <Grid size={{ xs: 12, md: 6 }} sx={{ display: "flex" }}>
             <MotionBox
               initial={{ opacity: 0, y: 35 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -116,6 +109,8 @@ export default function ContactSection() {
               sx={{
                 ...cardSx,
                 p: { xs: "24px", md: "30px" },
+                width: "100%",
+                height: "100%",
                 minHeight: { xs: "auto", md: "230px" },
               }}
             >
@@ -152,7 +147,7 @@ export default function ContactSection() {
           </Grid>
 
           {/* TOP RIGHT */}
-          <Grid size={{ xs: 12, md: 6 }}>
+          <Grid size={{ xs: 12, md: 6 }} sx={{ display: "flex" }}>
             <MotionBox
               initial={{ opacity: 0, y: 35 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -161,6 +156,8 @@ export default function ContactSection() {
               sx={{
                 ...cardSx,
                 p: { xs: "24px", md: "30px" },
+                width: "100%",
+                height: "100%",
                 minHeight: { xs: "auto", md: "230px" },
               }}
             >
@@ -195,9 +192,16 @@ export default function ContactSection() {
           </Grid>
 
           {/* BOTTOM LEFT */}
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Grid container spacing={3}>
-              <Grid size={{ xs: 12 }}>
+          <Grid size={{ xs: 12, md: 6 }} sx={{ display: "flex" }}>
+            <Grid
+              container
+              spacing={3}
+              sx={{
+                width: "100%",
+                height: "100%",
+              }}
+            >
+              <Grid size={{ xs: 12 }} sx={{ display: "flex" }}>
                 <MotionBox
                   initial={{ opacity: 0, y: 35 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -206,6 +210,9 @@ export default function ContactSection() {
                   sx={{
                     ...cardSx,
                     p: { xs: "24px", md: "30px" },
+                    width: "100%",
+                    height: "100%",
+                    minHeight: { xs: "auto", md: "235px" },
                   }}
                 >
                   <Typography sx={{ ...titleSx, mb: "24px" }}>
@@ -285,7 +292,7 @@ export default function ContactSection() {
                 </MotionBox>
               </Grid>
 
-              <Grid size={{ xs: 12 }}>
+              <Grid size={{ xs: 12 }} sx={{ display: "flex" }}>
                 <MotionBox
                   initial={{ opacity: 0, y: 35 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -294,6 +301,9 @@ export default function ContactSection() {
                   sx={{
                     ...cardSx,
                     p: { xs: "24px", md: "30px" },
+                    width: "100%",
+                    height: "100%",
+                    minHeight: { xs: "auto", md: "235px" },
                   }}
                 >
                   <Typography sx={{ ...titleSx, mb: "22px" }}>
@@ -332,7 +342,7 @@ export default function ContactSection() {
           </Grid>
 
           {/* BOTTOM RIGHT FORM */}
-          <Grid size={{ xs: 12, md: 6 }}>
+          <Grid size={{ xs: 12, md: 6 }} sx={{ display: "flex" }}>
             <MotionBox
               initial={{ opacity: 0, y: 35 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -341,7 +351,11 @@ export default function ContactSection() {
               sx={{
                 ...cardSx,
                 p: { xs: "24px", md: "36px" },
+                width: "100%",
                 height: "100%",
+                minHeight: { xs: "auto", md: "494px" },
+                display: "flex",
+                flexDirection: "column",
               }}
             >
               <Typography sx={{ ...titleSx, mb: "30px" }}>Reach Us</Typography>
@@ -385,6 +399,7 @@ export default function ContactSection() {
                 whileTap={{ scale: 0.98 }}
                 endIcon={<ArrowForwardIcon />}
                 sx={{
+                  mt: "auto",
                   height: "54px",
                   backgroundColor: "#19C8E8",
                   color: "#000",
