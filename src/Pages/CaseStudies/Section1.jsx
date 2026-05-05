@@ -11,7 +11,8 @@ export default function CaseStudiesHero() {
         width: "100%",
         backgroundColor: "#0A0E27",
         overflow: "hidden",
-        position: "relative", // ✅ required
+        position: "relative", 
+        // ✅ required
       }}
     >
       {/* 🔹 ICON + TEXT */}

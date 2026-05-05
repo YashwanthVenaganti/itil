@@ -17,7 +17,6 @@ const services = [
       "Endpoint Support Services",
       "IT AMC Services",
       "Cloud & Email Management",
-      "Server & Network Management",
     ],
   },
   {
@@ -68,6 +67,7 @@ const services = [
 
 export default function ServicesSection() {
   const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
 
   const nextSlide = () => {
     setActive((prev) => (prev + 1) % services.length);
@@ -78,13 +78,19 @@ export default function ServicesSection() {
   };
 
   useEffect(() => {
-    const timer = setInterval(nextSlide, 3000);
+    if (paused) return;
+
+    const timer = setInterval(() => {
+      nextSlide();
+    }, 3000);
+
     return () => clearInterval(timer);
-  }, []);
+  }, [paused]);
 
   const current = services[active];
-  const leftPoints = current.points.slice(0, 4);
-  const rightPoints = current.points.slice(4);
+  const balancedPoints = current.points.slice(0, 6);
+  const leftPoints = balancedPoints.slice(0, 3);
+  const rightPoints = balancedPoints.slice(3, 6);
 
   return (
     <Box
@@ -162,6 +168,8 @@ export default function ServicesSection() {
         >
           <IconButton
             onClick={prevSlide}
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
             sx={{
               position: "absolute",
               left: { xs: "-8px", md: "-40px" },
@@ -181,6 +189,8 @@ export default function ServicesSection() {
 
           <IconButton
             onClick={nextSlide}
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
             sx={{
               position: "absolute",
               right: { xs: "-8px", md: "-40px" },
@@ -201,6 +211,10 @@ export default function ServicesSection() {
           <AnimatePresence mode="wait">
             <MotionBox
               key={active}
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
+              onTouchStart={() => setPaused(true)}
+              onTouchEnd={() => setPaused(false)}
               initial={{ opacity: 0, x: 60 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -60 }}
@@ -235,7 +249,7 @@ export default function ServicesSection() {
                 sx={{
                   display: "grid",
                   gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
-                  gap: { xs: "8px", md: "40px" },
+                  gap: { xs: "8px", md: "60px" },
                   px: { xs: "28px", md: "80px" },
                   py: { xs: "28px", md: "34px" },
                 }}
@@ -291,6 +305,8 @@ export default function ServicesSection() {
               <Box
                 key={index}
                 onClick={() => setActive(index)}
+                onMouseEnter={() => setPaused(true)}
+                onMouseLeave={() => setPaused(false)}
                 sx={{
                   width: "14px",
                   height: "14px",

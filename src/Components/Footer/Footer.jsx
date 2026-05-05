@@ -38,7 +38,7 @@ export default function Footer() {
       <Container maxWidth={false} sx={{ px: { xs: 3, md: 6 } }}>
         <Grid container spacing={4}>
           {/* LEFT */}
-          <Grid size={{ xs: 12, md: 3 }}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <Box
               onClick={() => navigate("/")}
               sx={{
@@ -76,7 +76,7 @@ export default function Footer() {
               </Typography>
             </Box>
 
-            <Typography sx={{ fontSize: "14px", mb: 3,mt: 1 }}>
+            <Typography sx={{ fontSize: "14px", mb: 3, mt: 1 }}>
               Transforming data into intelligent business outcomes through advanced analytics and technology solutions.
             </Typography>
 
@@ -117,11 +117,11 @@ export default function Footer() {
 
           {/* SOLUTIONS */}
           <Grid size={{ xs: 12, md: 3 }}>
-            <Typography sx={{ color: "#00D9FF", mb: 2 }}>
+            {/* <Typography sx={{ color: "#00D9FF", mb: 2 }}>
               Solutions
-            </Typography>
+            </Typography> */}
 
-            {["Data Intelligence", "AI & ML", "Cloud", "Cybersecurity"].map(
+            {["IT Service","Data Service", "AI & ML", "Cloud Infrastructure", "Cybersecurity"].map(
               (item) => (
                 <Typography
                   key={item}
@@ -139,10 +139,10 @@ export default function Footer() {
           </Grid>
 
           {/* COMPANY */}
-          <Grid size={{ xs: 12, md: 3 }}>
-            <Typography sx={{ color: "#00D9FF", mb: 2 }}>
+          <Grid size={{ xs: 12, md: 2.5 }}>
+            {/* <Typography sx={{ color: "#00D9FF", mb: 2 }}>
               Company
-            </Typography>
+            </Typography> */}
 
             {["About", "Case Studies", "Legal", "Reach Us"].map((item) => (
               <Typography
@@ -161,10 +161,10 @@ export default function Footer() {
           </Grid>
 
           {/* CONTACT */}
-          <Grid size={{ xs: 12, md: 3 }}>
-            <Typography sx={{ color: "#00D9FF", mb: 2 }}>
+          <Grid size={{ xs: 12, md: 2.5 }}>
+            {/* <Typography sx={{ color: "#00D9FF", mb: 2 }}>
               Contact
-            </Typography>
+            </Typography> */}
 
             <Box sx={{ display: "flex", gap: 1 }}>
               <EmailOutlinedIcon sx={{ color: "#00D9FF" }} />
@@ -173,7 +173,12 @@ export default function Footer() {
 
             <Box sx={{ display: "flex", gap: 1, mt: 2 }}>
               <LocationOnOutlinedIcon sx={{ color: "#00D9FF" }} />
-              <Typography sx={{ fontSize: "13px" }}>Hyderabad, India</Typography>
+              <Typography sx={{ fontSize: "13px" }}>Sattva Knowledge City, Hi-Tec City,
+                
+                Hyderabad - 500081 Telangana,
+                
+                India
+              </Typography>
             </Box>
           </Grid>
         </Grid>
@@ -187,8 +192,8 @@ export default function Footer() {
           }}
         >
           <Typography sx={{ fontSize: "13px" }}>
-            © 2026 Crediple. All rights reserved. Empowering Professionals
-            Through Convergent Technology.
+            © 2026 Crediple India Private Limited  (CIPL). All rights reserved . Empowering Professionals Through Convergent
+            Technology..
           </Typography>
         </Box>
       </Container>
