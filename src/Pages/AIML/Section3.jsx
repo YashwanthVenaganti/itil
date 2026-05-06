@@ -5,12 +5,42 @@ const MotionBox = motion(Box);
 const MotionTypography = motion(Typography);
 
 const offerings = [
-  "Predictive Models ",
-  "NLP Solutions ",
-  "AI Automation ",
-  "Recommendation Engines ",
-  "Custom ML Models ",
-  
+  {
+    number: "01",
+    title: "Predictive Analytics",
+    description:
+      "We build data driven models that forecast trends, customer behavior, and business outcomes, helping you make proactive and informed decisions.",
+  },
+  {
+    number: "02",
+    title: "Natural Language Processing (NLP)",
+    description:
+      "Enable systems to understand, interpret, and respond to human language for applications like chatbots, sentiment analysis, and document processing.",
+  },
+  {
+    number: "03",
+    title: "Computer Vision Solutions",
+    description:
+      "Leverage image and video analysis for automation, quality checks, facial recognition, and surveillance intelligence.",
+  },
+  {
+    number: "04",
+    title: "AI-Powered Automation",
+    description:
+      "Automate repetitive and rule-based processes to improve operational efficiency and reduce human intervention.",
+  },
+  {
+    number: "05",
+    title: "Recommendation Systems",
+    description:
+      "Design intelligent engines that provide personalized suggestions to customers, improving engagement and conversion rates.",
+  },
+  {
+    number: "06",
+    title: "Custom ML Model Development & Deployment",
+    description:
+      "Develop, train, and deploy tailored machine learning models aligned with your specific business requirements and scale them seamlessly.",
+  },
 ];
 
 export default function KeyOfferingsSection() {
@@ -27,7 +57,7 @@ export default function KeyOfferingsSection() {
         sx={{
           maxWidth: "1440px",
           mx: "auto",
-          px: { xs: "20px", sm: "32px", md: "48px" },
+          px: { xs: "20px", sm: "32px", md: "48px", lg: "80px" },
           py: { xs: "70px", md: "100px" },
         }}
       >
@@ -39,13 +69,13 @@ export default function KeyOfferingsSection() {
           sx={{
             color: "#E7EAF3",
             fontWeight: 500,
-            fontSize: { xs: "36px", md: "56px" },
-            lineHeight: { xs: "44px", md: "64px" },
-            letterSpacing: "-1px",
-            mb: { xs: "32px", md: "48px" },
+            fontSize: { xs: "42px", md: "64px" },
+            lineHeight: { xs: "48px", md: "72px" },
+            letterSpacing: "-2px",
+            mb: { xs: "50px", md: "70px" },
           }}
         >
-          Key Offerings
+          Key Offering
         </MotionTypography>
 
         {/* GRID */}
@@ -57,49 +87,74 @@ export default function KeyOfferingsSection() {
               sm: "repeat(2, 1fr)",
               md: "repeat(3, 1fr)",
             },
-            gap: { xs: "16px", md: "24px" },
+            gap: { xs: "40px", md: "70px 60px" },
           }}
         >
           {offerings.map((item, index) => (
             <MotionBox
-              key={item}
+              key={item.number}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -6 }}
-              sx={{
-                border: "0.8px solid #FFFFFF14",
-                px: { xs: "18px", md: "22px" },
-                py: { xs: "18px", md: "20px" },
-                display: "flex",
-                alignItems: "center",
-                gap: "10px",
-                minHeight: "72px",
-              }}
             >
-              {/* DOT */}
-              <Box
-                sx={{
-                  width: "8px",
-                  height: "8px",
-                  borderRadius: "50%",
-                  backgroundColor: "#00D9FF",
-                  flexShrink: 0,
-                }}
-              />
-
-              {/* TEXT (UPDATED) */}
+              {/* NUMBER */}
               <Typography
                 sx={{
-                  fontFamily: "Inter, sans-serif", // ✅ required
+                  fontSize: {
+                    xs: "72px",
+                    sm: "82px",
+                    md: "96px",
+                  },
+                  lineHeight: 1,
                   fontWeight: 400,
-                  fontSize: { xs: "16px", md: "18px" }, // ✅ responsive
-                  lineHeight: { xs: "26px", md: "28px" }, // ✅ required
-                  letterSpacing: "0px",
-                  color: "#E8EAF2",
+                  color: "#00D9FF",
+                  mb: { xs: "24px", md: "34px" },
+                  letterSpacing: "-3px",
                 }}
               >
-                {item}
+                {item.number}
+              </Typography>
+
+              {/* TITLE */}
+              <Typography
+                sx={{
+                  color: "#E8EAF2",
+                  fontWeight: 500,
+                  fontSize: {
+                    xs: "28px",
+                    md: "34px",
+                  },
+                  lineHeight: {
+                    xs: "38px",
+                    md: "46px",
+                  },
+                  letterSpacing: "-1px",
+                  mb: "22px",
+                  maxWidth: "360px",
+                }}
+              >
+                {item.title}
+              </Typography>
+
+              {/* DESCRIPTION */}
+              <Typography
+                sx={{
+                  color: "#8D94B8",
+                  fontWeight: 400,
+                  fontSize: {
+                    xs: "15px",
+                    md: "18px",
+                  },
+                  lineHeight: {
+                    xs: "32px",
+                    md: "38px",
+                  },
+                  letterSpacing: "0.2px",
+                  maxWidth: "360px",
+                }}
+              >
+                {item.description}
               </Typography>
             </MotionBox>
           ))}

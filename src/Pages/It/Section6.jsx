@@ -7,18 +7,21 @@ const MotionTypography = motion(Typography);
 const items = [
   {
     id: "1",
-    title: "Scalable architecture",
-    desc: "Built to grow with your business",
+    title: "Business-Driven AI Solutions",
+    description:
+      "We design AI systems that directly align with business goals, ensuring every model delivers measurable outcomes like revenue growth, cost reduction, or process efficiency.",
   },
   {
     id: "2",
-    title: "Agile development",
-    desc: "Fast iterations and continuous improvement",
+    title: "Advanced Machine Learning Capabilities",
+    description:
+      "Our ML models are built using modern algorithms for prediction, classification, and optimization, enabling smarter and faster decision-making.",
   },
   {
     id: "3",
-    title: "Performance-driven delivery",
-    desc: "Results that exceed expectations",
+    title: "Scalable & Future-Ready Architecture",
+    description:
+      "IITIL builds AI systems that grow with your business, ensuring long-term adaptability, integration, and performance across evolving data environments.",
   },
 ];
 
@@ -36,7 +39,7 @@ export default function WhyIITILSection() {
         sx={{
           maxWidth: "1440px",
           mx: "auto",
-          px: { xs: "20px", sm: "32px", md: "48px" },
+          px: { xs: "20px", sm: "32px", md: "48px", lg: "80px" },
           py: { xs: "70px", md: "100px" },
         }}
       >
@@ -66,7 +69,7 @@ export default function WhyIITILSection() {
               sm: "repeat(2, 1fr)",
               md: "repeat(3, 1fr)",
             },
-            gap: { xs: "32px", md: "24px" },
+            gap: { xs: "40px", md: "24px" },
             textAlign: "center",
           }}
         >
@@ -81,18 +84,20 @@ export default function WhyIITILSection() {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
+                maxWidth: "360px",
+                mx: "auto",
               }}
             >
               {/* NUMBER BOX */}
               <Box
                 sx={{
-                  width: "60px",
-                  height: "60px",
+                  width: "64px",
+                  height: "64px",
                   border: "1px solid #00D9FF",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  mb: "18px",
+                  mb: "24px",
                 }}
               >
                 <Typography
@@ -112,26 +117,29 @@ export default function WhyIITILSection() {
                 sx={{
                   fontFamily: "Jost, sans-serif",
                   fontWeight: 500,
-                  fontSize: { xs: "18px", md: "20px" },
+                  fontSize: { xs: "22px", md: "24px" },
+                  lineHeight: { xs: "32px", md: "38px" },
                   color: "#E8EAF2",
-                  mb: "6px",
+                  mb: "16px",
+                  maxWidth: "340px",
                 }}
               >
                 {item.title}
               </Typography>
 
-              {/* DESC */}
+              {/* DESCRIPTION */}
               <Typography
                 sx={{
                   fontFamily: "Inter, sans-serif",
                   fontWeight: 400,
-                  fontSize: { xs: "14px", md: "15px" },
-                  lineHeight: { xs: "22px", md: "24px" },
-                  color: "#7A82A8",
-                  maxWidth: "240px",
+                  fontSize: { xs: "15px", md: "16px" },
+                  lineHeight: { xs: "34px", md: "40px" },
+                  letterSpacing: "0px",
+                  color: "#8D94B8",
+                  maxWidth: "340px",
                 }}
               >
-                {item.desc}
+                {item.description}
               </Typography>
             </MotionBox>
           ))}

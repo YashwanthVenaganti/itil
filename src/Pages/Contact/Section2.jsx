@@ -1,10 +1,4 @@
-import {
-  Box,
-  Button,
-  Grid,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Grid, TextField, Typography } from "@mui/material";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
 import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
@@ -12,6 +6,7 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const MotionBox = motion(Box);
 const MotionButton = motion(Button);
@@ -72,6 +67,36 @@ const fieldSx = {
 export default function ContactSection() {
   const navigate = useNavigate();
 
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = () => {
+  const subject = encodeURIComponent("New Contact Form Submission");
+
+  const body = encodeURIComponent(`
+Full Name: ${formData.fullName}
+
+Email Address: ${formData.email}
+
+Message:
+${formData.message}
+  `);
+
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=business@iitil.com&su=${subject}&body=${body}`;
+
+  window.open(gmailUrl, "_blank");
+};
+
   return (
     <Box
       sx={{
@@ -99,7 +124,6 @@ export default function ContactSection() {
             mx: "auto",
           }}
         >
-          {/* TOP LEFT */}
           <Grid size={{ xs: 12, md: 6 }} sx={{ display: "flex" }}>
             <MotionBox
               initial={{ opacity: 0, y: 35 }}
@@ -146,7 +170,6 @@ export default function ContactSection() {
             </MotionBox>
           </Grid>
 
-          {/* TOP RIGHT */}
           <Grid size={{ xs: 12, md: 6 }} sx={{ display: "flex" }}>
             <MotionBox
               initial={{ opacity: 0, y: 35 }}
@@ -191,16 +214,8 @@ export default function ContactSection() {
             </MotionBox>
           </Grid>
 
-          {/* BOTTOM LEFT */}
           <Grid size={{ xs: 12, md: 6 }} sx={{ display: "flex" }}>
-            <Grid
-              container
-              spacing={3}
-              sx={{
-                width: "100%",
-                height: "100%",
-              }}
-            >
+            <Grid container spacing={3} sx={{ width: "100%", height: "100%" }}>
               <Grid size={{ xs: 12 }} sx={{ display: "flex" }}>
                 <MotionBox
                   initial={{ opacity: 0, y: 35 }}
@@ -247,7 +262,7 @@ export default function ContactSection() {
                           fontSize: "14px",
                         }}
                       >
-                        hello@iitil.com
+                        business@iitil.com
                       </Typography>
                     </Box>
                   </Box>
@@ -341,7 +356,6 @@ export default function ContactSection() {
             </Grid>
           </Grid>
 
-          {/* BOTTOM RIGHT FORM */}
           <Grid size={{ xs: 12, md: 6 }} sx={{ display: "flex" }}>
             <MotionBox
               initial={{ opacity: 0, y: 35 }}
@@ -362,16 +376,22 @@ export default function ContactSection() {
 
               <TextField
                 fullWidth
+                name="fullName"
                 label="Full Name"
                 placeholder="John Doe"
+                value={formData.fullName}
+                onChange={handleChange}
                 InputLabelProps={{ shrink: true }}
                 sx={{ ...fieldSx, mb: "22px" }}
               />
 
               <TextField
                 fullWidth
+                name="email"
                 label="Email Address"
                 placeholder="john@company.com"
+                value={formData.email}
+                onChange={handleChange}
                 InputLabelProps={{ shrink: true }}
                 sx={{ ...fieldSx, mb: "22px" }}
               />
@@ -380,8 +400,11 @@ export default function ContactSection() {
                 fullWidth
                 multiline
                 rows={6}
+                name="message"
                 label="Message"
                 placeholder="Tell us about your project..."
+                value={formData.message}
+                onChange={handleChange}
                 InputLabelProps={{ shrink: true }}
                 sx={{
                   ...fieldSx,
@@ -395,6 +418,8 @@ export default function ContactSection() {
 
               <MotionButton
                 fullWidth
+                type="button"
+                onClick={handleSubmit}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 endIcon={<ArrowForwardIcon />}

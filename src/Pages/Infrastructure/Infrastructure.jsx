@@ -10,9 +10,9 @@ export default function Infrastructure() {
     return (
         <>
             <HeroSection />
-            <AboutSection />
+            {/* <AboutSection /> */}
             <KeyOfferingsSection />
-            <ProcessSection />
+            {/* <ProcessSection /> */}
             <UseCasesSection />
             <WhyIITILSection />
             <CTASection />

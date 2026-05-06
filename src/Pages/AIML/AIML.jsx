@@ -10,9 +10,9 @@ export default function AIML() {
     return (
         <>
             <HeroSection />
-            <AboutSection />
+            {/* <AboutSection /> */}
             <KeyOfferingsSection />
-            <ProcessSection />
+            {/* <ProcessSection /> */}
             <UseCasesSection />
             <WhyIITILSection />
             <CTASection />

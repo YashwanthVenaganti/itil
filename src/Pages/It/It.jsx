@@ -12,12 +12,12 @@ export default function It() {
   return (
     <>
       <HeroSection />
-      <AboutSection />
+      {/* <AboutSection /> */}
       <KeyOfferingsSection />
-      <ProcessSection />    
+      {/* <ProcessSection />     */}
       <UseCasesSection />
       <WhyIITILSection />
-      <EngagementModelsSection />
+      {/* <EngagementModelsSection /> */}
       <CTASection />
     </>
   );

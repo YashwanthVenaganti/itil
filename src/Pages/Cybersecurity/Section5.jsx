@@ -5,9 +5,21 @@ const MotionBox = motion(Box);
 const MotionTypography = motion(Typography);
 
 const useCases = [
-  "Infrastructure scaling",
-  "Remote operations ",
-  "Cost reduction ",
+  {
+    title: "Financial Institutions & Banking Systems",
+    description:
+      "Cybersecurity protects customer data, transaction systems, and online banking platforms from fraud, hacking, and data breaches.",
+  },
+  {
+    title: "Healthcare & Medical Data Protection",
+    description:
+      "Secure patient records, hospital systems, and healthcare applications against cyber threats while maintaining compliance and privacy standards.",
+  },
+  {
+    title: "Enterprise Network & Infrastructure Security",
+    description:
+      "Protect enterprise networks, servers, and cloud infrastructure through continuous monitoring, threat prevention, and secure access controls.",
+  },
 ];
 
 export default function UseCasesSection() {
@@ -24,11 +36,10 @@ export default function UseCasesSection() {
         sx={{
           maxWidth: "1440px",
           mx: "auto",
-          px: { xs: "20px", sm: "32px", md: "48px" },
+          px: { xs: "20px", sm: "32px", md: "48px", lg: "80px" },
           py: { xs: "70px", md: "100px" },
         }}
       >
-        {/* TITLE */}
         <MotionTypography
           initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -45,7 +56,6 @@ export default function UseCasesSection() {
           Use Cases
         </MotionTypography>
 
-        {/* CARDS */}
         <Box
           sx={{
             display: "grid",
@@ -54,50 +64,53 @@ export default function UseCasesSection() {
               sm: "repeat(2, 1fr)",
               md: "repeat(3, 1fr)",
             },
-            gap: { xs: "16px", md: "24px" },
+            gap: { xs: "20px", md: "32px" },
           }}
         >
           {useCases.map((item, index) => (
             <MotionBox
-              key={item}
+              key={item.title}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -6 }}
               sx={{
-                backgroundColor: "#00D9FF0D",
-                border: "0.8px solid #00D9FF",
-                px: { xs: "20px", md: "28px" },
-                py: { xs: "28px", md: "36px" },
+                backgroundColor: "#141829",
+                border: "0.8px solid #1A1F47",
+                px: { xs: "24px", md: "32px" },
+                py: { xs: "30px", md: "38px" },
+                minHeight: { xs: "220px", md: "220px" },
+                height: "100%",
                 display: "flex",
-                alignItems: "center",
-                gap: "12px",
-                minHeight: "120px",
+                flexDirection: "column",
+                justifyContent: "flex-start",
               }}
             >
-              {/* BLUE DISC */}
-              <Box
+              <Typography
                 sx={{
-                  width: "8px",
-                  height: "8px",
-                  borderRadius: "50%",
-                  backgroundColor: "#00D9FF",
-                  flexShrink: 0,
+                  fontFamily: "Jost, sans-serif",
+                  fontWeight: 500,
+                  fontSize: { xs: "24px", md: "28px" },
+                  lineHeight: { xs: "34px", md: "36px" },
+                  letterSpacing: "-0.6px",
+                  color: "#E8EAF2",
+                  mb: "16px",
                 }}
-              />
+              >
+                {item.title}
+              </Typography>
 
-              {/* TEXT */}
               <Typography
                 sx={{
                   fontFamily: "Inter, sans-serif",
                   fontWeight: 400,
-                  fontSize: { xs: "16px", md: "18px" },
-                  lineHeight: { xs: "24px", md: "28px" },
+                  fontSize: { xs: "14px", md: "15px" },
+                  lineHeight: { xs: "26px", md: "28px" },
                   letterSpacing: "0px",
-                  color: "#E8EAF2",
+                  color: "#8D94B8",
                 }}
               >
-                {item}
+                {item.description}
               </Typography>
             </MotionBox>
           ))}

@@ -10,9 +10,9 @@ export default function Cybersecurity() {
   return (
     <>
       <HeroSection />
-      <AboutSection />
+      {/* <AboutSection /> */}
       <KeyOfferingsSection />
-      <ProcessSection />
+      {/* <ProcessSection /> */}
       <UseCasesSection />
       <WhyIITILSection />
       <CTASection />

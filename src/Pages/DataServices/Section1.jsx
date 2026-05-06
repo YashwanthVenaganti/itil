@@ -21,7 +21,7 @@ export default function HeroSection() {
         position: "relative",
       }}
     >
-      {/* RIGHT IMAGE / ICON */}
+      {/* ✅ RIGHT IMAGE / ICON */}
       <Box
         sx={{
           position: "absolute",
@@ -62,13 +62,13 @@ export default function HeroSection() {
         </Typography>
       </Box>
 
-      {/* CONTENT */}
+      {/* ✅ CONTENT CONTAINER */}
       <Box
         sx={{
           maxWidth: "1440px",
           mx: "auto",
-          px: { xs: "20px", sm: "32px", md: "48px" },
-          pt: { xs: "130px", sm: "150px", md: "170px", lg: "190px" },
+          px: { xs: "20px", sm: "32px", md: "48px", lg: "80px" },
+          pt: { xs: "10px", sm: "50px" },
           pb: { xs: "80px", md: "100px" },
           position: "relative",
           zIndex: 2,
@@ -78,9 +78,9 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 45 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75 }}
-          sx={{ maxWidth: "980px" }}
+          sx={{ maxWidth: "1100px" }}
         >
-          {/* TITLE */}
+          {/* ✅ TITLE */}
           <MotionTypography
             initial={{ opacity: 0, y: 45 }}
             animate={{ opacity: 1, y: 0 }}
@@ -88,73 +88,106 @@ export default function HeroSection() {
             sx={{
               fontWeight: 500,
               fontSize: {
-                xs: "32px",
-                sm: "44px",
-                md: "58px",
-                lg: "72px",
+                xs: "42px",
+                sm: "56px",
+                md: "68px",
+                lg: "82px",
               },
               lineHeight: {
-                xs: "48px",
-                sm: "64px",
-                md: "82px",
-                lg: "92px",
+                xs: "46px",
+                sm: "62px",
+                md: "74px",
+                lg: "82px",
               },
               letterSpacing: {
                 xs: "-1px",
                 sm: "-1.4px",
-                md: "-1.8px",
-                lg: "-2.2px",
+                md: "-2px",
+                lg: "-2.6px",
               },
               color: "#E7EAF3",
+              maxWidth: "900px",
             }}
           >
-            Turn Data into Strategic
-            <br />
-            Advantage
+            Turn Data into Strategic Advantage
           </MotionTypography>
 
-          {/* SUBTEXT */}
+          {/* ✅ SUBTEXT */}
           <MotionTypography
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
             sx={{
-              mt: { xs: "22px", md: "28px" },
-              fontWeight: 500,
-              fontSize: { xs: "16px", md: "20px" },
-              lineHeight: { xs: "30px", sm: "34px", md: "40px" },
+              mt: { xs: "24px", md: "34px" },
+              fontWeight: 400,
+              fontSize: { xs: "15px", sm: "16px", md: "18px" },
+              lineHeight: { xs: "22px", md: "32px" },
               color: "#8D94B8",
-              maxWidth: "600px",
+              maxWidth: "1080px",
+              letterSpacing: "0.3px",
             }}
           >
-            We transform raw data into actionable insights that drive smarter
-            decisions
-          </MotionTypography>
+            We deliver end-to-end IT solutions designed to accelerate business growth, improve operational efficiency, and enable digital transformation. Our services combine cutting-edge technology with strategic expertise to build scalable, secure, and high performance systems. From application development to data intelligence, we empower businesses to stay competitive in a rapidly evolving digital landscape. Our approach is customer-centric, agile, and aligned with long term business goals.           </MotionTypography>
 
-          {/* BUTTON */}
-          <MotionButton
-            onClick={() => navigate("/schedule-consultation")}
+          {/* ✅ BUTTONS */}
+          <MotionBox
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.45 }}
-            whileHover={{ y: -4 }}
             sx={{
-              mt: { xs: "32px", md: "44px" },
-              width: { xs: "100%", sm: "250px" },
-              height: "64px",
-              backgroundColor: "#11D7FF",
-              color: "#000",
-              borderRadius: 0,
-              textTransform: "none",
-              fontWeight: 500,
-              fontSize: "17px",
-              "&:hover": {
-                backgroundColor: "#11D7FF",
-              },
+              mt: { xs: "36px", md: "54px" },
+              display: "flex",
+              gap: "16px",
+              flexWrap: "wrap",
+              alignItems: "center",
             }}
           >
-            Get a consultation
-          </MotionButton>
+            {/* PRIMARY BUTTON */}
+            <MotionButton
+              onClick={() => navigate("/schedule-consultation")}
+              whileHover={{ y: -4 }}
+              sx={{
+                width: { xs: "100%", sm: "260px" },
+                height: "60px",
+                backgroundColor: "#11D7FF",
+                color: "#000",
+                borderRadius: 0,
+                textTransform: "none",
+                fontWeight: 500,
+                fontSize: "16px",
+                boxShadow: "none",
+                "&:hover": {
+                  backgroundColor: "#11D7FF",
+                  boxShadow: "none",
+                },
+              }}
+            >
+              Schedule a Consultation →
+            </MotionButton>
+
+            {/* SECONDARY BUTTON */}
+            <MotionButton
+              onClick={() => navigate("/speak-to-our-expert")}
+              whileHover={{ y: -4 }}
+              sx={{
+                width: { xs: "100%", sm: "185px" },
+                height: "60px",
+                backgroundColor: "transparent",
+                color: "#11D7FF",
+                border: "1px solid #11D7FF",
+                borderRadius: 0,
+                textTransform: "none",
+                fontWeight: 500,
+                fontSize: "15px",
+                "&:hover": {
+                  backgroundColor: "rgba(17,215,255,0.08)",
+                  border: "1px solid #11D7FF",
+                },
+              }}
+            >
+              Speak to an Expert
+            </MotionButton>
+          </MotionBox>
         </MotionBox>
       </Box>
     </Box>

@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const MotionBox = motion(Box);
 
@@ -34,19 +35,60 @@ const fieldStyles = {
 };
 
 export default function ContactFormSection() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    companyName: "",
+    designation: "",
+    businessEmail: "",
+    service: "",
+    message: "",
+  });
+
+  const handleChange = (field, value) => {
+    setFormData((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+  };
+
+  const handleSubmit = () => {
+    const subject = encodeURIComponent("Schedule Consultation Enquiry");
+
+    const body = encodeURIComponent(`
+First Name: ${formData.firstName}
+
+Last Name: ${formData.lastName}
+
+Company Name: ${formData.companyName}
+
+Designation: ${formData.designation}
+
+Business Email: ${formData.businessEmail}
+
+Service: ${formData.service}
+
+Message:
+${formData.message}
+    `);
+
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=business@iitil.com&su=${subject}&body=${body}`;
+
+    window.open(gmailUrl, "_blank");
+  };
+
   return (
     <Box
       sx={{
         width: "100%",
         backgroundColor: "#0A0E27",
         py: { xs: "45px", md: "65px" },
-        borderTop:"0.8px solid #FFFFFF14",
+        borderTop: "0.8px solid #FFFFFF14",
       }}
     >
       <Box
         sx={{
           width: "100%",
-          // borderTop: "1px solid rgba(255,255,255,0.2)",
           mb: { xs: "32px", md: "44px" },
         }}
       />
@@ -67,7 +109,6 @@ export default function ContactFormSection() {
             mx: "auto",
           }}
         >
-          {/* LEFT IMAGE */}
           <Grid size={{ xs: 12, md: 6 }} sx={{ display: "flex" }}>
             <MotionBox
               initial={{ opacity: 0, y: 35 }}
@@ -76,7 +117,7 @@ export default function ContactFormSection() {
               sx={{
                 backgroundColor: "#141829",
                 width: "100%",
-                height: { xs: "320px", md: "700px" }, // ✅ increased
+                height: { xs: "320px", md: "700px" },
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -96,7 +137,6 @@ export default function ContactFormSection() {
             </MotionBox>
           </Grid>
 
-          {/* RIGHT FORM */}
           <Grid size={{ xs: 12, md: 6 }} sx={{ display: "flex" }}>
             <MotionBox
               initial={{ opacity: 0, y: 35 }}
@@ -105,7 +145,7 @@ export default function ContactFormSection() {
               sx={{
                 backgroundColor: "#141829",
                 width: "100%",
-                height: { xs: "auto", md: "700px" }, // ✅ same height
+                height: { xs: "auto", md: "700px" },
                 p: { xs: "24px", md: "28px" },
                 display: "flex",
                 flexDirection: "column",
@@ -134,11 +174,23 @@ export default function ContactFormSection() {
                 }}
               >
                 {[
-                  { label: "First Name", placeholder: "John Doe" },
-                  { label: "Last Name", placeholder: "john@company.com" },
-                  { label: "Company Name", placeholder: "john@company.com" },
-                  { label: "Designation", placeholder: "Your Company" },
-                  { label: "Business Email", placeholder: "john@company.com" },
+                  { label: "First Name", placeholder: "John", key: "firstName" },
+                  { label: "Last Name", placeholder: "Doe", key: "lastName" },
+                  {
+                    label: "Company Name",
+                    placeholder: "Your Company",
+                    key: "companyName",
+                  },
+                  {
+                    label: "Designation",
+                    placeholder: "Your Designation",
+                    key: "designation",
+                  },
+                  {
+                    label: "Business Email",
+                    placeholder: "john@company.com",
+                    key: "businessEmail",
+                  },
                 ].map((field) => (
                   <Box key={field.label}>
                     <Typography
@@ -155,6 +207,8 @@ export default function ContactFormSection() {
                     <TextField
                       fullWidth
                       placeholder={field.placeholder}
+                      value={formData[field.key]}
+                      onChange={(e) => handleChange(field.key, e.target.value)}
                       sx={fieldStyles}
                     />
                   </Box>
@@ -172,13 +226,19 @@ export default function ContactFormSection() {
                     Services
                   </Typography>
 
-                  <TextField select defaultValue="" fullWidth sx={fieldStyles}>
+                  <TextField
+                    select
+                    fullWidth
+                    value={formData.service}
+                    onChange={(e) => handleChange("service", e.target.value)}
+                    sx={fieldStyles}
+                  >
                     <MenuItem value="" disabled>
                       Select your Service
                     </MenuItem>
-                    <MenuItem value="ai">AI & ML</MenuItem>
-                    <MenuItem value="cloud">Cloud</MenuItem>
-                    <MenuItem value="data">Data</MenuItem>
+                    <MenuItem value="AI & ML">AI & ML</MenuItem>
+                    <MenuItem value="Cloud">Cloud</MenuItem>
+                    <MenuItem value="Data">Data</MenuItem>
                   </TextField>
                 </Box>
 
@@ -199,12 +259,15 @@ export default function ContactFormSection() {
                     multiline
                     rows={3}
                     placeholder="Add Message"
+                    value={formData.message}
+                    onChange={(e) => handleChange("message", e.target.value)}
                     sx={fieldStyles}
                   />
                 </Box>
               </Box>
 
               <Button
+                onClick={handleSubmit}
                 endIcon={<ArrowForwardIcon />}
                 sx={{
                   mt: "16px",

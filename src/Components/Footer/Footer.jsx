@@ -22,8 +22,8 @@ const companyRoutes = {
 };
 
 const solutions = [
-  { label: "IT Service", path: "/it-services" },
-  { label: "Data Service", path: "/data-services" },
+  { label: "IT Services", path: "/it-services" },
+  { label: "Data Services", path: "/data-services" },
   { label: "AI & ML", path: "/ai-ml" },
   { label: "Cloud Infrastructure", path: "/cloud-infrastructure" },
   { label: "Cybersecurity", path: "/cybersecurity" },
@@ -68,6 +68,9 @@ export default function Footer() {
                   objectFit: "contain",
                   display: "block",
                   mb: "4px",
+                  position: "relative",
+                  ml: "-15px",
+                
                 }}
               />
 
