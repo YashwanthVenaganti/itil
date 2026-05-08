@@ -87,7 +87,7 @@ export default function Footer() {
                   display: "block",
                   mb: "4px",
                   position: "relative",
-
+                  marginLeft: "-5px",
 
                 }}
               />

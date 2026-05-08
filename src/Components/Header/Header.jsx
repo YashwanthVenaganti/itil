@@ -80,6 +80,7 @@ export default function Header() {
             alignItems: "center",
             cursor: "pointer",
             flexShrink: 0,
+            marginLeft: "5px",
           }}
         >
           <Box
