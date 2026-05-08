@@ -81,9 +81,9 @@ export default function ContactSection() {
   };
 
   const handleSubmit = () => {
-  const subject = encodeURIComponent("New Contact Form Submission");
+    const subject = encodeURIComponent("New Contact Form Submission");
 
-  const body = encodeURIComponent(`
+    const body = encodeURIComponent(`
 Full Name: ${formData.fullName}
 
 Email Address: ${formData.email}
@@ -92,10 +92,10 @@ Message:
 ${formData.message}
   `);
 
-  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=business@iitil.com&su=${subject}&body=${body}`;
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=business@iitil.com&su=${subject}&body=${body}`;
 
-  window.open(gmailUrl, "_blank");
-};
+    window.open(gmailUrl, "_blank");
+  };
 
   return (
     <Box

@@ -127,7 +127,7 @@ export default function HeroSection() {
               letterSpacing: "0.3px",
             }}
           >
-            We deliver advanced Artificial Intelligence and Machine Learning solutions designed to transform data into actionable intelligence. Our services enable businesses to automate processes, enhance decisionmaking, and unlock new growth opportunities. By leveraging predictive analytics, intelligent automation, and scalable models, we help organizations stay competitive in a rapidly evolving digital landscape. Our approach focuses on accuracy, efficiency, and real-world business impact. 
+            We deliver advanced Artificial Intelligence and Machine Learning solutions designed to transform data into actionable intelligence. Our services enable businesses to automate processes, enhance decisionmaking, and unlock new growth opportunities. By leveraging predictive analytics, intelligent automation, and scalable models, we help organizations stay competitive in a rapidly evolving digital landscape. Our approach focuses on accuracy, efficiency, and real-world business impact.
 
           </MotionTypography>
 
