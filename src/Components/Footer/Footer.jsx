@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import {
   Box,
   Container,
@@ -6,8 +5,6 @@ import {
   Typography,
   IconButton,
 } from "@mui/material";
-
-
 
 const companyRoutes = {
   About: "/about",
@@ -48,7 +45,9 @@ const solutions = [
 ];
 
 export default function Footer() {
-  const navigate = useNavigate();
+  const openInNewTab = (path) => {
+    window.open(path, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <Box
@@ -59,15 +58,15 @@ export default function Footer() {
         pt: { xs: 6, md: 8 },
         pb: { xs: 4, md: 5 },
         fontFamily: "Jost, sans-serif",
-        paddingX: { xs: 1, md: 1 },
+        px: { xs: 1, md: 1 },
       }}
     >
       <Container maxWidth={false} sx={{ px: { xs: 3, md: 5 } }}>
         <Grid container spacing={4}>
           {/* LEFT */}
-          <Grid size={{ xs: 12, md: 4 }}>
+          <Grid size={{xs:12,md:4}}>
             <Box
-              onClick={() => navigate("/")}
+              onClick={() => openInNewTab("/")}
               sx={{
                 cursor: "pointer",
                 display: "inline-flex",
@@ -75,10 +74,10 @@ export default function Footer() {
                 alignItems: "flex-start",
               }}
             >
-              {/* LOGO IMAGE */}
+              {/* LOGO */}
               <Box
                 component="img"
-                src="/Images/Itil.svg" // 👉 replace with your image path
+                src="/Images/Itil.svg"
                 alt="litl"
                 sx={{
                   height: "36px",
@@ -88,7 +87,6 @@ export default function Footer() {
                   mb: "4px",
                   position: "relative",
                   marginLeft: "-5px",
-
                 }}
               />
 
@@ -96,8 +94,8 @@ export default function Footer() {
               <Typography
                 sx={{
                   color: "#FFFFFF",
-                  fontSize: "11px", // 👈 smaller size
-                  fontWeight: 600,  // 👈 bold
+                  fontSize: "11px",
+                  fontWeight: 600,
                   lineHeight: "14px",
                   fontFamily: "Jost, sans-serif",
                 }}
@@ -107,7 +105,8 @@ export default function Footer() {
             </Box>
 
             <Typography sx={{ fontSize: "14px", mb: 3, mt: 1 }}>
-              Transforming data into intelligent business outcomes through advanced analytics and technology solutions.
+              Transforming data into intelligent business outcomes through
+              advanced analytics and technology solutions.
             </Typography>
 
             <Box sx={{ display: "flex", gap: 2 }}>
@@ -147,16 +146,20 @@ export default function Footer() {
           </Grid>
 
           {/* SOLUTIONS */}
-          <Grid size={{ xs: 12, md: 3 }}>
+          <Grid size={{xs:12,md:3}}>
             {solutions.map((item) => (
               <Typography
                 key={item.label}
-                onClick={() => navigate(item.path)}
+                onClick={() => openInNewTab(item.path)}
                 sx={{
                   fontSize: "14px",
                   mb: 1,
                   cursor: "pointer",
-                  "&:hover": { color: "#00D9FF" },
+                  transition: "0.3s ease",
+                  "&:hover": {
+                    color: "#00D9FF",
+                    transform: "translateX(4px)",
+                  },
                 }}
               >
                 {item.label}
@@ -165,20 +168,20 @@ export default function Footer() {
           </Grid>
 
           {/* COMPANY */}
-          <Grid size={{ xs: 12, md: 2.5 }}>
-            {/* <Typography sx={{ color: "#00D9FF", mb: 2 }}>
-              Company
-            </Typography> */}
-
+          <Grid size={{xs:12,md:2.5}}>
             {["About", "Case Studies", "Legal", "Reach Us"].map((item) => (
               <Typography
                 key={item}
-                onClick={() => navigate(companyRoutes[item])}
+                onClick={() => openInNewTab(companyRoutes[item])}
                 sx={{
                   fontSize: "14px",
                   mb: 1,
                   cursor: "pointer",
-                  "&:hover": { color: "#00D9FF" },
+                  transition: "0.3s ease",
+                  "&:hover": {
+                    color: "#00D9FF",
+                    transform: "translateX(4px)",
+                  },
                 }}
               >
                 {item}
@@ -187,22 +190,19 @@ export default function Footer() {
           </Grid>
 
           {/* CONTACT */}
-          <Grid size={{ xs: 12, md: 2.5 }}>
-            {/* <Typography sx={{ color: "#00D9FF", mb: 2 }}>
-              Contact
-            </Typography> */}
-
+          <Grid size={{xs:12,md:2.5}}>
             <Box sx={{ display: "flex", gap: 1 }}>
-              {/* <EmailOutlinedIcon sx={{ color: "#00D9FF" }} /> */}
-              <Typography sx={{ fontSize: "14px" }}>hello@litl.com</Typography>
+              <Typography sx={{ fontSize: "14px" }}>
+                hello@litl.com
+              </Typography>
             </Box>
 
             <Box sx={{ display: "flex", gap: 1, mt: 2 }}>
-              {/* <LocationOnOutlinedIcon sx={{ color: "#00D9FF" }} /> */}
-              <Typography sx={{ fontSize: "13px" }}>Sattva Knowledge City, Hi-Tec City,
-
+              <Typography sx={{ fontSize: "13px", lineHeight: 1.8 }}>
+                Sattva Knowledge City, Hi-Tec City,
+                <br />
                 Hyderabad - 500081 Telangana,
-
+                <br />
                 India
               </Typography>
             </Box>
