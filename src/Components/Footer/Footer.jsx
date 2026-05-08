@@ -21,6 +21,29 @@ const companyRoutes = {
   "Reach Us": "/contact",
 };
 
+const socialLinks = [
+  {
+    icon: "/Images/linkedin.svg",
+    link: "https://www.linkedin.com/pulse/iitil-hiring-global-vacancies-iitil--2f7kf/",
+  },
+  {
+    icon: "/Images/x.svg",
+    link: "https://x.com/@iitil58131",
+  },
+  {
+    icon: "/Images/youtube.svg",
+    link: "https://www.youtube.com/@Iitil-q9e",
+  },
+  {
+    icon: "/Images/facebook.svg",
+    link: "https://www.facebook.com/profile.php?id=61589067426703",
+  },
+  {
+    icon: "/Images/instagram.svg",
+    link: "https://www.instagram.com/accounts/login/?next=%2Fiitilcipl&source=omni_redirect",
+  },
+];
+
 const solutions = [
   { label: "IT Services", path: "/it-services" },
   { label: "Data Services", path: "/data-services" },
@@ -69,8 +92,8 @@ export default function Footer() {
                   display: "block",
                   mb: "4px",
                   position: "relative",
-                  ml: "-15px",
-                
+                 
+
                 }}
               />
 
@@ -93,31 +116,32 @@ export default function Footer() {
             </Typography>
 
             <Box sx={{ display: "flex", gap: 2 }}>
-              {[
-                "/Images/linkedin.svg",
-                "/Images/x.svg",
-                "/Images/youtube.svg",
-                "/Images/facebook.svg",
-              ].map((src, i) => (
+              {socialLinks.map((item, i) => (
                 <IconButton
                   key={i}
+                  component="a"
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   sx={{
                     border: "1px solid rgba(255,255,255,0.1)",
                     width: 36,
                     height: 36,
                     borderRadius: 0,
+                    transition: "all 0.3s ease",
                     "&:hover": {
                       borderColor: "#00D9FF",
                       backgroundColor: "rgba(0,217,255,0.08)",
+                      transform: "translateY(-2px)",
                     },
                   }}
                 >
                   <Box
                     component="img"
-                    src={src}
+                    src={item.icon}
                     alt="social"
                     sx={{
-                      width: "18px",  // adjust size
+                      width: "18px",
                       height: "18px",
                       objectFit: "contain",
                     }}
@@ -145,64 +169,64 @@ export default function Footer() {
             ))}
           </Grid>
 
-            {/* COMPANY */}
-            <Grid size={{ xs: 12, md: 2.5 }}>
-              {/* <Typography sx={{ color: "#00D9FF", mb: 2 }}>
+          {/* COMPANY */}
+          <Grid size={{ xs: 12, md: 2.5 }}>
+            {/* <Typography sx={{ color: "#00D9FF", mb: 2 }}>
               Company
             </Typography> */}
 
-              {["About", "Case Studies", "Legal", "Reach Us"].map((item) => (
-                <Typography
-                  key={item}
-                  onClick={() => navigate(companyRoutes[item])}
-                  sx={{
-                    fontSize: "14px",
-                    mb: 1,
-                    cursor: "pointer",
-                    "&:hover": { color: "#00D9FF" },
-                  }}
-                >
-                  {item}
-                </Typography>
-              ))}
-            </Grid>
+            {["About", "Case Studies", "Legal", "Reach Us"].map((item) => (
+              <Typography
+                key={item}
+                onClick={() => navigate(companyRoutes[item])}
+                sx={{
+                  fontSize: "14px",
+                  mb: 1,
+                  cursor: "pointer",
+                  "&:hover": { color: "#00D9FF" },
+                }}
+              >
+                {item}
+              </Typography>
+            ))}
+          </Grid>
 
-            {/* CONTACT */}
-            <Grid size={{ xs: 12, md: 2.5 }}>
-              {/* <Typography sx={{ color: "#00D9FF", mb: 2 }}>
+          {/* CONTACT */}
+          <Grid size={{ xs: 12, md: 2.5 }}>
+            {/* <Typography sx={{ color: "#00D9FF", mb: 2 }}>
               Contact
             </Typography> */}
 
-              <Box sx={{ display: "flex", gap: 1 }}>
-                {/* <EmailOutlinedIcon sx={{ color: "#00D9FF" }} /> */}
-                <Typography sx={{ fontSize: "14px" }}>hello@litl.com</Typography>
-              </Box>
+            <Box sx={{ display: "flex", gap: 1 }}>
+              {/* <EmailOutlinedIcon sx={{ color: "#00D9FF" }} /> */}
+              <Typography sx={{ fontSize: "14px" }}>hello@litl.com</Typography>
+            </Box>
 
-              <Box sx={{ display: "flex", gap: 1, mt: 2 }}>
-                {/* <LocationOnOutlinedIcon sx={{ color: "#00D9FF" }} /> */}
-                <Typography sx={{ fontSize: "13px" }}>Sattva Knowledge City, Hi-Tec City,
+            <Box sx={{ display: "flex", gap: 1, mt: 2 }}>
+              {/* <LocationOnOutlinedIcon sx={{ color: "#00D9FF" }} /> */}
+              <Typography sx={{ fontSize: "13px" }}>Sattva Knowledge City, Hi-Tec City,
 
-                  Hyderabad - 500081 Telangana,
+                Hyderabad - 500081 Telangana,
 
-                  India
-                </Typography>
-              </Box>
-            </Grid>
+                India
+              </Typography>
+            </Box>
           </Grid>
+        </Grid>
 
-          {/* BOTTOM */}
-          <Box
-            sx={{
-              borderTop: "1px solid rgba(255,255,255,0.1)",
-              mt: 5,
-              pt: 3,
-            }}
-          >
-            <Typography sx={{ fontSize: "13px" }}>
-              © 2026 Crediple India Private Limited  (CIPL). All rights reserved . Empowering Professionals Through Convergent
-              Technology..
-            </Typography>
-          </Box>
+        {/* BOTTOM */}
+        <Box
+          sx={{
+            borderTop: "1px solid rgba(255,255,255,0.1)",
+            mt: 5,
+            pt: 3,
+          }}
+        >
+          <Typography sx={{ fontSize: "13px" }}>
+            © 2026 Crediple India Private Limited  (CIPL). All rights reserved . Empowering Professionals Through Convergent
+            Technology..
+          </Typography>
+        </Box>
       </Container>
     </Box>
   );
