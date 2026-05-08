@@ -7,12 +7,7 @@ import {
   IconButton,
 } from "@mui/material";
 
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import XIcon from "@mui/icons-material/X";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
+
 
 const companyRoutes = {
   About: "/about",
@@ -24,7 +19,7 @@ const companyRoutes = {
 const socialLinks = [
   {
     icon: "/Images/linkedin.svg",
-    link: "https://www.linkedin.com/pulse/iitil-hiring-global-vacancies-iitil--2f7kf/",
+    link: "https://www.linkedin.com/in/iitil-6bbb47407/",
   },
   {
     icon: "/Images/x.svg",
@@ -92,7 +87,7 @@ export default function Footer() {
                   display: "block",
                   mb: "4px",
                   position: "relative",
-                 
+
 
                 }}
               />
@@ -220,11 +215,25 @@ export default function Footer() {
             borderTop: "1px solid rgba(255,255,255,0.1)",
             mt: 5,
             pt: 3,
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            alignItems: { xs: "flex-start", md: "center" },
+            width: "100%",
+            gap: { xs: 1, md: 0 },
           }}
         >
           <Typography sx={{ fontSize: "13px" }}>
-            © 2026 Crediple India Private Limited  (CIPL). All rights reserved . Empowering Professionals Through Convergent
-            Technology..
+            © 2026 Crediple India Private Limited (CIPL). All rights reserved.
+          </Typography>
+
+          <Typography
+            sx={{
+              fontSize: "13px",
+              marginLeft: { xs: 0, md: "auto" },
+              textAlign: { xs: "left", md: "right" },
+            }}
+          >
+            Empowering Professionals Through Convergent Technology.
           </Typography>
         </Box>
       </Container>
