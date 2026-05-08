@@ -59,10 +59,10 @@ export default function Footer() {
         pt: { xs: 6, md: 8 },
         pb: { xs: 4, md: 5 },
         fontFamily: "Jost, sans-serif",
-        paddingX: { xs: 1, md: 3 },
+        paddingX: { xs: 1, md: 1 },
       }}
     >
-      <Container maxWidth={false} sx={{ px: { xs: 3, md: 6 } }}>
+      <Container maxWidth={false} sx={{ px: { xs: 3, md: 5 } }}>
         <Grid container spacing={4}>
           {/* LEFT */}
           <Grid size={{ xs: 12, md: 4 }}>
